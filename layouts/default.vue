@@ -38,9 +38,10 @@ html {
 }
 
 .main{
-  margin: 0 100px;
+  margin: 0 auto;
   position: relative;
   overflow-x: hidden;
+  max-width: 1440px;
 }
 
 *,

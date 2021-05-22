@@ -1,6 +1,6 @@
 <template>
   <div class="main-img">
-    <img src="~/assets/streak.jpeg" alt="">
+    <img src="~/assets/slider3.jpg" alt="">
     <div class="circle">
       scroll
     </div>

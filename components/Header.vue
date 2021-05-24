@@ -5,7 +5,9 @@
         <img src="../assets/logo-black.png" alt="">
       </nuxt-link>
     </div>
-
+    <div class="order-btn" :class="{'order-btn-menu' : !show}">
+      order now
+    </div>
     <div class="menu">
       <div
         v-if="show"
@@ -20,7 +22,6 @@
         :class="{'not-hidden' : !show}"
       >
         <div
-          v-if="!show"
           class="cross"
           @click="showMenu"
         >
@@ -37,14 +38,20 @@
           catering
         </nuxt-link>
 
-        <div class="hidden-footer">
-          <div class="hidden-text">
+        <div class="hidden-info">
+          <nuxt-link to="/" class="hidden-text">
             contact
-          </div>
+          </nuxt-link>
           <div class="hidden-social">
-            <div class="icon" />
-            <div class="icon" />
-            <div class="icon" />
+            <div class="icon">
+              <img src="~/assets/ig.png" alt="">
+            </div>
+            <div class="icon">
+              <img src="~/assets/fb.png" alt="" class="fb">
+            </div>
+            <div class="icon">
+              <img src="~/assets/tw.png" alt="">
+            </div>
           </div>
           <div class="hidden-copy">
             COPYRIGHT KINGSFORD GRILLE 2021
@@ -107,7 +114,7 @@ header {
     width: 500px;
     height: 100vh;
     top: 0;
-    background: red;
+    background: $color-red;
     display: flex;
     flex-direction: column;
     padding: 0 30px;
@@ -119,23 +126,31 @@ header {
     }
 
     .menu1{
-      font-size: 50px;
+      font-family: alternate-gothic-condensed-a, sans-serif;
+      font-size: 90px;
+      letter-spacing: 2.42px;
+      line-height: 108px;
       text-transform: uppercase;
       margin-left: 100px;
     }
 
     .menu2{
-      font-size: 40px;
-      margin-left: 150px;
+      font-family: fenway-park-jf, sans-serif;
+      font-size: 60px;
+      letter-spacing: 0;
+      line-height: 78px;
+      margin-left: 218px;
       text-transform: capitalize;
     }
     .menu3{
+      font-family: filson-pro, sans-serif;
+      text-transform: uppercase;
       font-size: 30px;
       text-decoration: underline;
-      margin-left: 50px;
+      margin-left: 70px;
     }
   }
-  &-footer{
+  &-info{
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -143,32 +158,73 @@ header {
     flex-direction: column;
     margin-bottom: 30px;
   }
+  &-text{
+    font-family: filson-soft, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3.89px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
   &-social{
     display: flex;
-    margin: 30px 0;
+    flex-direction: row;
+    margin-top: 34px;
+    margin-bottom: 53px;
     .icon{
-      width: 30px;
-      height: 30px;
-      background: white;
       position: relative;
+      img{
+        width: auto;
+      }
+      .fb{
+        margin: 0 36px;
+      }
       &:after{
         content: '';
-        width: 100%;
+        width: 23px;
         position: absolute;
         bottom: -10px;
         border: 2px solid black;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
-
-    .icon+.icon{
-      margin-left: 10px;
-    }
+  }
+  &-copy{
+    font-family: filson-soft, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    line-height: 22px;
+    text-align: center;
   }
 }
 
 .not-hidden {
   right: 0;
   transition: right 2s;
+}
+
+.order-btn{
+  font-family: filson-soft, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3.89px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px;
+  background: $color-red;
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  z-index: 20;
+  cursor: pointer;
+  &-menu{
+    right: 30px;
+  }
 }
 
 </style>

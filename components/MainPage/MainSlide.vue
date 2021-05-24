@@ -1,9 +1,7 @@
 <template>
   <div class="main-img">
     <img src="~/assets/slider3.jpg" alt="">
-    <div class="circle">
-      scroll
-    </div>
+    <img src="~/assets/circle.png" alt="" class="circle">
   </div>
 </template>
 
@@ -21,15 +19,8 @@ export default {
   .circle{
     position: absolute;
     bottom: 0;
-    border-radius: 50%;
-    border: 2px solid;
-    background: #ffffff;
-    color: red;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 0;
     transform: translateY(50%);
+    width: auto;
   }
 </style>

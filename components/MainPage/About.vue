@@ -30,27 +30,48 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import url("https://use.typekit.net/pwo8bya.css");
 
 .about{
   display: flex;
   justify-content: space-between;
-  margin: 100px;
+  padding: 171px 266px 100px;
+  background: url('~/assets/about-back.png');
   &-main{
-    font-size: 18px;
+    font-size: 36px;
+    line-height: 46px;
     text-transform: uppercase;
     text-align: left;
-    margin-right: 30px;
+    margin-right: 101px;
+    max-width: 600px; /*??*/
+    font-family: alternate-gothic-condensed-a, sans-serif;
   }
   &-text{
-    font-size: 12px;
+    font-family: filson-pro, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
     text-align: left;
     display: flex;
     flex-direction: column;
 
     a{
-      color: red;
+      color: #CE4141;
       margin-top: auto;
-      font-size: 14px;
+      margin-bottom: 100px;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      position: relative;
+      display: block;
+      &:after{
+        content: '';
+        width: 184px;
+        border: 2px solid #CE4141;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+      }
     }
   }
 }

@@ -60,8 +60,8 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 129px;
-      margin-top: 65px;
+      padding: 65px 129px 0;
+      //margin-top: 65px;
       position: relative;
     }
     &-text{

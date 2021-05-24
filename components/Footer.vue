@@ -1,15 +1,32 @@
 <template>
   <div class="footer">
     <div class="footer-menu">
-      <nuxt-link to="menu">menu</nuxt-link>
-      <nuxt-link to="locations">locations</nuxt-link>
-      <nuxt-link to="catering">catering</nuxt-link>
-      <nuxt-link to="/">contact</nuxt-link>
+      <nuxt-link to="menu">
+        menu
+      </nuxt-link>
+      <nuxt-link to="locations">
+        locations
+      </nuxt-link>
+      <nuxt-link to="catering">
+        catering
+      </nuxt-link>
+      <nuxt-link to="/">
+        contact
+      </nuxt-link>
+      <nuxt-link to="/">
+        careers
+      </nuxt-link>
     </div>
     <div class="footer-social">
-      <div class="icon"></div>
-      <div class="icon"></div>
-      <div class="icon"></div>
+      <div class="icon">
+        <img src="~/assets/ig.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="~/assets/fb.png" alt="" class="fb">
+      </div>
+      <div class="icon">
+        <img src="~/assets/tw.png" alt="">
+      </div>
     </div>
     <div class="copy">
       COPYRIGHT KINGSFORD GRILLE 2021
@@ -24,6 +41,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import url("https://use.typekit.net/pwo8bya.css");
+
 .footer {
   display: flex;
   align-items: center;
@@ -35,9 +54,14 @@ export default {
 
   &-menu {
     a {
+      font-family: filson-soft, sans-serif;
+      font-weight: 200;
       color: white;
       text-decoration: none;
       text-transform: uppercase;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 1.5px;
     }
     a + a {
       margin-left: 10px;
@@ -46,28 +70,33 @@ export default {
   &-social{
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 34px;
+    margin-bottom: 67px;
     .icon{
-      width: 30px;
-      height: 30px;
-      background: white;
       position: relative;
+      img{
+        width: auto;
+      }
+      .fb{
+        margin: 0 36px;
+      }
       &:after{
         content: '';
-        width: 100%;
+        width: 23px;
         position: absolute;
         bottom: -10px;
         border: 2px solid red;
+        left: 50%;
+        transform: translateX(-50%);
       }
-    }
-
-    .icon+.icon{
-      margin-left: 10px;
     }
   }
   .copy{
-    font-size: 10px;
+    font-family: filson-soft, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 1.8px;
   }
 }
 

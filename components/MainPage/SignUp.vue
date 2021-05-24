@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <div class="signup-image">
-      <img src="~/assets/sign.jpg" alt="">
+      <img src="~/assets/sign-back.png" alt="">
     </div>
     <div class="signup-text">
       SIGN UP FOR UPDATES
@@ -22,12 +22,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import url("https://use.typekit.net/pwo8bya.css");
+
 .signup{
-  background: red;
-  padding: 40px;
+  background: $color-red;
+  padding: 57px 66px;
   color: #ffffff;
   &-text{
-    font-size: 18px;
+    font-family: alternate-gothic-condensed-a, sans-serif;
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: 3.375px;
+    margin: 25px 0 24px;
   }
   &-form{
     display: inline-flex;
@@ -37,18 +43,31 @@ export default {
   }
   &-input{
     border: none;
-    padding: 10px;
+    padding: 22px 0 22px 21px;
     &::placeholder{
-      color: red;
-      font-size: 13px;
+      font-family: filson-pro, sans-serif;
+      font-size: 14px;
+      line-height: 22px;
+      color: $color-red;
     }
   }
   &-btn{
+    font-family: filson-pro, sans-serif;
     color: red;
     background: #ffffff;
-    padding-right: 10px;
-    text-decoration: underline;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      border: 2px solid #CE4141;
+      width: 34px;
+    }
   }
+
 }
 
 </style>

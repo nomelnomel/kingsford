@@ -26,12 +26,14 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: filson-pro, sans-serif;
     &-name{
       font-size: 18px;
-      line-height: 22px;
+      font-weight: bold;
       letter-spacing: 4.5px;
-      text-transform: uppercase;
+      line-height: 22px;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
     &-desc{
       font-size: 14px;

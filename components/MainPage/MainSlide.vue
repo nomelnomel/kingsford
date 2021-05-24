@@ -1,6 +1,6 @@
 <template>
   <div class="main-img">
-    <img src="~/assets/slider3.jpg" alt="">
+    <img src="~/assets/main-slide.png" alt="">
     <img src="~/assets/circle.png" alt="" class="circle">
   </div>
 </template>

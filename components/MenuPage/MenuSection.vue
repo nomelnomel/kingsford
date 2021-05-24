@@ -26,20 +26,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   h3{
-    color: #CE4141;
+    font-family: alternate-gothic-condensed-a, sans-serif;
+    color: $color-red;
+    text-transform: uppercase;
     font-weight: normal;
     font-size: 36px;
-    line-height: 48px;
-    letter-spacing: 0.969231px;
-    text-align: center;
-    margin-bottom: 40px;
+    letter-spacing: 0.97px;
+    line-height: 43px;
+    margin: 60px 0;
   }
 
   .dishes{
     display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-row-gap: 90px;
+    grid-column-gap: 45px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin: 45px 300px 0;
+    padding-bottom: 45px;
   }
 </style>

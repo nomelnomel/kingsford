@@ -88,7 +88,7 @@ header {
 .logo {
   position: absolute;
   left: 20px;
-  top: 20px;
+  top: 40px;
 
   &-link {
     color: white !important;
@@ -98,7 +98,7 @@ header {
 
 .burger {
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 20px;
 }
 
@@ -215,10 +215,10 @@ header {
   justify-content: center;
   text-transform: uppercase;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   background: $color-red;
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 100px;
   z-index: 20;
   cursor: pointer;

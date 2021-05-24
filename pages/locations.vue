@@ -65,6 +65,7 @@ h2{
   &-image {
     margin-left: 80px;
     z-index: 5;
+    width: 50%;
   }
 
   &-text {

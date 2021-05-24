@@ -1,35 +1,10 @@
 <template>
   <div class="container menu-page">
-    <div class="menu-about">
-      <div class="menu-text">
-        <h3 class="menu-line-left">
-          ABOUT OUR MENU
-        </h3>
-        <p>
-          Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-        </p>
-      </div>
-      <img src="../assets/menu-text.png" alt="">
-      <div class="menu-text">
-        <h3 class="menu-line-right">
-          OUR SIGNATURE GRILL
-        </h3>
-        <p>
-          Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-        </p>
-      </div>
-    </div>
-    <div class="menu-header">
-      <div
-        v-for="(item,i) in menu"
-        :key="item.id"
-        class="menu-item"
-        :class="{'menu-active': current === item.id - 1}"
-        @click="current = i"
-      >
-        {{ item.title }}
-      </div>
-    </div>
+    <MenuAbout />
+    <MenuHeader
+      :menu="menu"
+      @changeCurrent="changeCurrent($event)"
+    />
     <MenuPart :part="menu[current]" />
   </div>
 </template>
@@ -37,17 +12,27 @@
 <script>
 import { menu } from '../assets/menu'
 import MenuPart from '../components/MenuPage/MenuPart'
+import MenuAbout from '../components/MenuPage/MenuAbout'
+import MenuHeader from '../components/MenuPage/MenuHeader'
 export default {
   name: 'Menu',
   components: {
-    MenuPart
+    MenuPart,
+    MenuAbout,
+    MenuHeader
   },
   data () {
     return {
       menu,
       current: 0
     }
+  },
+  methods: {
+    changeCurrent (num) {
+      this.current = num
+    }
   }
+
 }
 </script>
 

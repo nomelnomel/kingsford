@@ -1,6 +1,13 @@
 <template>
   <div class="main-img">
-    <img src="~/assets/main-slide.png" alt="">
+    <img src="~/assets/land3.png" alt="">
+    <swiper-slide>
+      <div class="slider-text">
+        <span class="slider-text-1st">Friends</span>
+        <span class="slider-text-2nd">Fire</span>
+        <span class="slider-text-3rd">Food</span>
+      </div>
+    </swiper-slide>
   </div>
 </template>
 

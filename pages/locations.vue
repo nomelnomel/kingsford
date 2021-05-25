@@ -1,7 +1,6 @@
 <template>
   <section class="locations">
     <LocationsH2 />
-    <SliderSwiper />
     <LocationList />
   </section>
 </template>
@@ -9,13 +8,11 @@
 <script>
 import LocationList from '../components/LocationsPage/LocationList'
 import LocationsH2 from '../components/LocationsPage/LocationsH2'
-import SliderSwiper from '../components/SliderSwiper'
 export default {
   name: 'Locations',
   components: {
     LocationList,
-    LocationsH2,
-    SliderSwiper
+    LocationsH2
   }
 }
 </script>

@@ -48,7 +48,7 @@ export default {
 
 <style scoped lang="scss">
   .catering{
-    background: $color-red;
+    background: $contrast;
     display: flex;
     color: white;
     padding: 125px 250px 650px;
@@ -107,7 +107,7 @@ export default {
           position: absolute;
           bottom: -10px;
           left: 0;
-          border: 2px solid white;
+          border: 2px solid $primary;
           width: 300px;
         }
       }
@@ -119,7 +119,7 @@ export default {
           margin-bottom: 0;
         }
         .top{
-          color: black;
+          color: $secondary;
           margin-bottom: 5px;
         }
       }

@@ -48,15 +48,15 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: black;
-  color: white;
+  background: $secondary;
+  color: $primary;
   flex-direction: column;
 
   &-menu {
     a {
       font-family: filson-soft, sans-serif;
       font-weight: 200;
-      color: white;
+      color: $primary;
       text-decoration: none;
       text-transform: uppercase;
       font-size: 16px;
@@ -85,7 +85,7 @@ export default {
         width: 23px;
         position: absolute;
         bottom: -10px;
-        border: 2px solid red;
+        border: 2px solid $contrast;
         left: 50%;
         transform: translateX(-50%);
       }

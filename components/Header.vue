@@ -80,7 +80,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-  color: #ffffff !important;
+  color: $primary !important;
   position: relative;
   z-index: 5;
 }
@@ -108,19 +108,19 @@ header {
 
 .hidden{
   &-menu {
-    position: absolute;
+    position: fixed;
     right: -500px;
     transition: right 2s;
     width: 500px;
     height: 100vh;
     top: 0;
-    background: $color-red;
+    background: $contrast;
     display: flex;
     flex-direction: column;
     padding: 0 30px;
 
     a {
-      color: white;
+      color: $primary;
       text-decoration: none;
       margin-bottom: 20px;
     }
@@ -184,7 +184,7 @@ header {
         width: 23px;
         position: absolute;
         bottom: -10px;
-        border: 2px solid black;
+        border: 2px solid $secondary;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -214,9 +214,9 @@ header {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  color: white;
+  color: $primary;
   padding: 10px 20px;
-  background: $color-red;
+  background: $contrast;
   position: absolute;
   top: 40px;
   right: 100px;

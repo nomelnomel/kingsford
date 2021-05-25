@@ -41,7 +41,7 @@ html {
   margin: 0 auto;
   position: relative;
   overflow-x: hidden;
-  max-width: 1440px;
+  /*max-width: 1440px;*/
 }
 
 *,

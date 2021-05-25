@@ -1,18 +1,25 @@
 <template>
   <section class="menu-about">
     <div class="menu-text">
-      <h3 class="menu-line-left">
-        ABOUT OUR MENU
-      </h3>
+      <div class="h3line h3line-left">
+        <span class="line" />
+        <h3 class="menu-line-left">
+          ABOUT OUR MENU
+        </h3>
+      </div>
       <p>
         Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
       </p>
     </div>
     <img src="~/assets/menu-text.png" alt="">
     <div class="menu-text">
-      <h3 class="menu-line-right">
-        OUR SIGNATURE GRILL
-      </h3>
+      <div class="h3line h3line-right">
+        <h3 class="menu-line-right">
+          OUR SIGNATURE GRILL
+        </h3>
+        <span class="line" />
+      </div>
+
       <p>
         Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
       </p>
@@ -27,6 +34,39 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.h3line{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  &-left{
+    margin-right: 50px;
+    h3{
+      padding-left: 50px;
+    }
+    .line{
+      margin-left: -100px;
+    }
+  }
+  &-right{
+    margin-left: 50px;
+    h3{
+      padding-right: 50px;
+    }
+    .line{
+      margin-right: -100px;
+    }
+  }
+  h3{
+    display: block;
+  }
+  .line{
+    display: block;
+    width: 121px;
+    border-bottom: 2px solid black;
+  }
+}
+
 .menu{
   &-page{
     background: url('~/assets/menu-back.png') 100% 100% no-repeat;
@@ -50,7 +90,7 @@ export default {
       text-transform: uppercase;
       font-style: normal;
       font-weight: normal;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
       position: relative;
     }
     p{
@@ -62,26 +102,27 @@ export default {
     }
   }
   &-line-left{
-    &:before{
-      content: '';
-      border: 2px solid black;
-      position: absolute;
-      left: -50%;
-      top: 50%;
-      transform: translate(100%,-100%);
-      width: 121px;
-    }
+    //&:before{
+    //  content: '';
+    //  border: 2px solid $secondary;
+    //  //position: absolute;
+    //  //left: -50%;
+    //  //top: 50%;
+    //  //transform: translate(100%,-100%);
+    //  width: 121px;
+    //  align-self: center;
+    //}
   }
   &-line-right{
-    &:before{
-      content: '';
-      border: 2px solid black;
-      position: absolute;
-      right: -50%;
-      top: 50%;
-      transform: translate(-100%,-100%);
-      width: 121px;
-    }
+    //&:after{
+    //  content: '';
+    //  border: 2px solid $secondary;
+    //  //position: absolute;
+    //  //right: -50%;
+    //  //top: 50%;
+    //  //transform: translate(-100%,-100%);
+    //  width: 121px;
+    //}
   }
   &-header{
     display: flex;
@@ -91,9 +132,9 @@ export default {
     padding: 0 200px;
     margin-bottom: 100px;
     position: relative;
-    &:before{
+    &:after{
       content: '';
-      border-top: 3px solid;
+      border-top: 3px solid $secondary;
       position: absolute;
       width: 100%;
       left: 0;
@@ -110,12 +151,12 @@ export default {
     margin-top: 10px;
   }
   &-active{
-    color: white;
+    color: $primary;
     &:before{
       content: '';
       height: 122px;
       width: 279px;
-      background: $color-red;
+      background: $contrast;
       position: absolute;
       z-index: -1;
       top:0;

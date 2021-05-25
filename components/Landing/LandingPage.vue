@@ -38,7 +38,7 @@ export default {
 
 <style scoped lang="scss">
   .slider{
-    background: #212721;
+    background: $secondary-light;
     position: relative;
     &-text{
       position: absolute;

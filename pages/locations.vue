@@ -3,6 +3,19 @@
     <h2>Locations</h2>
     <LocationItem :address="address" :image="'_nuxt/assets/loc1.png'" />
     <LocationItem :address="address2" :image="'_nuxt/assets/loc1.png'" />
+    <!--    <div class="address">-->
+    <!--      <div class="address-image">-->
+    <!--        <img src="~/assets/loc1.png" alt="">-->
+    <!--      </div>-->
+    <!--      <div class="address-text">-->
+    <!--        <div class="text">-->
+    <!--          <span>TAMPA, FL</span><br>-->
+    <!--          1234 Street Name.<br>-->
+    <!--          Tampa, FL 12345<br>-->
+    <!--          <span class="red">123-456-7890</span><br>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
   </section>
 </template>
 
@@ -47,7 +60,7 @@ h2{
   letter-spacing: 0;
   line-height: 300px;
   font-family: fenway-park-jf, sans-serif;
-  color: $color-red;
+  color: $contrast;
   transform: translateX(26%);
   font-weight: normal;
 }

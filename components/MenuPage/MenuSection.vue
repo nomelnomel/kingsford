@@ -29,7 +29,7 @@ export default {
 <style scoped lang="scss">
   h3{
     font-family: alternate-gothic-condensed-a, sans-serif;
-    color: $color-red;
+    color: $contrast;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 36px;
@@ -43,7 +43,7 @@ export default {
     grid-row-gap: 90px;
     grid-column-gap: 45px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    margin: 45px 300px 0;
+    margin: 45px 27% 0;
     padding-bottom: 45px;
   }
 </style>

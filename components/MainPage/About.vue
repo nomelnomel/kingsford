@@ -36,7 +36,8 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 171px 266px 100px;
-  background: url('~/assets/about-back.png');
+  background: url('~/assets/about-back.png') 100% 100% no-repeat;
+  background-size: cover;
   &-main{
     font-size: 36px;
     line-height: 46px;
@@ -55,9 +56,9 @@ export default {
     flex-direction: column;
 
     a{
-      color: #CE4141;
+      color: $contrast;
       margin-top: auto;
-      margin-bottom: 100px;
+      margin-bottom: 20px;
       font-size: 16px;
       line-height: 20px;
       letter-spacing: 1.5px;
@@ -67,7 +68,7 @@ export default {
       &:after{
         content: '';
         width: 184px;
-        border: 2px solid #CE4141;
+        border: 2px solid $contrast;
         position: absolute;
         bottom: -15px;
         left: 0;

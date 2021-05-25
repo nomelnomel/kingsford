@@ -14,6 +14,8 @@ export default {
 <style scoped>
   .main-img{
     position: relative;
+    max-height: 100vh;
+    overflow: hidden;
   }
 
   .circle{

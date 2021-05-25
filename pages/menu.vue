@@ -125,7 +125,7 @@ export default {
         content: '';
         height: 122px;
         width: 279px;
-        background: $color-red;
+        background: $contrast;
         position: absolute;
         z-index: -1;
         top:0;

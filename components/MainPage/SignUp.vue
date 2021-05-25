@@ -25,9 +25,9 @@ export default {
 @import url("https://use.typekit.net/pwo8bya.css");
 
 .signup{
-  background: $color-red;
+  background: $contrast;
   padding: 57px 66px;
-  color: #ffffff;
+  color: $primary;
   &-text{
     font-family: alternate-gothic-condensed-a, sans-serif;
     font-size: 36px;
@@ -39,7 +39,7 @@ export default {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
+    background: $primary;
   }
   &-input{
     border: none;
@@ -48,13 +48,13 @@ export default {
       font-family: filson-pro, sans-serif;
       font-size: 14px;
       line-height: 22px;
-      color: $color-red;
+      color: $contrast;
     }
   }
   &-btn{
     font-family: filson-pro, sans-serif;
     color: red;
-    background: #ffffff;
+    background: $primary;
     padding: 20px;
     position: relative;
     cursor: pointer;
@@ -63,7 +63,7 @@ export default {
       position: absolute;
       bottom: 16px;
       left: 20px;
-      border: 2px solid #CE4141;
+      border: 2px solid $contrast;
       width: 34px;
     }
   }

@@ -50,7 +50,7 @@ export default {
 
     &:before {
       content: '';
-      border-top: 3px solid;
+      border-top: 3px solid $secondary;
       position: absolute;
       width: 100%;
       left: 0;
@@ -69,13 +69,13 @@ export default {
   }
 
   &-active {
-    color: white;
+    color: $primary;
 
     &:before {
       content: '';
       height: 122px;
       width: 279px;
-      background: $color-red;
+      background: $contrast;
       position: absolute;
       z-index: -1;
       top: 0;

@@ -67,13 +67,13 @@ export default {
         font-size: 18px;
         line-height: 23px;
         letter-spacing: 0.484615px;
-        color: #212721;
+        color: $secondary-light;
         margin-bottom: 10px;
         display: block;
       }
       .red{
         font-size: 14px;
-        color: $color-red;
+        color: $contrast;
         display: inline;
       }
     }

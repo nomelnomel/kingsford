@@ -1,42 +1,52 @@
 <template>
-  <div class="slider">
-    <div
-      v-if="counter===0"
-      @click="counter++"
-    >
-      <img src="~/assets/land1.png" alt="">
-      <img src="~/assets/slider-text1.png" alt="" class="slider-text">
-    </div>
-    <div
-      v-if="counter===1"
-      @click="counter++"
-    >
-      <img src="~/assets/land2.png" alt="">
-      <img src="~/assets/slider-text2.png" alt="" class="slider-text">
-    </div>
-    <div
-      v-if="counter===2"
-      @click="$emit('lastSlide')"
-    >
-      <img src="~/assets/land3.png" alt="">
-      <img src="~/assets/slider-text3.png" alt="" class="slider-text">
-    </div>
-  </div>
+  <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper-slide><img src="~/assets/land1.png" alt=""></swiper-slide>
+    <swiper-slide><img src="~/assets/land2.png" alt=""></swiper-slide>
+    <swiper-slide><img src="~/assets/land3.png" alt=""></swiper-slide>
+    <!--    <div slot="button-prev" class="swiper-button-prev" />-->
+    <div slot="button-next" class="swiper-button-next" @click="next" />
+  </swiper>
 </template>
 
 <script>
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 export default {
-  name: 'LandingPage',
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  },
   data () {
     return {
-      counter: 0
+      swiperOptions: {
+        navigation: {
+          nextEl: '.swiper-button-next'
+          // prevEl: '.swiper-button-prev'
+        }
+        // Some Swiper option/callback...
+      },
+      counter: 0,
+      showMain: false
+    }
+  },
+  methods: {
+    next () {
+      this.counter++
+      if (this.counter === 2) {
+        setTimeout(() => {
+          this.$emit('showMain')
+        }, 2000)
+      }
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  .slider{
+.swiper-container{
     background: $secondary-light;
     position: relative;
     max-height: 100vh;

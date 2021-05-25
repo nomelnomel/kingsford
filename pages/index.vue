@@ -2,7 +2,7 @@
   <div>
     <LandingPage
       v-if="!endslider"
-      @lastSlide="endslider = true"
+      @showMain="endslider = true"
     />
     <div v-else class="container">
       <MainSlide />

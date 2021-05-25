@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="slider">
     <div
       v-if="counter===0"
-      class="slider"
       @click="counter++"
     >
       <img src="~/assets/land1.png" alt="">
@@ -40,6 +39,8 @@ export default {
   .slider{
     background: $secondary-light;
     position: relative;
+    max-height: 100vh;
+    overflow: hidden;
     &-text{
       position: absolute;
       top: 50%;

@@ -5,7 +5,7 @@
         <img src="../assets/logo-black.png" alt="">
       </nuxt-link>
     </div>
-    <div class="order-btn" :class="{'order-btn-menu' : !show}">
+    <div class="order-btn">
       order now
     </div>
     <div class="menu">
@@ -27,16 +27,20 @@
         >
           &times;
         </div>
-
-        <nuxt-link to="menu" class="menu1">
-          menu
-        </nuxt-link>
-        <nuxt-link to="locations" class="menu2">
-          locations
-        </nuxt-link>
-        <nuxt-link to="catering" class="menu3">
-          catering
-        </nuxt-link>
+        <div class="order-btn order-btn-menu">
+          order now
+        </div>
+        <nav>
+          <nuxt-link to="menu" class="menu1">
+            menu
+          </nuxt-link>
+          <nuxt-link to="locations" class="menu2">
+            locations
+          </nuxt-link>
+          <nuxt-link to="catering" class="menu3">
+            catering
+          </nuxt-link>
+        </nav>
 
         <div class="hidden-info">
           <nuxt-link to="/" class="hidden-text">
@@ -100,10 +104,15 @@ header {
   position: absolute;
   top: 40px;
   right: 20px;
+  cursor: pointer;
 }
 
 .cross {
+  position: absolute;
+  top: 10px;
+  left: 40px;
   font-size: 50px;
+  cursor: pointer;
 }
 
 .hidden{
@@ -205,7 +214,7 @@ header {
 }
 
 .order-btn{
-  font-family: filson-soft, sans-serif;
+  font-family: henderson-slab-basic, sans-serif;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 3.89px;
@@ -220,11 +229,15 @@ header {
   position: absolute;
   top: 40px;
   right: 100px;
-  z-index: 20;
+  //z-index: 20;
   cursor: pointer;
   &-menu{
     right: 30px;
   }
+}
+
+nav{
+  margin-top: 100px;
 }
 
 </style>

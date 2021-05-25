@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <img src="~/assets/circle.png" alt="" class="circle">
     <div class="about-main">
       donec vulputate libero sed
       euismod blandit. proin
@@ -32,12 +33,21 @@ export default {
 <style scoped lang="scss">
 @import url("https://use.typekit.net/pwo8bya.css");
 
+.circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  width: auto;
+}
+
 .about{
   display: flex;
   justify-content: space-between;
   padding: 171px 266px 100px;
   background: url('~/assets/about-back.png') 100% 100% no-repeat;
   background-size: cover;
+  position: relative;
   &-main{
     font-size: 36px;
     line-height: 46px;

@@ -1,7 +1,8 @@
 <template>
   <section class="address">
     <div class="address-image">
-      <Images :image-url="image" />
+      <!--      <Images :image-url="image" />-->
+      <img src="~/static/images/loc1.png" alt="">
     </div>
     <div class="address-text">
       <div class="text">
@@ -15,11 +16,11 @@
 </template>
 
 <script>
-import Images from '../Images'
+// import Images from '../Images'
 export default {
   name: 'LocationItem',
   components: {
-    Images
+    // Images
   },
   props: {
     image: {

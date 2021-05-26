@@ -32,7 +32,9 @@
           <img src="~/static/icons/cross.svg" alt="">
         </div>
         <div class="order-btn order-btn-menu">
-          order now
+          <nuxt-link to="/ordering">
+            order now
+          </nuxt-link>
         </div>
         <nav>
           <nuxt-link to="menu" class="menu1">
@@ -128,7 +130,7 @@ header {
   &-menu {
     position: fixed;
     right: -500px;
-    transition: right 2s;
+    transition: right 1s;
     width: 500px;
     height: 100vh;
     top: 0;
@@ -219,7 +221,8 @@ header {
 
 .not-hidden {
   right: 0;
-  transition: right 2s;
+  transition: right 1s;
+  box-shadow: -5px -4px 12px 0px $secondary-light;
 }
 
 .order-btn{

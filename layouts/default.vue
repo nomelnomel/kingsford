@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style>
+@import url("https://use.typekit.net/pwo8bya.css");
 html {
   font-family:
     'Source Sans Pro',

@@ -28,6 +28,7 @@ export default {
   background: $contrast;
   padding: 57px 66px;
   color: $primary;
+  text-align: center;
   &-text{
     font-family: alternate-gothic-condensed-a, sans-serif;
     font-size: 36px;

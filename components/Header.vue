@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="abs-header">
     <div class="logo">
       <nuxt-link to="/" class="logo-link">
         <img v-if="isIndex" src="../static/icons/logo-white.svg" alt="">
@@ -49,6 +49,7 @@
         </nav>
 
         <div class="hidden-info">
+          <img src="~/static/icons/fire.svg" alt="" class="fire">
           <nuxt-link to="/" class="hidden-text">
             contact
           </nuxt-link>
@@ -96,15 +97,18 @@ export default {
 <style scoped lang="scss">
 header {
   color: $primary !important;
-  position: relative;
   z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.abs-header{
+  position: absolute;
+  width: 100%;
+  padding: 20px 40px 0;
 }
 
 .logo {
-  position: absolute;
-  left: 20px;
-  top: 40px;
-
   &-link {
     color: white !important;
     text-decoration: none;
@@ -112,9 +116,6 @@ header {
 }
 
 .burger {
-  position: absolute;
-  top: 40px;
-  right: 20px;
   cursor: pointer;
 }
 
@@ -130,7 +131,7 @@ header {
   &-menu {
     position: fixed;
     right: -500px;
-    transition: right 1s;
+    transition: right 0.65s;
     width: 500px;
     height: 100vh;
     top: 0;
@@ -177,6 +178,13 @@ header {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 30px;
+    .fire{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 272px;
+    }
   }
   &-text{
     font-family: filson-soft, sans-serif;
@@ -221,8 +229,8 @@ header {
 
 .not-hidden {
   right: 0;
-  transition: right 1s;
-  box-shadow: -5px -4px 12px 0px $secondary-light;
+  transition: right 0.65s;
+  box-shadow: -5px 0 12px 3px rgb(0 0 0 / 10%);
 }
 
 .order-btn{
@@ -235,19 +243,20 @@ header {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  padding: 10px 20px;
   background: $contrast;
-  position: absolute;
-  top: 40px;
-  right: 100px;
+  margin-left: auto;
+  margin-right: 40px;
   //z-index: 20;
   cursor: pointer;
   &-menu{
     right: 30px;
+    position: absolute;
+    top: 40px;
   }
   a{
     color: $primary;
     text-decoration: none;
+    padding: 10px 20px;
   }
 }
 

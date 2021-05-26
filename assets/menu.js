@@ -1,7 +1,7 @@
 export const menu = [
   {
     id: 1,
-    title: 'LUNCH & DINNER',
+    title: 'lunch & dinner',
     sections: [
       {
         id: 1,
@@ -79,7 +79,7 @@ export const menu = [
   },
   {
     id: 2,
-    title: 'BRUNCH',
+    title: 'brunch',
     sections: [
       {
         id: 1,
@@ -101,7 +101,7 @@ export const menu = [
   },
   {
     id: 3,
-    title: 'Drinks',
+    title: 'drinks',
     sections: [
       {
         id: 1,
@@ -123,7 +123,7 @@ export const menu = [
   },
   {
     id: 4,
-    title: 'HAPPY HOUR',
+    title: 'happy hour',
     sections: [
       {
         id: 1,

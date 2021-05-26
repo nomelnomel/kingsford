@@ -39,6 +39,7 @@ export default {
   left: 0;
   transform: translateY(-50%);
   width: auto;
+  z-index: 2;
 }
 
 .about{

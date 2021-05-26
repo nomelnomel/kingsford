@@ -1,10 +1,6 @@
 <template>
   <div>
-    <LandingPage
-      v-if="!endslider"
-      @showMain="endslider = true"
-    />
-    <div v-else class="container">
+    <div>
       <MainSlide />
       <About />
       <SignUp />
@@ -13,14 +9,12 @@
 </template>
 
 <script>
-import LandingPage from '../components/Landing/LandingPage'
 import MainSlide from '../components/MainPage/MainSlide'
 import About from '../components/MainPage/About'
 import SignUp from '../components/MainPage/SignUp'
 
 export default {
   components: {
-    LandingPage,
     MainSlide,
     About,
     SignUp
@@ -33,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 .container {
   margin: 0 auto;

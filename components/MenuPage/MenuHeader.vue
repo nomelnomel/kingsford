@@ -67,6 +67,7 @@ export default {
     z-index: 2;
     padding: 10px;
     cursor: pointer;
+    text-transform: uppercase;
   }
 
   &-active {

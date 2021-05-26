@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url("https://use.typekit.net/pwo8bya.css");
 
 .signup{
   background: $contrast;

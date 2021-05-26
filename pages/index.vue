@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://use.typekit.net/pwo8bya.css");
 
 .container {
   margin: 0 auto;

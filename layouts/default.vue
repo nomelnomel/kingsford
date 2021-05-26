@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import url("https://use.typekit.net/pwo8bya.css");
+
 html {
   font-size: 16px;
   word-spacing: 1px;

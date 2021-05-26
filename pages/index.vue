@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div>
-      <MainSlide />
-      <About />
-      <SignUp />
-    </div>
+  <div class="container">
+    <MainSlide />
+    <About />
+    <SignUp />
   </div>
 </template>
 

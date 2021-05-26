@@ -51,7 +51,7 @@ export default {
       margin-bottom: 30px;
       position: relative;
       &:before{
-        content: url('~/assets/catering1.png');
+        content: url('~/static/images/catering1.png');
         position: absolute;
         top: -38px;
         left: 0;

@@ -1,6 +1,6 @@
 <template>
   <div class="main-img">
-    <img src="~/assets/land3.png" alt="">
+    <img src="~/static/images/land3.png" alt="">
     <swiper-slide>
       <div class="slider-text">
         <span class="slider-text-1st">Friends</span>

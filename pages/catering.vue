@@ -25,7 +25,7 @@ export default {
     padding: 125px 250px 650px;
     position: relative;
     &:after{
-      content: url('~/assets/catering3.png');
+      content: url('~/static/images/catering3.png');
       position: absolute;
       bottom: 125px;
       right: 0;

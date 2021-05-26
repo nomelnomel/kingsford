@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img src="~/assets/circle.png" alt="" class="circle">
+    <img src="~/static/icons/circle.svg" alt="" class="circle">
     <div class="about-main">
       donec vulputate libero sed
       euismod blandit. proin
@@ -44,8 +44,8 @@ export default {
 .about{
   display: flex;
   justify-content: space-between;
-  padding: 171px 266px 100px;
-  background: url('~/assets/about-back.png') 100% 100% no-repeat;
+  padding: 171px 18% 100px;
+  background: url('~/static/images/about-back.png') 100% 100% no-repeat;
   background-size: cover;
   position: relative;
   &-main{
@@ -54,7 +54,6 @@ export default {
     text-transform: uppercase;
     text-align: left;
     margin-right: 101px;
-    max-width: 600px; /*??*/
     font-family: alternate-gothic-condensed-a, sans-serif;
   }
   &-text{

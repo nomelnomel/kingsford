@@ -2,11 +2,14 @@
   <header>
     <div class="logo">
       <nuxt-link to="/" class="logo-link">
-        <img src="../assets/logo-black.png" alt="">
+        <img v-if="isIndex" src="../static/icons/logo-white.svg" alt="">
+        <img v-else src="../static/icons/logo-black.svg" alt="">
       </nuxt-link>
     </div>
     <div class="order-btn">
-      order now
+      <nuxt-link to="/ordering">
+        order now
+      </nuxt-link>
     </div>
     <div class="menu">
       <div
@@ -14,7 +17,8 @@
         class="burger"
         @click="showMenu"
       >
-        <img src="../assets/burger-black.png" alt="">
+        <img v-if="isIndex" src="../static/icons/burger-white.svg" alt="">
+        <img v-else src="../static/icons/burger-black.svg" alt="">
       </div>
 
       <div
@@ -25,7 +29,7 @@
           class="cross"
           @click="showMenu"
         >
-          &times;
+          <img src="~/static/icons/cross.svg" alt="">
         </div>
         <div class="order-btn order-btn-menu">
           order now
@@ -48,13 +52,13 @@
           </nuxt-link>
           <div class="hidden-social">
             <div class="icon">
-              <img src="~/assets/ig.png" alt="">
+              <img src="~/static/icons/ig.svg" alt="">
             </div>
             <div class="icon">
-              <img src="~/assets/fb.png" alt="" class="fb">
+              <img src="~/static/icons/fb.svg" alt="" class="fb">
             </div>
             <div class="icon">
-              <img src="~/assets/tw.png" alt="">
+              <img src="~/static/icons/tw.svg" alt="">
             </div>
           </div>
           <div class="hidden-copy">
@@ -72,6 +76,11 @@ export default {
   data () {
     return {
       show: true
+    }
+  },
+  computed: {
+    isIndex () {
+      return (this.$route.name === 'index')
     }
   },
   methods: {
@@ -223,7 +232,6 @@ header {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  color: $primary;
   padding: 10px 20px;
   background: $contrast;
   position: absolute;
@@ -233,6 +241,10 @@ header {
   cursor: pointer;
   &-menu{
     right: 30px;
+  }
+  a{
+    color: $primary;
+    text-decoration: none;
   }
 }
 

@@ -44,7 +44,7 @@ export default {
     justify-content: space-between;
     width: 100%;
     margin-top: 100px;
-    padding: 0 200px;
+    padding: 0 10%;
     margin-bottom: 100px;
     position: relative;
 
@@ -65,7 +65,8 @@ export default {
     letter-spacing: 0.484615px;
     position: relative;
     z-index: 2;
-    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
   }
 
   &-active {

@@ -19,13 +19,13 @@
     </div>
     <div class="footer-social">
       <div class="icon">
-        <img src="~/assets/ig.png" alt="">
+        <img src="~/static/icons/ig.png" alt="">
       </div>
       <div class="icon">
-        <img src="~/assets/fb.png" alt="" class="fb">
+        <img src="~/static/icons/fb.png" alt="" class="fb">
       </div>
       <div class="icon">
-        <img src="~/assets/tw.png" alt="">
+        <img src="~/static/icons/tw.png" alt="">
       </div>
     </div>
     <div class="copy">

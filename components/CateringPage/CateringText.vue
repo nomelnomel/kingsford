@@ -23,7 +23,7 @@ export default {
   padding: 125px 250px 650px;
   position: relative;
   &:after{
-    content: url('~/assets/catering3.png');
+    content: url('~/static/images/catering3.png');
     position: absolute;
     bottom: 125px;
     right: 0;
@@ -35,7 +35,7 @@ export default {
     flex: 1 1 0;
     position: relative;
     &:before{
-      content: url('~/assets/catering2.png');
+      content: url('~/static/images/catering2.png');
       position: absolute;
       left: -250px;
       top: 200px;

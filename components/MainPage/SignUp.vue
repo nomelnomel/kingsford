@@ -1,17 +1,17 @@
 <template>
   <div class="signup">
     <div class="signup-image">
-      <img src="~/assets/sign-back.png" alt="">
+      <img src="~/static/images/sign-back.png" alt="">
     </div>
     <div class="signup-text">
       SIGN UP FOR UPDATES
     </div>
-    <div class="signup-form">
+    <form class="signup-form">
       <input type="text" class="signup-input" placeholder="Email@website.com">
       <div class="signup-btn">
         OK
       </div>
-    </div>
+    </form>
   </div>
 </template>
 

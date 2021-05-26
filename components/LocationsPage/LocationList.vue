@@ -1,7 +1,18 @@
 <template>
   <section class="locations-list">
-    <LocationItem :address="address" :image="'_nuxt/assets/loc1.png'" />
-    <LocationItem :address="address2" :image="'_nuxt/assets/loc1.png'" />
+    <LocationItem :address="address" :image="'/_nuxt/static/images/loc1.png'" />
+    <!--    <div class="address">-->
+    <!--      <div class="address-image">-->
+    <!--        <img src="~/static/images/loc1.png" alt="">-->
+    <!--      </div>-->
+    <!--      <div class="address-text">-->
+    <!--        <div class="text">-->
+    <!--          <span>ST. PETE, FL</span><br>-->
+    <!--          Coming Soon-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <LocationItem :address="address2" :image="'/_nuxt/static/images/loc1.png'" />
   </section>
 </template>
 
@@ -38,5 +49,8 @@ export default {
   padding: 0 20px 40px;
   background-size: cover;
   position: relative;
+  &-list{
+    margin-bottom: 40px;
+  }
 }
 </style>

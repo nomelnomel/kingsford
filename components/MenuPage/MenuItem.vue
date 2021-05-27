@@ -1,12 +1,12 @@
 <template>
-  <div class="dish">
+  <section class="dish">
     <div class="dish-name">
       {{ item.title }}
     </div>
     <div class="dish-desc">
       {{ item.desc }}
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -14,7 +14,9 @@ export default {
   name: 'MenuItem',
   props: {
     item: {
-      type: Object
+      type: Object,
+      default: () => {},
+      required: true
     }
   }
 }

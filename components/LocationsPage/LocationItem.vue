@@ -24,10 +24,14 @@ export default {
   },
   props: {
     image: {
-      type: String
+      type: String,
+      default: () => {},
+      required: true
     },
     address: {
-      type: Object
+      type: Object,
+      default: () => {},
+      required: true
     }
   }
 }

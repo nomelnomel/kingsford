@@ -43,7 +43,7 @@ export default {
   }
   &-headline{
     font-family: alternate-gothic-condensed-a, sans-serif;
-    font-size: 83px; /*должен быть 80*/
+    font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
   }

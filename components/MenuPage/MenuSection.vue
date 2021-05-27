@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="menu-section">
     <h3>{{ section.title }}</h3>
     <div class="dishes">
       <MenuItem
@@ -8,7 +8,7 @@
         :item="item"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -20,7 +20,9 @@ export default {
   },
   props: {
     section: {
-      type: Object
+      type: Object,
+      default: () => {},
+      required: true
     }
   }
 }

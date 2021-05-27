@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <section class="menu-part">
     <MenuSection
       v-for="section in part.sections"
       :key="section.id"
       :section="section"
     />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -17,7 +17,9 @@ export default {
   },
   props: {
     part: {
-      type: Object
+      type: Object,
+      default: () => {},
+      required: true
     }
   }
 }

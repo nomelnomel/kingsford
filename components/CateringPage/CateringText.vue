@@ -1,11 +1,11 @@
 <template>
   <section class="catering-text">
-    <div class="catering-headline">
+    <h2 class="catering-headline">
       CATERING HEADLINE CAN GO HERE AND BE THIS LONG IF IT NEEDS TO BE UP TO YOU REALLY.
-    </div>
-    <div class="catering-about">
+    </h2>
+    <p class="catering-about">
       Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-    </div>
+    </p>
   </section>
 </template>
 

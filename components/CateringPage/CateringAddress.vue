@@ -4,28 +4,28 @@
       START A CATERING ORDER
     </div>
     <div class="catering-address-line">
-      <div class="top">
+      <h3 class="top">
         DOWNLOAD CATERING MENU
-      </div>
-      <div class="bot">
+      </h3>
+      <a class="link" href="#">
         CATERINGMENU.PDF
-      </div>
+      </a>
     </div>
     <div class="catering-address-line">
-      <div class="top">
+      <h3 class="top">
         CALL CATERING EXPERT
-      </div>
-      <div class="bot">
+      </h3>
+      <a class="link" href="tel:123-456-7890">
         123-456-7890
-      </div>
+      </a>
     </div>
     <div class="catering-address-line">
-      <div class="top">
+      <h3 class="top">
         EMAIL CATERING EXPERT
-      </div>
-      <div class="bot">
+      </h3>
+      <a class="link" href="mailto:CATERING@KINGSFORDGRILLE.COM">
         CATERING@KINGSFORDGRILLE.COM
-      </div>
+      </a>
     </div>
   </section>
 </template>
@@ -44,7 +44,7 @@ export default {
     margin-right: -258px;
     margin-left: 100px;
     &-title{
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: 1.5px;
       line-height: 18px;
       padding-bottom: 5px;
@@ -76,6 +76,11 @@ export default {
       .top{
         color: $secondary;
         margin-bottom: 5px;
+        font-size: 16px;
+      }
+      .link{
+        color: $primary;
+        text-decoration: none;
       }
     }
   }

@@ -101,7 +101,7 @@ export default {
     @media screen and (max-width: $bpT){
       padding-top: 100px;
     }
-    @media screen and (max-width: $bpT){
+    @media screen and (max-width: $bpM){
       flex-direction: column;
     }
   }

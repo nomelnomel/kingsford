@@ -2,6 +2,7 @@
   <div class="catering">
     <CateringText />
     <CateringAddress />
+    <img src="~/static/images/catering3.png" alt="" class="cat3">
   </div>
 </template>
 
@@ -29,13 +30,13 @@ export default {
     }
     @media screen and (max-width: $bpM){
       flex-direction: column;
-      padding: 125px 25px 500px;
+      padding: 125px 25px 60%;
     }
-    &:after{
-      content: url('~/static/images/catering3.png');
+    .cat3{
       position: absolute;
       bottom: 50px;
       right: 0;
+      width: auto;
       @media screen and (max-width: $bpM){
         max-width: 100%;
       }

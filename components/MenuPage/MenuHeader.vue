@@ -53,9 +53,10 @@ export default {
     position: relative;
     list-style: none;
     @media screen and (max-width: $bpM){
-      padding: 50px 0 0;
-      overflow-x: scroll;
-      overflow-y: hidden;
+    //  padding: 50px 0 0;
+    //  overflow-x: scroll;
+    //  overflow-y: hidden;
+      padding: 0;
     }
 
     &:before {
@@ -66,8 +67,11 @@ export default {
       left: 0;
       z-index: 3;
       top: -30px;
+      @media screen and (max-width: $bpT){
+        top: -20px;
+      }
       @media screen and (max-width: $bpM){
-        top: 10px;
+        top: -10px;
       }
     }
   }
@@ -81,12 +85,18 @@ export default {
     padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: $bpT){
       font-size: 16px;
       line-height: 18px;
     }
     @media screen and (max-width: $bpM){
-      min-width: 50%;
+      //min-width: 50%;
+      font-size: 14px;
+      line-height: 16px;
     }
   }
 
@@ -104,8 +114,14 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       @media screen and (max-width: $bpT){
+        top: 10px;
         height: 100px;
         width: 180px;
+      }
+      @media screen and (max-width: $bpM){
+        top: 20px;
+        width: 110px;
+        height: 95px;
       }
     }
   }

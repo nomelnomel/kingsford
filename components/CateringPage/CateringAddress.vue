@@ -1,5 +1,6 @@
 <template>
   <section class="catering-address">
+    <img src="~/static/images/catering1.png" alt="" class="cat1">
     <div class="catering-address-title">
       START A CATERING ORDER
     </div>
@@ -37,40 +38,45 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.catering{
-  &-address{
+.catering {
+  &-address {
     flex: 1 1 0;
     align-self: flex-end;
     margin-right: -258px;
     margin-left: 100px;
-    @media screen and (max-width: $bpT){
+    position: relative;
+    @media screen and (max-width: $bpT) {
       margin-right: -24px;
     }
-    @media screen and (max-width: $bpM){
+    @media screen and (max-width: $bpM) {
       margin: 30px 0 0;
       align-self: self-start;
     }
-    &-title{
+
+    .cat1 {
+      position: absolute;
+      top: -38px;
+      left: 0;
+      transform: translateY(-100%);
+      width: auto;
+      @media screen and (max-width: $bpT) {
+        top: -50px;
+      }
+      @media screen and (max-width: $bpM) {
+        display: none;
+
+      }
+    }
+
+    &-title {
       font-size: 18px;
       letter-spacing: 1.5px;
       line-height: 18px;
       padding-bottom: 5px;
       margin-bottom: 30px;
       position: relative;
-      &:before{
-        content: url('~/static/images/catering1.png');
-        position: absolute;
-        top: -38px;
-        left: 0;
-        transform: translateY(-100%);
-        @media screen and (max-width: $bpT){
-          top: -50px;
-        }
-        @media screen and (max-width: $bpM){
-          content: '';
-        }
-      }
-      &:after{
+
+      &:after {
         content: '';
         position: absolute;
         bottom: -10px;
@@ -79,19 +85,23 @@ export default {
         width: 300px;
       }
     }
-    &-line{
+
+    &-line {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
-      &:last-child{
+
+      &:last-child {
         margin-bottom: 0;
       }
-      .top{
+
+      .top {
         color: $secondary;
         margin-bottom: 5px;
         font-size: 16px;
       }
-      .link{
+
+      .link {
         color: $primary;
         text-decoration: none;
       }

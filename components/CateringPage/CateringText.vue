@@ -1,5 +1,6 @@
 <template>
   <section class="catering-text">
+    <img src="~/static/images/catering2.png" alt="" class="cat2">
     <h2 class="catering-headline">
       CATERING HEADLINE CAN GO HERE AND BE THIS LONG IF IT NEEDS TO BE UP TO YOU REALLY.
     </h2>
@@ -22,14 +23,14 @@ export default {
     flex-direction: column;
     flex: 1 1 0;
     position: relative;
-    &:before{
-      content: url('~/static/images/catering2.png');
-      position: absolute;
-      left: -250px;
-      top: 200px;
-      @media screen and (max-width: $bpT){
-        content: '';
-      }
+  }
+  .cat2{
+    position: absolute;
+    left: -250px;
+    top: 200px;
+    width: auto;
+    @media screen and (max-width: $bpT){
+      display: none;
     }
   }
   &-headline{

@@ -36,7 +36,7 @@
             order now
           </nuxt-link>
         </div>
-        <nav>
+        <nav @click="showMenu">
           <nuxt-link to="menu" class="menu1">
             menu
           </nuxt-link>
@@ -106,6 +106,9 @@ header {
   position: absolute;
   width: 100%;
   padding: 20px 40px 0;
+  @media screen and (max-width: $bpM){
+    padding: 10px 20px 0;
+  }
 }
 
 .logo {
@@ -113,10 +116,20 @@ header {
     color: white !important;
     text-decoration: none;
   }
+  img{
+    @media screen and (max-width: $bpM){
+      max-width: 100px;
+    }
+  }
 }
 
 .burger {
   cursor: pointer;
+  img{
+    @media screen and (max-width: $bpM){
+      max-width: 30px;
+    }
+  }
 }
 
 .cross {
@@ -270,10 +283,16 @@ header {
   margin-left: auto;
   margin-right: 40px;
   cursor: pointer;
+  @media screen and (max-width: $bpM){
+    display: none;
+  }
   &-menu{
     right: 30px;
     position: absolute;
     top: 40px;
+    @media screen and (max-width: $bpM){
+      display: flex;
+    }
   }
   a{
     color: $primary;

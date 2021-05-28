@@ -42,6 +42,9 @@ export default {
   @media screen and (max-width: $bpT){
     width: 120px;
   }
+  @media screen and (max-width: $bpM){
+    width: 80px;
+  }
 }
 
 .about{
@@ -54,6 +57,9 @@ export default {
   @media screen and (max-width: $bpT){
     padding: 75px 50px 50px;
   }
+  @media screen and (max-width: $bpM){
+    flex-direction: column;
+  }
   &-main{
     font-size: 36px;
     line-height: 46px;
@@ -65,6 +71,10 @@ export default {
       font-size: 24px;
       line-height: 27px;
       margin-right: 50px;
+    }
+    @media screen and (max-width: $bpM){
+      margin-right: 0;
+      margin-bottom: 20px;
     }
   }
   &-text{
@@ -89,6 +99,10 @@ export default {
       text-decoration: none;
       position: relative;
       display: block;
+      @media screen and (max-width: $bpM){
+        margin-bottom: 0;
+        margin-top: 30px;
+      }
       &:after{
         content: '';
         width: 184px;

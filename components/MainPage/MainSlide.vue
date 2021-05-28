@@ -78,6 +78,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: $bpM){
+    top: 50px;
+  }
   &-1st{
     font-size: 160px;
     font-family: alternate-gothic-condensed-a, sans-serif;
@@ -85,6 +88,9 @@ export default {
     margin-bottom: 20px;
     @media screen and (max-width: $bpT){
       font-size: 100px;
+    }
+    @media screen and (max-width: $bpM){
+      font-size: 50px;
     }
   }
   &-2nd{
@@ -94,6 +100,9 @@ export default {
     @media screen and (max-width: $bpT){
       font-size: 70px;
     }
+    @media screen and (max-width: $bpM){
+      font-size: 30px;
+    }
   }
   &-3rd{
     font-size: 190px;
@@ -101,6 +110,9 @@ export default {
     text-transform: uppercase;
     @media screen and (max-width: $bpT){
       font-size: 130px;
+    }
+    @media screen and (max-width: $bpM){
+      font-size: 70px;
     }
   }
 }

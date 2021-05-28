@@ -42,11 +42,21 @@ export default {
   display: flex;
   margin-top: 80px;
   position: relative;
+  @media screen and (max-width: $bpM){
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+    margin-top: 0;
+  }
 
   &-image {
     margin-left: 80px;
     z-index: 2;
     width: 50%;
+    @media screen and (max-width: $bpM){
+      margin-left: 0;
+      width: auto;
+    }
   }
 
   &-text {
@@ -54,6 +64,12 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
+    @media screen and (max-width: $bpM){
+      position: unset;
+      width: auto;
+      margin-left: 0;
+      margin-bottom: 40px;
+    }
 
     &:before {
       content: '';
@@ -62,6 +78,9 @@ export default {
       left: 0;
       border: 2px solid;
       width: 98%;
+      @media screen and (max-width: $bpM){
+       border: none;
+      }
     }
 
     .text {
@@ -72,6 +91,10 @@ export default {
       font-size: 14px;
       display: flex;
       flex-direction: column;
+      @media screen and (max-width: $bpM){
+        margin: 20px 0 0;
+
+      }
       p{
         font-size: 18px;
         line-height: 23px;
@@ -85,6 +108,22 @@ export default {
         color: $contrast;
         display: inline;
       }
+    }
+  }
+  &:after{
+    @media screen and (max-width: $bpM){
+      content: "";
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      border: 2px solid;
+      width: 80%;
+      transform: translateX(-50%);
+    }
+  }
+  &:last-child{
+    &:after{
+      border: none!important;
     }
   }
 }

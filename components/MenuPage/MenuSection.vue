@@ -38,6 +38,9 @@ export default {
     font-family: alternate-gothic-condensed-a, sans-serif;
     font-size: 36px;
     line-height: 43px;
+    @media screen and (max-width: $bpM){
+      margin: 30px 0;
+    }
   }
 
   .dishes{
@@ -49,6 +52,9 @@ export default {
     padding-bottom: 45px;
     @media screen and (max-width: $bpT){
       margin: 45px 20% 0;
+    }
+    @media screen and (max-width: $bpM){
+      grid-row-gap: 30px;
     }
   }
 </style>

@@ -101,6 +101,9 @@ export default {
     @media screen and (max-width: $bpT){
       padding-top: 100px;
     }
+    @media screen and (max-width: $bpT){
+      flex-direction: column;
+    }
   }
   &-text{
     display: flex;
@@ -196,6 +199,10 @@ export default {
 img{
     max-width: 25%;
     margin: 0 15px;
+  @media screen and (max-width: $bpM){
+    max-width: 50%;
+    margin: 25px 0;
+  }
 }
 
 </style>

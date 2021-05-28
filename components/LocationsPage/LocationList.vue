@@ -50,7 +50,8 @@ export default {
   background-size: cover;
   position: relative;
   &-list{
-    margin-bottom: 40px;
+    padding-bottom: 40px;
+
   }
 }
 </style>

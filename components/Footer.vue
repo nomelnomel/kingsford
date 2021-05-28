@@ -52,6 +52,12 @@ export default {
   flex-direction: column;
 
   &-menu {
+    @media screen and (max-width: $bpM) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     a {
       font-family: filson-soft, sans-serif;
       font-weight: 200;
@@ -61,25 +67,36 @@ export default {
       font-size: 16px;
       line-height: 20px;
       letter-spacing: 1.5px;
+
     }
+
     a + a {
       margin-left: 10px;
+      @media screen and (max-width: $bpM){
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   }
-  &-social{
+
+  &-social {
     display: flex;
     flex-direction: row;
     margin-top: 34px;
     margin-bottom: 67px;
-    .icon{
+
+    .icon {
       position: relative;
-      img{
+
+      img {
         width: auto;
       }
-      .fb{
+
+      .fb {
         margin: 0 36px;
       }
-      &:after{
+
+      &:after {
         content: '';
         width: 23px;
         position: absolute;
@@ -90,7 +107,8 @@ export default {
       }
     }
   }
-  .copy{
+
+  .copy {
     font-family: filson-soft, sans-serif;
     font-weight: 200;
     font-size: 12px;

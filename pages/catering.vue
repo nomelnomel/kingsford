@@ -27,11 +27,18 @@ export default {
     @media screen and (max-width: $bpT){
       padding: 125px 50px 500px;
     }
+    @media screen and (max-width: $bpM){
+      flex-direction: column;
+      padding: 125px 25px 500px;
+    }
     &:after{
       content: url('~/static/images/catering3.png');
       position: absolute;
       bottom: 50px;
       right: 0;
+      @media screen and (max-width: $bpM){
+        max-width: 100%;
+      }
     }
   }
 </style>

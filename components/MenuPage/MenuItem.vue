@@ -36,6 +36,9 @@ export default {
       line-height: 22px;
       margin-bottom: 20px;
       text-transform: uppercase;
+      @media screen and (max-width: $bpM){
+        margin-bottom: 10px;
+      }
     }
     &-desc{
       font-size: 14px;

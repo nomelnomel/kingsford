@@ -46,6 +46,10 @@ export default {
     @media screen and (max-width: $bpT){
       margin-right: -24px;
     }
+    @media screen and (max-width: $bpM){
+      margin: 30px 0 0;
+      align-self: self-start;
+    }
     &-title{
       font-size: 18px;
       letter-spacing: 1.5px;
@@ -61,6 +65,9 @@ export default {
         transform: translateY(-100%);
         @media screen and (max-width: $bpT){
           top: -50px;
+        }
+        @media screen and (max-width: $bpM){
+          content: '';
         }
       }
       &:after{

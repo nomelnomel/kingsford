@@ -52,6 +52,10 @@ export default {
     margin-bottom: 100px;
     position: relative;
     list-style: none;
+    @media screen and (max-width: $bpM){
+      padding: 50px 0 0;
+      overflow-x: scroll;
+    }
 
     &:before {
       content: '';
@@ -61,6 +65,9 @@ export default {
       left: 0;
       z-index: 3;
       top: -30px;
+      @media screen and (max-width: $bpM){
+        top: 10px;
+      }
     }
   }
 
@@ -76,6 +83,9 @@ export default {
     @media screen and (max-width: $bpT){
       font-size: 16px;
       line-height: 18px;
+    }
+    @media screen and (max-width: $bpM){
+      min-width: 50%;
     }
   }
 

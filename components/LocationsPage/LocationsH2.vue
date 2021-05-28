@@ -22,5 +22,10 @@ h2{
     line-height: 200px;
     margin-bottom: -50px;
   }
+  @media screen and (max-width: $bpM){
+    font-size: 100px;
+    line-height: 100px;
+    margin-bottom: 50px;
+  }
 }
 </style>

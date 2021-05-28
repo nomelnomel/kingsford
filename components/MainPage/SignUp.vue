@@ -70,7 +70,7 @@ export default {
       position: absolute;
       bottom: 16px;
       left: 20px;
-      border: 2px solid $contrast;
+      border-bottom: 3px solid $contrast;
       width: 34px;
     }
   }

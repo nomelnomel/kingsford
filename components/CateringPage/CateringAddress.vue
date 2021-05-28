@@ -75,7 +75,7 @@ export default {
         position: absolute;
         bottom: -10px;
         left: 0;
-        border: 2px solid $primary;
+        border-bottom: 3px solid $primary;
         width: 300px;
       }
     }

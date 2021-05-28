@@ -76,7 +76,7 @@ export default {
       position: absolute;
       top: -40px;
       left: 0;
-      border: 2px solid;
+      border-top: 3px solid;
       width: 98%;
       @media screen and (max-width: $bpM){
        border: none;

@@ -106,7 +106,7 @@ export default {
       &:after{
         content: '';
         width: 184px;
-        border: 2px solid $contrast;
+        border-bottom: 3px solid $contrast;
         position: absolute;
         bottom: -15px;
         left: 0;

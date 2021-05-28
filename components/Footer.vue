@@ -101,7 +101,7 @@ export default {
         width: 23px;
         position: absolute;
         bottom: -10px;
-        border: 2px solid $contrast;
+        border-bottom: 3px solid $contrast;
         left: 50%;
         transform: translateX(-50%);
       }

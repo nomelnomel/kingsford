@@ -55,6 +55,7 @@ export default {
     @media screen and (max-width: $bpM){
       padding: 50px 0 0;
       overflow-x: scroll;
+      overflow-y: hidden;
     }
 
     &:before {

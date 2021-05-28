@@ -1,5 +1,6 @@
 <template>
   <header class="abs-header">
+    <div v-if="!show" class="menu-layout" @click="showMenu" />
     <div class="logo">
       <nuxt-link to="/" class="logo-link">
         <img v-if="isIndex" src="../static/icons/logo-white.svg" alt="">
@@ -89,12 +90,14 @@ export default {
   methods: {
     showMenu () {
       this.show = !this.show
+      const body = document.querySelector('body')
+      body.classList.toggle('dontscroll')
     }
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 header {
   color: $primary !important;
   z-index: 5;
@@ -155,6 +158,11 @@ header {
     @media screen and (max-width: $bpT){
       right: -400px;
       width: 400px;
+      padding: 0 20px;
+    }
+    @media screen and (max-width: $bpM){
+      right: -100%;
+      width: 100%;
       padding: 0 20px;
     }
     a {
@@ -247,7 +255,7 @@ header {
         width: 23px;
         position: absolute;
         bottom: -10px;
-        border: 2px solid $secondary;
+        border-bottom: 3px solid $secondary;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -303,6 +311,19 @@ header {
 
 nav{
   margin-top: 100px;
+}
+
+.menu-layout{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+}
+
+.dontscroll{
+  overflow: hidden!important;
 }
 
 </style>

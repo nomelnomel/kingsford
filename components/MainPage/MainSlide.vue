@@ -83,16 +83,25 @@ export default {
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
+    @media screen and (max-width: $bpT){
+      font-size: 100px;
+    }
   }
   &-2nd{
     font-size: 130px;
     font-family: fenway-park-jf, sans-serif;
     margin-bottom: 20px;
+    @media screen and (max-width: $bpT){
+      font-size: 70px;
+    }
   }
   &-3rd{
     font-size: 190px;
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
+    @media screen and (max-width: $bpT){
+      font-size: 130px;
+    }
   }
 }
 </style>

@@ -43,6 +43,9 @@ export default {
     align-self: flex-end;
     margin-right: -258px;
     margin-left: 100px;
+    @media screen and (max-width: $bpT){
+      margin-right: -24px;
+    }
     &-title{
       font-size: 18px;
       letter-spacing: 1.5px;
@@ -56,6 +59,9 @@ export default {
         top: -38px;
         left: 0;
         transform: translateY(-100%);
+        @media screen and (max-width: $bpT){
+          top: -50px;
+        }
       }
       &:after{
         content: '';

@@ -42,6 +42,10 @@ export default {
     scss: [
       '~/assets/styles.scss',
       '~/assets/variables/colors.scss'
+      // '~/assets/variables/breakepoints.scss',
+      // '~/assets/variables/typograthy.scss'
+      // '~/assets/variables/mixins.scss',
+
     ]
   },
 

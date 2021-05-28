@@ -1,14 +1,16 @@
 <template>
-  <section class="menu-header">
-    <div
-      v-for="(item,i) in menu"
-      :key="item.id"
-      class="menu-item"
-      :class="{'menu-active': highlightMenu(item.id)}"
-      @click="showCurrentMenu(i)"
-    >
-      {{ item.title }}
-    </div>
+  <section>
+    <ul class="menu-header">
+      <li
+        v-for="(item,i) in menu"
+        :key="item.id"
+        class="menu-item"
+        :class="{'menu-active': highlightMenu(item.id)}"
+        @click="showCurrentMenu(i)"
+      >
+        {{ item.title }}
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -49,6 +51,7 @@ export default {
     padding: 0 10%;
     margin-bottom: 100px;
     position: relative;
+    list-style: none;
 
     &:before {
       content: '';
@@ -70,6 +73,10 @@ export default {
     padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
+    @media screen and (max-width: $bpT){
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
 
   &-active {
@@ -85,6 +92,10 @@ export default {
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%);
+      @media screen and (max-width: $bpT){
+        height: 100px;
+        width: 180px;
+      }
     }
   }
 }

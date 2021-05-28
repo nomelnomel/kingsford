@@ -139,7 +139,11 @@ header {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-
+    @media screen and (max-width: $bpT){
+      right: -400px;
+      width: 400px;
+      padding: 0 20px;
+    }
     a {
       color: $primary;
       text-decoration: none;
@@ -153,6 +157,11 @@ header {
       line-height: 108px;
       text-transform: uppercase;
       margin-left: 100px;
+      @media screen and (max-width: $bpT){
+        font-size: 60px;
+        line-height: 78px;
+        margin-left: 70px;
+      }
     }
 
     .menu2{
@@ -162,6 +171,14 @@ header {
       line-height: 78px;
       margin-left: 218px;
       text-transform: capitalize;
+      @media screen and (max-width: $bpT){
+        font-size: 50px;
+        line-height: 48px;
+        margin-left: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+      }
     }
     .menu3{
       font-family: filson-pro, sans-serif;
@@ -169,6 +186,11 @@ header {
       font-size: 30px;
       text-decoration: underline;
       margin-left: 70px;
+      @media screen and (max-width: $bpT){
+        font-size: 20px;
+        line-height: 28px;
+        margin-left: 40px;
+      }
     }
   }
   &-info{
@@ -231,6 +253,7 @@ header {
   right: 0;
   transition: right 0.65s;
   box-shadow: -5px 0 12px 3px rgb(0 0 0 / 10%);
+  z-index: 20;
 }
 
 .order-btn{
@@ -246,7 +269,6 @@ header {
   background: $contrast;
   margin-left: auto;
   margin-right: 40px;
-  //z-index: 20;
   cursor: pointer;
   &-menu{
     right: 30px;

@@ -1,0 +1,14 @@
+@import '~include-media/dist/_include-media.scss';
+
+$mobile: 425px;
+$tablet: 768px;
+$ipad-pro: 1024px;
+$laptop: 1440px;
+$desktop: 1920px;
+$breakpoints: (
+  'mobile': $mobile,
+  'tablet': $tablet,
+  'ipad-pro': $ipad-pro,
+  'laptop' :$laptop,
+  'desktop': $desktop,
+);

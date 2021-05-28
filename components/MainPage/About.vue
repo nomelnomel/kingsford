@@ -39,6 +39,9 @@ export default {
   transform: translateY(-50%);
   width: auto;
   z-index: 2;
+  @media screen and (max-width: $bpT){
+    width: 120px;
+  }
 }
 
 .about{
@@ -48,6 +51,9 @@ export default {
   background: url('~/static/images/about-back.png') 100% 100% no-repeat;
   background-size: cover;
   position: relative;
+  @media screen and (max-width: $bpT){
+    padding: 75px 50px 50px;
+  }
   &-main{
     font-size: 36px;
     line-height: 46px;
@@ -55,6 +61,11 @@ export default {
     text-align: left;
     margin-right: 101px;
     font-family: alternate-gothic-condensed-a, sans-serif;
+    @media screen and (max-width: $bpT){
+      font-size: 24px;
+      line-height: 27px;
+      margin-right: 50px;
+    }
   }
   &-text{
     font-family: filson-pro, sans-serif;
@@ -63,6 +74,10 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: $bpT){
+      font-size: 14px;
+      line-height: 17px;
+    }
 
     a{
       color: $contrast;

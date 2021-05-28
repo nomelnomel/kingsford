@@ -17,5 +17,10 @@ h2{
   color: $contrast;
   text-align: center;
   font-weight: normal;
+  @media screen and (max-width: $bpT){
+    font-size: 200px;
+    line-height: 200px;
+    margin-bottom: -50px;
+  }
 }
 </style>

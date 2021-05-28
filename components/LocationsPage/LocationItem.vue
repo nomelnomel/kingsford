@@ -45,7 +45,7 @@ export default {
 
   &-image {
     margin-left: 80px;
-    z-index: 5;
+    z-index: 2;
     width: 50%;
   }
 

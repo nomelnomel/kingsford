@@ -28,12 +28,19 @@ export default {
   padding: 57px 66px;
   color: $primary;
   text-align: center;
+  @media screen and (max-width: $bpT){
+    padding: 25px;
+  }
   &-text{
     font-family: alternate-gothic-condensed-a, sans-serif;
     font-size: 36px;
     line-height: 46px;
     letter-spacing: 3.375px;
     margin: 25px 0 24px;
+    @media screen and (max-width: $bpT){
+      font-size: 24px;
+      line-height: 27px;
+    }
   }
   &-form{
     display: inline-flex;

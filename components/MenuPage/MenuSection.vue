@@ -30,14 +30,14 @@ export default {
 
 <style scoped lang="scss">
   h3{
-    font-family: alternate-gothic-condensed-a, sans-serif;
     color: $contrast;
     text-transform: uppercase;
-    font-weight: normal;
-    font-size: 36px;
     letter-spacing: 0.97px;
-    line-height: 43px;
     margin: 60px 0;
+    font-weight: normal;
+    font-family: alternate-gothic-condensed-a, sans-serif;
+    font-size: 36px;
+    line-height: 43px;
   }
 
   .dishes{
@@ -47,5 +47,8 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     margin: 45px 27% 0;
     padding-bottom: 45px;
+    @media screen and (max-width: $bpT){
+      margin: 45px 20% 0;
+    }
   }
 </style>

@@ -24,10 +24,13 @@ export default {
     color: white;
     padding: 125px 250px 650px;
     position: relative;
+    @media screen and (max-width: $bpT){
+      padding: 125px 50px 500px;
+    }
     &:after{
       content: url('~/static/images/catering3.png');
       position: absolute;
-      bottom: 125px;
+      bottom: 50px;
       right: 0;
     }
   }

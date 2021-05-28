@@ -17,18 +17,6 @@ export default {
 
 <style scoped lang="scss">
 .catering{
-  background: $contrast;
-  display: flex;
-  color: white;
-  padding: 125px 250px 650px;
-  position: relative;
-  &:after{
-    content: url('~/static/images/catering3.png');
-    position: absolute;
-    bottom: 125px;
-    right: 0;
-  }
-
   &-text{
     display: flex;
     flex-direction: column;
@@ -39,6 +27,9 @@ export default {
       position: absolute;
       left: -250px;
       top: 200px;
+      @media screen and (max-width: $bpT){
+        content: '';
+      }
     }
   }
   &-headline{
@@ -46,6 +37,10 @@ export default {
     font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
+    @media screen and (max-width: $bpT){
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
   &-about{
     font-family: filson-pro, sans-serif;

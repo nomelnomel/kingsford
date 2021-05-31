@@ -20,7 +20,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/variables/fonts.scss'
+    '~/assets/base/fonts.scss',
+    '~/assets/styles.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -39,8 +40,7 @@ export default {
   modules: ['@nuxtjs/style-resources', 'vue-scrollto/nuxt'],
   styleResources: {
     scss: [
-      '~/assets/styles.scss',
-      '~/assets/variables/colors.scss'
+      '~/assets/base/colors.scss'
       // '~/assets/variables/breakepoints.scss',
       // '~/assets/variables/typograthy.scss'
       // '~/assets/variables/mixins.scss',

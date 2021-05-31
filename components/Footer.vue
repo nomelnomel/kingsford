@@ -18,13 +18,13 @@
       </nuxt-link>
     </div>
     <div class="footer-social">
-      <div class="icon">
+      <div class="icon underline underline-contrast">
         <img src="~/assets/icons/ig.png" alt="">
       </div>
-      <div class="icon">
+      <div class="icon underline underline-contrast">
         <img src="~/assets/icons/fb.png" alt="" class="fb">
       </div>
-      <div class="icon">
+      <div class="icon underline underline-contrast">
         <img src="~/assets/icons/tw.png" alt="">
       </div>
     </div>
@@ -87,7 +87,7 @@ export default {
     gap: 36px; /*is it legal? :D*/
     .icon {
       position: relative;
-
+      cursor: pointer;
       img {
         width: auto;
       }
@@ -96,24 +96,6 @@ export default {
       //  padding: 0 36px;
       //}
 
-      &:after {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 2px;
-        left: 50%;
-        position: absolute;
-        background: $contrast;
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-      }
-      &:hover{
-        &:after{
-          width: 100%;
-          left: 0;
-        }
-      }
     }
   }
 

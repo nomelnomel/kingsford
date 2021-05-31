@@ -55,13 +55,13 @@
             contact
           </nuxt-link>
           <div class="hidden-social">
-            <div class="icon">
+            <div class="icon underline underline-secondary">
               <img src="~/assets/icons/ig.svg" alt="">
             </div>
-            <div class="icon">
+            <div class="icon underline underline-secondary">
               <img src="~/assets/icons/fb.svg" alt="" class="fb">
             </div>
-            <div class="icon">
+            <div class="icon underline underline-secondary">
               <img src="~/assets/icons/tw.svg" alt="">
             </div>
           </div>
@@ -242,23 +242,16 @@ header {
     flex-direction: row;
     margin-top: 34px;
     margin-bottom: 53px;
+    gap: 36px;
     .icon{
       position: relative;
+      cursor: pointer;
       img{
         width: auto;
       }
-      .fb{
-        margin: 0 36px;
-      }
-      &:after{
-        content: '';
-        width: 23px;
-        position: absolute;
-        bottom: -10px;
-        border-bottom: 3px solid $secondary;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      //.fb{
+      //  margin: 0 36px;
+      //}
     }
   }
   &-copy{

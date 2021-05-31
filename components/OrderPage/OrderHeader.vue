@@ -12,7 +12,7 @@ export default {
 .order{
   &-header{
     height: 150px;
-    background: url('~/static/images/about-back.png') 100% 100% no-repeat;
+    background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
     background-size: cover;
   }
 }

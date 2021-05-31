@@ -2,7 +2,7 @@
   <div class="catering">
     <CateringText />
     <CateringAddress />
-    <img src="~/static/images/catering3.png" alt="" class="cat3">
+    <img src="~/assets/images/catering3.png" alt="" class="cat3">
   </div>
 </template>
 

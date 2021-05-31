@@ -3,8 +3,8 @@
     <div v-if="!show" class="menu-layout" @click="showMenu" />
     <div class="logo">
       <nuxt-link to="/" class="logo-link">
-        <img v-if="isIndex" src="../static/icons/logo-white.svg" alt="">
-        <img v-else src="../static/icons/logo-black.svg" alt="">
+        <img v-if="isIndex" src="../assets/icons/logo-white.svg" alt="">
+        <img v-else src="../assets/icons/logo-black.svg" alt="">
       </nuxt-link>
     </div>
     <div class="order-btn">
@@ -18,8 +18,8 @@
         class="burger"
         @click="showMenu"
       >
-        <img v-if="isIndex" src="../static/icons/burger-white.svg" alt="">
-        <img v-else src="../static/icons/burger-black.svg" alt="">
+        <img v-if="isIndex" src="../assets/icons/burger-white.svg" alt="">
+        <img v-else src="../assets/icons/burger-black.svg" alt="">
       </div>
 
       <div
@@ -30,7 +30,7 @@
           class="cross"
           @click="showMenu"
         >
-          <img src="~/static/icons/cross.svg" alt="">
+          <img src="~/assets/icons/cross.svg" alt="">
         </div>
         <div class="order-btn order-btn-menu">
           <nuxt-link to="/ordering">
@@ -50,19 +50,19 @@
         </nav>
 
         <div class="hidden-info">
-          <img src="~/static/icons/fire.svg" alt="" class="fire">
+          <img src="~/assets/icons/fire.svg" alt="" class="fire">
           <nuxt-link to="/" class="hidden-text">
             contact
           </nuxt-link>
           <div class="hidden-social">
             <div class="icon">
-              <img src="~/static/icons/ig.svg" alt="">
+              <img src="~/assets/icons/ig.svg" alt="">
             </div>
             <div class="icon">
-              <img src="~/static/icons/fb.svg" alt="" class="fb">
+              <img src="~/assets/icons/fb.svg" alt="" class="fb">
             </div>
             <div class="icon">
-              <img src="~/static/icons/tw.svg" alt="">
+              <img src="~/assets/icons/tw.svg" alt="">
             </div>
           </div>
           <div class="hidden-copy">

@@ -1,6 +1,6 @@
 <template>
   <section class="catering-address">
-    <img src="~/static/images/catering1.png" alt="" class="cat1">
+    <img src="~/assets/images/catering1.png" alt="" class="cat1">
     <div class="catering-address-title">
       START A CATERING ORDER
     </div>

@@ -1,6 +1,6 @@
 <template>
   <section class="catering-text">
-    <img src="~/static/images/catering2.png" alt="" class="cat2">
+    <img src="~/assets/images/catering2.png" alt="" class="cat2">
     <h2 class="catering-headline">
       CATERING HEADLINE CAN GO HERE AND BE THIS LONG IF IT NEEDS TO BE UP TO YOU REALLY.
     </h2>

@@ -39,7 +39,7 @@ export default {
 <style scoped lang="scss">
   .menu{
     &-page {
-      background: url('../static/images/menu-back.png') 100% 100% no-repeat;
+      background: url('../assets/images/menu-back.png') 100% 100% no-repeat;
       background-size: cover;
     }
   }

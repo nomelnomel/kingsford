@@ -1,7 +1,9 @@
 <template>
-  <div class="about">
-    <img src="~/static/icons/circle.svg" alt="" class="circle">
-    <div class="about-main">
+  <div id="element" class="about">
+    <a v-scroll-to="'#element'" href="#">
+      <img src="~/assets/icons/circle.svg" alt="" class="circle">
+    </a>
+    <div class="about-main" data-aos="zoom-in">
       donec vulputate libero sed
       euismod blandit. proin
       pharetra ultricies metus,
@@ -9,7 +11,7 @@
       ut. vestibulum convallis in
       libero sed convallis.
     </div>
-    <div class="about-text">
+    <div class="about-text" data-aos="zoom-in">
       Pellentesque porttitor condimentum orci, ut semper
       nibh finibus commodo. Pellentesque risus mauris,
       facilisis non elementum maximus, euismod a velit.
@@ -51,7 +53,7 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 171px 18% 100px;
-  background: url('~/static/images/about-back.png') 100% 100% no-repeat;
+  background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
   background-size: cover;
   position: relative;
   @media screen and (max-width: $bpT){

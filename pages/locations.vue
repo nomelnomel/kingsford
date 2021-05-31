@@ -19,7 +19,7 @@ export default {
 
 <style scoped lang="scss">
 .locations{
-  background: url('~/static/images/menu-back.png') 100% 100% no-repeat;
+  background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
   background-size: cover;
   @media screen and (max-width: $bpT){
     padding-top: 100px;

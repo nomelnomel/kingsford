@@ -2,7 +2,7 @@
   <section class="address">
     <div class="address-image">
       <!--      <Images :image-url="image" />-->
-      <img src="~/static/images/loc1.png" alt="">
+      <img src="~/assets/images/loc1.png" alt="">
     </div>
     <div class="address-text">
       <div class="text">

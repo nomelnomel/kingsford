@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
+    "aos": "^2.3.4",
     "core-js": "^3.9.1",
     "include-media": "^1.4.10",
     "nuxt": "^2.15.3",
     "swiper": "^5.4.5",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.6",

@@ -1,9 +1,9 @@
 <template>
   <section class="locations-list">
-    <LocationItem :address="address" :image="'/_nuxt/static/images/loc1.png'" />
+    <LocationItem :address="address" :image="'/_nuxt/assets/images/loc1.png'" />
     <!--    <div class="address">-->
     <!--      <div class="address-image">-->
-    <!--        <img src="~/static/images/loc1.png" alt="">-->
+    <!--        <img src="~/assets/images/loc1.png" alt="">-->
     <!--      </div>-->
     <!--      <div class="address-text">-->
     <!--        <div class="text">-->
@@ -12,7 +12,7 @@
     <!--        </div>-->
     <!--      </div>-->
     <!--    </div>-->
-    <LocationItem :address="address2" :image="'/_nuxt/static/images/loc1.png'" />
+    <LocationItem :address="address2" :image="'/_nuxt/assets/images/loc1.png'" />
   </section>
 </template>
 

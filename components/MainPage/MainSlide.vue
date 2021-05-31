@@ -1,7 +1,7 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
     <swiper-slide>
-      <img src="~/static/images/land1.png" alt="">
+      <img src="~/assets/images/land1.png" alt="">
       <div class="slider-text">
         <span class="slider-text-1st">
           Friends
@@ -9,14 +9,14 @@
       </div>
     </swiper-slide>
     <swiper-slide>
-      <img src="~/static/images/land2.png" alt="">
+      <img src="~/assets/images/land2.png" alt="">
       <div class="slider-text">
         <span class="slider-text-1st">Friends</span>
         <span class="slider-text-2nd">Fire</span>
       </div>
     </swiper-slide>
     <swiper-slide>
-      <img src="~/static/images/land3.png" alt="">
+      <img src="~/assets/images/land3.png" alt="">
       <div class="slider-text">
         <span class="slider-text-1st">Friends</span>
         <span class="slider-text-2nd">Fire</span>

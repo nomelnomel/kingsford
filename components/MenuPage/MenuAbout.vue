@@ -11,7 +11,7 @@
         Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
       </p>
     </div>
-    <img src="~/static/images/menu-text.png" alt="">
+    <img src="~/assets/images/menu-text.png" alt="">
     <div class="menu-text">
       <div class="h3line h3line-right">
         <h3 class="menu-line-right">
@@ -89,7 +89,7 @@ export default {
 
 .menu{
   &-page{
-    background: url('~/static/images/menu-back.png') 100% 100% no-repeat;
+    background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
     background-size: cover;
   }
   &-about{

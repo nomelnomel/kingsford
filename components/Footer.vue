@@ -59,7 +59,7 @@ export default {
     }
 
     a {
-      font-family: filson-soft, sans-serif;
+      font-family: henderson-slab-basic, sans-serif;
       font-weight: 200;
       color: $primary;
       text-decoration: none;

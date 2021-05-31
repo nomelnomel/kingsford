@@ -168,7 +168,6 @@ header {
     a {
       color: $primary;
       text-decoration: none;
-      margin-bottom: 20px;
     }
 
     .menu1{
@@ -284,13 +283,37 @@ header {
   margin-left: auto;
   margin-right: 40px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  &:after{
+    background: $primary;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    animation: hover-out .4s 1;
+    transition: all .25s ease;
+    z-index: 1;
+  }
+  &:hover{
+    a{
+      color: $contrast;
+    }
+    &:after{
+      animation: hover-in .25s 1;
+      transform: translateY(-100%);
+
+    }
+  }
   @media screen and (max-width: $bpM){
     display: none;
   }
   &-menu{
     right: 30px;
     position: absolute;
-    top: 40px;
+    top: 30px;
     @media screen and (max-width: $bpM){
       display: flex;
     }
@@ -299,6 +322,7 @@ header {
     color: $primary;
     text-decoration: none;
     padding: 10px 20px;
+    z-index: 2;
   }
 }
 

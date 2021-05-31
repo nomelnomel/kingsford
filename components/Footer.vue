@@ -84,7 +84,7 @@ export default {
     flex-direction: row;
     margin-top: 34px;
     margin-bottom: 67px;
-
+    gap: 36px; /*is it legal? :D*/
     .icon {
       position: relative;
 
@@ -92,18 +92,27 @@ export default {
         width: auto;
       }
 
-      .fb {
-        margin: 0 36px;
-      }
+      //.fb {
+      //  padding: 0 36px;
+      //}
 
       &:after {
-        content: '';
-        width: 23px;
-        position: absolute;
-        bottom: -10px;
-        border-bottom: 3px solid $contrast;
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
         left: 50%;
-        transform: translateX(-50%);
+        position: absolute;
+        background: $contrast;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      &:hover{
+        &:after{
+          width: 100%;
+          left: 0;
+        }
       }
     }
   }

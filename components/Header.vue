@@ -38,13 +38,13 @@
           </nuxt-link>
         </div>
         <nav @click="showMenu">
-          <nuxt-link to="menu" class="menu1">
+          <nuxt-link to="menu" class="menu1 menu-link">
             menu
           </nuxt-link>
-          <nuxt-link to="locations" class="menu2">
+          <nuxt-link to="locations" class="menu2 menu-link">
             locations
           </nuxt-link>
-          <nuxt-link to="catering" class="menu3">
+          <nuxt-link to="catering" class="menu3 menu-link">
             catering
           </nuxt-link>
         </nav>
@@ -165,18 +165,38 @@ header {
       width: 100%;
       padding: 0 20px;
     }
-    a {
+    .menu-link {
       color: $primary;
       text-decoration: none;
+      position: relative;
+      &:after{
+        content: '';
+        position: absolute;
+        border-bottom: 3px solid $primary;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: scale(1);
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover{
+        &:after{
+          transform: scale(0);
+          transition: all 0.2s ease-in-out;
+        }
+      }
     }
 
     .menu1{
       font-family: alternate-gothic-condensed-a, sans-serif;
       font-size: 90px;
       letter-spacing: 2.42px;
-      line-height: 108px;
+      line-height: 90px;
       text-transform: uppercase;
       margin-left: 100px;
+      &:after{
+        bottom: 15px;
+      }
       @media screen and (max-width: $bpT){
         font-size: 60px;
         line-height: 78px;
@@ -188,9 +208,11 @@ header {
       font-family: fenway-park-jf, sans-serif;
       font-size: 60px;
       letter-spacing: 0;
-      line-height: 78px;
-      margin-left: 218px;
+      line-height: 60px;
       text-transform: capitalize;
+      display: inline-block;
+      margin: 30px 0 30px 214px;
+
       @media screen and (max-width: $bpT){
         font-size: 50px;
         line-height: 48px;
@@ -204,7 +226,6 @@ header {
       font-family: filson-pro, sans-serif;
       text-transform: uppercase;
       font-size: 30px;
-      text-decoration: underline;
       margin-left: 70px;
       @media screen and (max-width: $bpT){
         font-size: 20px;
@@ -235,6 +256,8 @@ header {
     letter-spacing: 3.89px;
     line-height: 14px;
     text-transform: uppercase;
+    color: $primary;
+    text-decoration: none;
   }
   &-social{
     display: flex;

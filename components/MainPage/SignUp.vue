@@ -67,9 +67,9 @@ export default {
     cursor: pointer;
     &:after{
       border-bottom: 3px solid $contrast;
-      bottom: 15px;
+      bottom: 16px;
       left: 20px;
-      width: 30px;
+      width: 34px;
     }
   }
 

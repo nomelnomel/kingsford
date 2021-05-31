@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="menu">
     <ul class="menu-header">
       <li
         v-for="(item,i) in menu"
@@ -11,16 +11,27 @@
         {{ item.title }}
       </li>
     </ul>
+    <MenuSection
+      v-for="section in currentMenuPage.sections"
+      :key="section.id"
+      :section="section"
+    />
   </section>
 </template>
 
 <script>
+import MenuSection from './MenuSection'
+
 export default {
-  name: 'MenuHeader',
+  name: 'MenuMain',
+  components: {
+    MenuSection
+  },
   props: {
     menu: {
       type: Array,
-      default: () => {},
+      default: () => {
+      },
       required: true
     }
   },
@@ -29,10 +40,15 @@ export default {
       current: 0
     }
   },
+  computed: {
+    currentMenuPage () {
+      return this.menu[this.current]
+    }
+  },
   methods: {
     showCurrentMenu (i) {
+      this.currentMenuPage = this.menu[i]
       this.current = i
-      this.$emit('changeCurrent', this.current)
     },
     highlightMenu (id) {
       return this.current === id - 1
@@ -41,7 +57,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .menu {
   &-header {
     display: flex;
@@ -52,10 +68,10 @@ export default {
     margin-bottom: 100px;
     position: relative;
     list-style: none;
-    @media screen and (max-width: $bpM){
-    //  padding: 50px 0 0;
-    //  overflow-x: scroll;
-    //  overflow-y: hidden;
+    @media screen and (max-width: $bpM) {
+      //  padding: 50px 0 0;
+      //  overflow-x: scroll;
+      //  overflow-y: hidden;
       padding: 0;
     }
 
@@ -67,10 +83,10 @@ export default {
       left: 0;
       z-index: 3;
       top: -30px;
-      @media screen and (max-width: $bpT){
+      @media screen and (max-width: $bpT) {
         top: -20px;
       }
-      @media screen and (max-width: $bpM){
+      @media screen and (max-width: $bpM) {
         top: -10px;
       }
     }
@@ -89,11 +105,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: $bpT){
+    @media screen and (max-width: $bpT) {
       font-size: 16px;
       line-height: 18px;
     }
-    @media screen and (max-width: $bpM){
+    @media screen and (max-width: $bpM) {
       //min-width: 50%;
       font-size: 14px;
       line-height: 16px;
@@ -113,12 +129,12 @@ export default {
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%);
-      @media screen and (max-width: $bpT){
+      @media screen and (max-width: $bpT) {
         top: 10px;
         height: 100px;
         width: 180px;
       }
-      @media screen and (max-width: $bpM){
+      @media screen and (max-width: $bpM) {
         top: 20px;
         width: 110px;
         height: 95px;

@@ -1,6 +1,12 @@
 <template>
   <section class="catering-address">
-    <img src="~/assets/images/catering1.png" alt="" class="cat1">
+    <transition name="fade">
+      <img
+        src="~/assets/images/catering1.png"
+        alt=""
+        class="cat1"
+      >
+    </transition>
     <div class="catering-address-title">
       START A CATERING ORDER
     </div>
@@ -107,5 +113,12 @@ export default {
       }
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }
 </style>

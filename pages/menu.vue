@@ -1,25 +1,20 @@
 <template>
   <div class="container menu-page">
     <MenuAbout />
-    <MenuHeader
-      :menu="menu"
-      @changeCurrent="changeCurrent($event)"
-    />
-    <MenuPart :part="menu[current]" />
+    <MenuMain :menu="menu" />
   </div>
 </template>
 
 <script>
 import { menu } from '../assets/menu'
-import MenuPart from '../components/MenuPage/MenuPart'
 import MenuAbout from '../components/MenuPage/MenuAbout'
-import MenuHeader from '../components/MenuPage/MenuHeader'
+import MenuMain from '../components/MenuPage/MenuMain'
 export default {
   name: 'Menu',
   components: {
-    MenuPart,
+
     MenuAbout,
-    MenuHeader
+    MenuMain
   },
   data () {
     return {

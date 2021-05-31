@@ -295,7 +295,6 @@ header {
     width: 100%;
     animation: hover-out .4s 1;
     transition: all .25s ease;
-    z-index: 1;
   }
   &:hover{
     a{
@@ -321,8 +320,7 @@ header {
   a{
     color: $primary;
     text-decoration: none;
-    padding: 10px 20px;
-    z-index: 2;
+    padding: 10px 20px;z-index: 1;
   }
 }
 

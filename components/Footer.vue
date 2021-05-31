@@ -19,13 +19,13 @@
     </div>
     <div class="footer-social">
       <div class="icon underline underline-contrast">
-        <img src="~/assets/icons/ig.png" alt="">
+        <img src="~/assets/icons/ig.svg" alt="">
       </div>
       <div class="icon underline underline-contrast">
-        <img src="~/assets/icons/fb.png" alt="" class="fb">
+        <img src="~/assets/icons/fb.svg" alt="" class="fb">
       </div>
       <div class="icon underline underline-contrast">
-        <img src="~/assets/icons/tw.png" alt="">
+        <img src="~/assets/icons/tw.svg" alt="">
       </div>
     </div>
     <div class="copy">

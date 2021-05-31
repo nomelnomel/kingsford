@@ -7,9 +7,12 @@
     <div class="address-text">
       <div class="text">
         <p>{{ address.name }}</p>
-        <span>{{ address.street }}</span>
-        <span>{{ address.index }}</span>
-        <span class="red">{{ address.tel }}</span>
+        <a href="#" class="address-link">
+          {{ address.street }}
+          <br>
+          {{ address.index }}
+        </a>
+        <a :href="`tel:${address.tel}`" class="tel">{{ address.tel }}</a>
       </div>
     </div>
   </section>
@@ -25,12 +28,14 @@ export default {
   props: {
     image: {
       type: String,
-      default: () => {},
+      default: () => {
+      },
       required: true
     },
     address: {
       type: Object,
-      default: () => {},
+      default: () => {
+      },
       required: true
     }
   }
@@ -42,7 +47,7 @@ export default {
   display: flex;
   margin-top: 80px;
   position: relative;
-  @media screen and (max-width: $bpM){
+  @media screen and (max-width: $bpM) {
     flex-direction: column;
     align-items: center;
     padding: 0 25px;
@@ -53,7 +58,7 @@ export default {
     margin-left: 80px;
     z-index: 2;
     width: 50%;
-    @media screen and (max-width: $bpM){
+    @media screen and (max-width: $bpM) {
       margin-left: 0;
       width: auto;
     }
@@ -64,7 +69,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
-    @media screen and (max-width: $bpM){
+    @media screen and (max-width: $bpM) {
       position: unset;
       width: auto;
       margin-left: 0;
@@ -78,8 +83,8 @@ export default {
       left: 0;
       border-top: 3px solid;
       width: 98%;
-      @media screen and (max-width: $bpM){
-       border: none;
+      @media screen and (max-width: $bpM) {
+        border: none;
       }
     }
 
@@ -91,11 +96,12 @@ export default {
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      @media screen and (max-width: $bpM){
+      @media screen and (max-width: $bpM) {
         margin: 20px 0 0;
 
       }
-      p{
+
+      p {
         font-size: 18px;
         line-height: 23px;
         letter-spacing: 0.484615px;
@@ -103,15 +109,22 @@ export default {
         margin-bottom: 10px;
         display: block;
       }
-      .red{
+
+      .tel {
         font-size: 14px;
         color: $contrast;
         display: inline;
+        text-decoration: none;
       }
     }
   }
-  &:after{
-    @media screen and (max-width: $bpM){
+  &-link{
+    text-decoration: none;
+    color: $secondary;
+  }
+
+  &:after {
+    @media screen and (max-width: $bpM) {
       content: "";
       position: absolute;
       bottom: 30px;
@@ -121,9 +134,10 @@ export default {
       transform: translateX(-50%);
     }
   }
-  &:last-child{
-    &:after{
-      border: none!important;
+
+  &:last-child {
+    &:after {
+      border: none !important;
     }
   }
 }

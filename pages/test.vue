@@ -13,6 +13,54 @@
         {{ item }}
       </li>
     </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="cont">
+      <div class="elem">
+        <div class="elem2" data-aos="fade-down-right" data-aos-easing="ease" data-aos-duration="600" data-aos-delay="1000" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,10 +83,10 @@ export default {
 
 <style scoped lang="scss">
 .test {
-  height: 100vh;
   margin-top: 200px;
   border-top: 1px solid;
   padding-top: 20px;
+  margin-bottom: 200px;
 }
 
 .menu {
@@ -81,6 +129,32 @@ export default {
     opacity: 0;
   }
 
+}
+
+.cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.elem{
+  width: 250px;
+  height: 250px;
+  background: #7f828b;
+  z-index: 3;
+  position: relative;
+}
+
+.elem2{
+  width: 250px;
+  height: 250px;
+  background: #ff0000a5;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  transform: translate(-25px, -25px);
+  z-index: 0;
 }
 
 </style>

@@ -38,13 +38,13 @@
           </nuxt-link>
         </div>
         <nav @click="showMenu">
-          <nuxt-link to="menu" class="menu1 menu-link">
+          <nuxt-link to="menu" class="menu1 hover-underline">
             menu
           </nuxt-link>
-          <nuxt-link to="locations" class="menu2 menu-link">
+          <nuxt-link to="locations" class="menu2 hover-underline">
             locations
           </nuxt-link>
-          <nuxt-link to="catering" class="menu3 menu-link">
+          <nuxt-link to="catering" class="menu3 hover-underline">
             catering
           </nuxt-link>
         </nav>
@@ -164,27 +164,6 @@ header {
       right: -100%;
       width: 100%;
       padding: 0 20px;
-    }
-    .menu-link {
-      color: $primary;
-      text-decoration: none;
-      position: relative;
-      &:after{
-        content: '';
-        position: absolute;
-        border-bottom: 3px solid $primary;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        transform: scale(1);
-        transition: all 0.2s ease-in-out;
-      }
-      &:hover{
-        &:after{
-          transform: scale(0);
-          transition: all 0.2s ease-in-out;
-        }
-      }
     }
 
     .menu1{

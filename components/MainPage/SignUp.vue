@@ -8,7 +8,7 @@
     </div>
     <form class="signup-form" data-aos="fade-left">
       <input type="text" class="signup-input" placeholder="Email@website.com">
-      <div class="signup-btn">
+      <div class="signup-btn hover-underline">
         OK
       </div>
     </form>
@@ -66,12 +66,10 @@ export default {
     position: relative;
     cursor: pointer;
     &:after{
-      content: '';
-      position: absolute;
-      bottom: 16px;
-      left: 20px;
       border-bottom: 3px solid $contrast;
-      width: 34px;
+      bottom: 15px;
+      left: 20px;
+      width: 30px;
     }
   }
 

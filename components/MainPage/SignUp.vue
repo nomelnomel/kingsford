@@ -62,14 +62,13 @@ export default {
     font-family: filson-pro, sans-serif;
     color: red;
     background: $primary;
-    padding: 20px;
+    margin: 20px;
     position: relative;
     cursor: pointer;
+    padding-bottom: 4px;
+    width: 35px;
     &:after{
       border-bottom: 3px solid $contrast;
-      bottom: 16px;
-      left: 20px;
-      width: 34px;
     }
   }
 

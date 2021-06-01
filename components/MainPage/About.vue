@@ -168,7 +168,7 @@
       mattis vitae. Quisque tincidunt dolor et tellus
       pretium, eu accumsan arcu iaculis.
 
-      <nuxt-link to="menu">
+      <nuxt-link to="menu" class="hover-underline">
         SEE OUR MENU
       </nuxt-link>
     </div>
@@ -252,18 +252,15 @@ export default {
       text-decoration: none;
       position: relative;
       display: block;
+      width: 184px;
+      padding-bottom: 4px;
       @media screen and (max-width: $bpM) {
         margin-bottom: 0;
         margin-top: 30px;
       }
 
       &:after {
-        content: '';
-        width: 184px;
         border-bottom: 3px solid $contrast;
-        position: absolute;
-        bottom: -15px;
-        left: 0;
       }
     }
   }

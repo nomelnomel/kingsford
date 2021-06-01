@@ -147,7 +147,7 @@ export default {
   position: absolute;
   top: 50px;
   left: 0;
-  background-color: red;
+  background-color: $contrast;
   width: 200px;
   height: 80px;
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -158,35 +158,35 @@ export default {
 $percentage: 40%;
 
 // Forwards transition
-.to-right-enter {
-  opacity: 0;
-  transform: translateX($percentage);
-}
-
-.to-right-enter-active {
-  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.to-right-leave-active {
-  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
-  transform: translateX(-$percentage);
-}
-
-// Backwards transition
-
-.to-left-back-enter {
-  opacity: 0;
-  transform: translateX(-$percentage);
-}
-
-.to-left-enter-active {
-  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.to-left-leave-active {
-  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
-  transform: translateX($percentage);
-}
+//.to-right-enter {
+//  opacity: 0;
+//  transform: translateX($percentage);
+//}
+//
+//.to-right-enter-active {
+//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+//}
+//
+//.to-right-leave-active {
+//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+//  opacity: 0;
+//  transform: translateX(-$percentage);
+//}
+//
+//// Backwards transition
+//
+//.to-left-back-enter {
+//  opacity: 0;
+//  transform: translateX(-$percentage);
+//}
+//
+//.to-left-enter-active {
+//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+//}
+//
+//.to-left-leave-active {
+//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+//  opacity: 0;
+//  transform: translateX($percentage);
+//}
 </style>

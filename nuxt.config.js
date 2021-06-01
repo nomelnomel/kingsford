@@ -17,6 +17,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  transition: {
+    name: 'slide-bottom'
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

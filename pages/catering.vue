@@ -14,7 +14,9 @@ export default {
   components: {
     CateringText,
     CateringAddress
-  }
+  },
+  transition: 'slide-bottom'
+
 }
 </script>
 

@@ -33,7 +33,7 @@ html {
 .main{
   margin: 0 auto;
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   /*max-width: 1440px;*/
 }
 

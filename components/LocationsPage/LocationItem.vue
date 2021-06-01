@@ -129,7 +129,7 @@ export default {
       position: absolute;
       bottom: 30px;
       left: 50%;
-      border: 2px solid;
+      border-bottom: 3px solid $secondary;
       width: 80%;
       transform: translateX(-50%);
     }

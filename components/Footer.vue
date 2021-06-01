@@ -1,19 +1,19 @@
 <template>
   <div class="footer">
     <div class="footer-menu">
-      <nuxt-link to="menu">
+      <nuxt-link to="menu" class="underline underline-contrast">
         menu
       </nuxt-link>
-      <nuxt-link to="locations">
+      <nuxt-link to="locations" class="underline underline-contrast">
         locations
       </nuxt-link>
-      <nuxt-link to="catering">
+      <nuxt-link to="catering" class="underline underline-contrast">
         catering
       </nuxt-link>
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="underline underline-contrast">
         contact
       </nuxt-link>
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="underline underline-contrast">
         careers
       </nuxt-link>
     </div>
@@ -52,8 +52,9 @@ export default {
   flex-direction: column;
 
   &-menu {
+    display: flex;
+    gap: 20px;
     @media screen and (max-width: $bpM) {
-      display: flex;
       flex-direction: column;
       align-items: center;
     }
@@ -67,16 +68,9 @@ export default {
       font-size: 16px;
       line-height: 20px;
       letter-spacing: 1.5px;
-
+      padding-bottom: 2px;
     }
 
-    a + a {
-      margin-left: 10px;
-      @media screen and (max-width: $bpM){
-        margin-left: 0;
-        margin-top: 10px;
-      }
-    }
   }
 
   &-social {

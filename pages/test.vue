@@ -1,20 +1,22 @@
 <template>
   <div class="test">
-    {{ current }}<br>
-    {{ direction }}
-    {{ indicator_pos }}
+    {{ windowWidth }}
+    {{ num }}
+    <br>
+    <br>
+    <br>
     <ul class="menu">
       <li
         v-for="(item, i) in items"
         :key="i"
         class="menu-item"
-        :class="{'active-menu-item':isActive(i)}"
+        :class="{'menu-active':isActive(i)}"
         @click="changeCurrent(i); emitWidth($event)"
       >
-        {{ item }}
+        <span>{{ item }}</span>
       </li>
       <transition :name="direction">
-        <span class="tab-indicator" :style="getStyle" />
+        <span class="tab-indicator" :style="getStyle" @click.prevent="emitWidth($event)" />
       </transition>
     </ul>
   </div>
@@ -29,7 +31,9 @@ export default {
       current: 0,
       direction: '',
       indicator_width: 0,
-      indicator_pos: 0
+      indicator_pos: 0,
+      windowWidth: 0,
+      num: 0
     }
   },
   computed: {
@@ -41,9 +45,15 @@ export default {
     }
   },
   mounted () {
-    const first = document.querySelector('.active-menu-item')
-    this.indicator_width = first.target.offsetWidth + 40
-    this.indicator_pos = first.target.offsetLeft - 20
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
+    const currentItem = document.querySelector('.menu-active')
+    this.indicator_width = currentItem.firstChild.offsetWidth
+    this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     isActive (i) {
@@ -54,8 +64,16 @@ export default {
       this.current = i
     },
     emitWidth (e) {
-      this.indicator_width = e.target.offsetWidth + 40
-      this.indicator_pos = e.target.offsetLeft - 20
+      const parentWidth = e.currentTarget.offsetWidth
+      const childWidth = e.currentTarget.firstChild.offsetWidth
+      this.indicator_width = childWidth
+      this.indicator_pos = e.currentTarget.offsetLeft + (parentWidth - childWidth) / 2
+    },
+    onResize () {
+      this.windowWidth = window.innerWidth
+      const currentItem = document.querySelector('.menu-active')
+      this.indicator_width = currentItem.firstChild.offsetWidth
+      this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
     }
   }
 }
@@ -69,7 +87,7 @@ export default {
   background-color: white;
 }
 
-.active-menu-item{
+.menu-active{
   color: white;
 }
 .tab-indicator {
@@ -88,10 +106,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 300px;
   position: relative;
 
   &-item {
+    width: 25%;
     margin-right: 70px;
     padding: 10px;
     display: flex;
@@ -99,6 +117,7 @@ export default {
     justify-content: center;
     border: 1px solid;
     z-index: 1;
+    position: relative;
   }
 }
 $percentage: 40%;

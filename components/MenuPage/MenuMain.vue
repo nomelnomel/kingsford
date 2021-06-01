@@ -8,7 +8,7 @@
         :class="{'menu-active': isActive(i)}"
         @click="emitWidth($event); showCurrentMenu(i)"
       >
-        {{ item.title }}
+        <span>{{ item.title }}</span>
       </li>
       <transition :name="direction">
         <span class="tab-indicator" :style="getStyle" />
@@ -43,7 +43,8 @@ export default {
       current: 0,
       direction: '',
       indicator_width: 0,
-      indicator_pos: 0
+      indicator_pos: 0,
+      windowWidth: 0
     }
   },
   computed: {
@@ -58,9 +59,15 @@ export default {
     }
   },
   mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
     const first = document.querySelector('.menu-active')
-    this.indicator_width = first.offsetWidth + 40
-    this.indicator_pos = first.offsetLeft - 20
+    this.indicator_width = first.firstChild.offsetWidth
+    this.indicator_pos = first.offsetLeft + (first.offsetWidth - first.firstChild.offsetWidth) / 2
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     showCurrentMenu (i) {
@@ -69,11 +76,19 @@ export default {
       this.current = i
     },
     emitWidth (e) {
-      this.indicator_width = e.target.offsetWidth + 40
-      this.indicator_pos = e.target.offsetLeft - 20
+      const parentWidth = e.currentTarget.offsetWidth
+      const childWidth = e.currentTarget.firstChild.offsetWidth
+      this.indicator_width = childWidth
+      this.indicator_pos = e.currentTarget.offsetLeft + (parentWidth - childWidth) / 2
     },
     isActive (i) {
       return i === this.current
+    },
+    onResize () {
+      this.windowWidth = window.innerWidth
+      const currentItem = document.querySelector('.menu-active')
+      this.indicator_width = currentItem.firstChild.offsetWidth
+      this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
     }
   }
 }
@@ -120,13 +135,15 @@ export default {
     letter-spacing: 0.484615px;
     position: relative;
     z-index: 2;
-    padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
     flex: 1 1 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    span{
+      padding: 10px;
+    }
     @media screen and (max-width: $bpT) {
       font-size: 16px;
       line-height: 18px;

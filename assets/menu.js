@@ -120,7 +120,7 @@ export const menu = [
         ]
       },
       {
-        id: 1,
+        id: 2,
         title: 'Alcohol',
         items: [
           {

@@ -47,6 +47,7 @@ export default {
   display: flex;
   margin-top: 80px;
   position: relative;
+  overflow: hidden;
   @media screen and (max-width: $bpM) {
     flex-direction: column;
     align-items: center;

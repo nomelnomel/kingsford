@@ -25,6 +25,7 @@ export default {
     color: white;
     padding: 125px 250px 650px;
     position: relative;
+    overflow: hidden;
     @media screen and (max-width: $bpT){
       padding: 125px 50px 500px;
     }

@@ -54,7 +54,7 @@
 }
 
 .page-enter-active {
-  animation: fade-in-up1 ease 1s forwards;
+  animation: fade-in-up1 ease .8s forwards;
   &:before{
     content: '';
     position: fixed;
@@ -69,7 +69,7 @@
 }
 
 .page-leave-active {
-  animation: fade-in-up2 ease 1s forwards;
+  animation: fade-in-up2 ease .8s forwards;
   &:before{
     content: '';
     position: fixed;

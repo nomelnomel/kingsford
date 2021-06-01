@@ -28,6 +28,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  &::-webkit-scrollbar{
+   display: none;
+  }
 }
 
 .main{
@@ -35,6 +38,7 @@ html {
   position: relative;
   //overflow-x: hidden;
   /*max-width: 1440px;*/
+  background-color: $contrast;
 }
 
 *,

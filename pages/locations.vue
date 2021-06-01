@@ -21,7 +21,7 @@ export default {
 .locations{
   background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
   background-size: cover;
-  overflow: hidden;
+  background-color: $primary;
   @media screen and (max-width: $bpT){
     padding-top: 100px;
   }

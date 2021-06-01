@@ -54,7 +54,7 @@
 }
 
 .page-enter-active {
-  animation: fade-in-up1 ease .8s forwards;
+  animation: enter-page ease .8s;
   &:before{
     content: '';
     position: fixed;
@@ -69,7 +69,7 @@
 }
 
 .page-leave-active {
-  animation: fade-in-up2 ease .8s forwards;
+  animation: leave-page ease 1s;
   &:before{
     content: '';
     position: fixed;
@@ -83,7 +83,7 @@
   }
 }
 
-@keyframes fade-in-up1 {
+@keyframes enter-page {
   from {
     transform: translateY(100%);
   }
@@ -92,12 +92,12 @@
   }
 }
 
-@keyframes fade-in-up2 {
+@keyframes leave-page {
   from {
     transform: translateY(0);
   }
   to {
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
 }
 

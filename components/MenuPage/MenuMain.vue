@@ -149,7 +149,7 @@ export default {
   left: 0;
   background-color: $contrast;
   width: 200px;
-  height: 80px;
+  height: 100px;
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(-100%);
   z-index: 0;

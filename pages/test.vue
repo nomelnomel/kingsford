@@ -8,12 +8,12 @@
         v-for="(item, i) in items"
         :key="i"
         class="menu-item"
-        :class="{active:isActive(i)}"
+        :class="{'active-menu-item':isActive(i)}"
         @click="changeCurrent(i); emitWidth($event)"
       >
         {{ item }}
       </li>
-      <transition :name="{direction}">
+      <transition :name="direction">
         <span class="tab-indicator" :style="getStyle" />
       </transition>
     </ul>
@@ -41,9 +41,9 @@ export default {
     }
   },
   mounted () {
-    const first = document.querySelector('.active')
-    this.indicator_width = first.offsetWidth + 40
-    this.indicator_pos = first.offsetLeft - 20
+    const first = document.querySelector('.active-menu-item')
+    this.indicator_width = first.target.offsetWidth + 40
+    this.indicator_pos = first.target.offsetLeft - 20
   },
   methods: {
     isActive (i) {
@@ -69,7 +69,7 @@ export default {
   background-color: white;
 }
 
-.active{
+.active-menu-item{
   color: white;
 }
 .tab-indicator {
@@ -98,6 +98,7 @@ export default {
     align-items: center;
     justify-content: center;
     border: 1px solid;
+    z-index: 1;
   }
 }
 $percentage: 40%;

@@ -5,11 +5,14 @@
         v-for="(item,i) in menu"
         :key="item.id"
         class="menu-item"
-        :class="{'menu-active': highlightMenu(item.id)}"
-        @click="showCurrentMenu(i)"
+        :class="{'menu-active': isActive(i)}"
+        @click="emitWidth($event); showCurrentMenu(i)"
       >
         {{ item.title }}
       </li>
+      <transition :name="direction">
+        <span class="tab-indicator" :style="getStyle" />
+      </transition>
     </ul>
     <MenuSection
       v-for="section in currentMenuPage.sections"
@@ -37,21 +40,40 @@ export default {
   },
   data () {
     return {
-      current: 0
+      current: 0,
+      direction: '',
+      indicator_width: 0,
+      indicator_pos: 0
     }
   },
   computed: {
     currentMenuPage () {
       return this.menu[this.current]
+    },
+    getStyle () {
+      return {
+        left: this.indicator_pos + 'px',
+        width: this.indicator_width + 'px'
+      }
     }
+  },
+  mounted () {
+    const first = document.querySelector('.menu-active')
+    this.indicator_width = first.offsetWidth + 40
+    this.indicator_pos = first.offsetLeft - 20
   },
   methods: {
     showCurrentMenu (i) {
+      this.current > i ? this.direction = 'to left' : this.direction = 'to right'
       this.currentMenuPage = this.menu[i]
       this.current = i
     },
-    highlightMenu (id) {
-      return this.current === id - 1
+    emitWidth (e) {
+      this.indicator_width = e.target.offsetWidth + 40
+      this.indicator_pos = e.target.offsetLeft - 20
+    },
+    isActive (i) {
+      return i === this.current
     }
   }
 }
@@ -118,28 +140,53 @@ export default {
 
   &-active {
     color: $primary;
-
-    &:before {
-      content: '';
-      height: 122px;
-      width: 279px;
-      background: $contrast;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @media screen and (max-width: $bpT) {
-        top: 10px;
-        height: 100px;
-        width: 180px;
-      }
-      @media screen and (max-width: $bpM) {
-        top: 20px;
-        width: 110px;
-        height: 95px;
-      }
-    }
   }
+}
+
+.tab-indicator {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: red;
+  width: 200px;
+  height: 80px;
+  transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(-100%);
+  z-index: 0;
+}
+
+$percentage: 40%;
+
+// Forwards transition
+.to-right-enter {
+  opacity: 0;
+  transform: translateX($percentage);
+}
+
+.to-right-enter-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.to-right-leave-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateX(-$percentage);
+}
+
+// Backwards transition
+
+.to-left-back-enter {
+  opacity: 0;
+  transform: translateX(-$percentage);
+}
+
+.to-left-enter-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.to-left-leave-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateX($percentage);
 }
 </style>

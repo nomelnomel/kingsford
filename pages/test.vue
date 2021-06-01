@@ -1,66 +1,22 @@
 <template>
   <div class="test">
+    {{ current }}<br>
+    {{ direction }}
+    {{ indicator_pos }}
     <ul class="menu">
       <li
         v-for="(item, i) in items"
         :key="i"
         class="menu-item"
-        @click="current = i"
+        :class="{active:isActive(i)}"
+        @click="changeCurrent(i); emitWidth($event)"
       >
-        <transition name="slide-fade">
-          <span v-if="isActive(i)" class="menu-back" />
-        </transition>
         {{ item }}
       </li>
+      <transition :name="{direction}">
+        <span class="tab-indicator" :style="getStyle" />
+      </transition>
     </ul>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="cont">
-      <div class="elem">
-        <div class="elem2" data-aos="fade-down-right" data-aos-easing="ease" data-aos-duration="600" data-aos-delay="1000" />
-      </div>
-    </div>
   </div>
 </template>
 
@@ -69,13 +25,37 @@ export default {
   name: 'Test',
   data () {
     return {
-      items: ['Hello', 'World'],
-      current: 0
+      items: ['Hello', 'World', 'OMG'],
+      current: 0,
+      direction: '',
+      indicator_width: 0,
+      indicator_pos: 0
     }
+  },
+  computed: {
+    getStyle () {
+      return {
+        left: this.indicator_pos + 'px',
+        width: this.indicator_width + 'px'
+      }
+    }
+  },
+  mounted () {
+    const first = document.querySelector('.active')
+    this.indicator_width = first.offsetWidth + 40
+    this.indicator_pos = first.offsetLeft - 20
   },
   methods: {
     isActive (i) {
       return i === this.current
+    },
+    changeCurrent (i) {
+      this.current > i ? this.direction = 'to left' : this.direction = 'to right'
+      this.current = i
+    },
+    emitWidth (e) {
+      this.indicator_width = e.target.offsetWidth + 40
+      this.indicator_pos = e.target.offsetLeft - 20
     }
   }
 }
@@ -83,16 +63,33 @@ export default {
 
 <style scoped lang="scss">
 .test {
-  margin-top: 200px;
   border-top: 1px solid;
-  padding-top: 20px;
-  margin-bottom: 200px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: white;
+}
+
+.active{
+  color: white;
+}
+.tab-indicator {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: red;
+  width: 200px;
+  height: 80px;
+  transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(-100%);
+  z-index: 0;
 }
 
 .menu {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 300px;
+  position: relative;
 
   &-item {
     margin-right: 70px;
@@ -101,60 +98,67 @@ export default {
     align-items: center;
     justify-content: center;
     border: 1px solid;
-    position: relative;
   }
+}
+$percentage: 40%;
 
-  &-back {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: -75%;
-    left: -25%;
-    background: #7f828b2e;
-  }
-
-  .slide-fade-enter-active {
-    transition: all .8s ease;
-  }
-
-  .slide-fade-leave-active {
-    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-
-   .slide-fade-leave-to {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  .slide-fade-enter{
-    opacity: 0;
-  }
-
+// Forwards transition
+.to-right-enter {
+  opacity: 0;
+  transform: translateX($percentage);
 }
 
-.cont{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.to-right-enter-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.elem{
-  width: 250px;
-  height: 250px;
-  background: #7f828b;
-  z-index: 3;
-  position: relative;
+.to-right-leave-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateX(-$percentage);
 }
 
-.elem2{
-  width: 250px;
-  height: 250px;
-  background: #ff0000a5;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  transform: translate(-25px, -25px);
-  z-index: 0;
+// Backwards transition
+
+.to-left-back-enter {
+  opacity: 0;
+  transform: translateX(-$percentage);
 }
+
+.to-left-enter-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.to-left-leave-active {
+  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateX($percentage);
+}
+
+//.cont{
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  position: relative;
+//}
+//
+//.elem{
+//  width: 250px;
+//  height: 250px;
+//  background: #7f828b;
+//  z-index: 3;
+//  position: relative;
+//}
+//
+//.elem2{
+//  width: 250px;
+//  height: 250px;
+//  background: #ff0000a5;
+//  position: absolute;
+//  top: 25px;
+//  left: 25px;
+//  transform: translate(-25px, -25px);
+//  z-index: 0;
+//}
 
 </style>

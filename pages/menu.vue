@@ -38,6 +38,7 @@ export default {
       background-size: cover;
       overflow: hidden;
       background-color: $primary!important;
+      background-position: top;
     }
   }
 </style>

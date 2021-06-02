@@ -205,6 +205,7 @@ export default {
   padding: 171px 18% 100px;
   background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
   background-size: cover;
+  background-position: top;
   position: relative;
   @include media('<ipad-pro') {
     padding: 75px 50px 50px;

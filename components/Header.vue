@@ -190,8 +190,7 @@ header {
       letter-spacing: 0;
       line-height: 60px;
       text-transform: capitalize;
-      display: inline-block;
-      margin: 30px 0 30px 214px;
+      margin-left:214px;
 
       @include media('<ipad-pro'){
         font-size: 50px;
@@ -329,6 +328,9 @@ header {
 
 nav{
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .menu-layout{

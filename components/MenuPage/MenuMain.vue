@@ -124,7 +124,7 @@ export default {
         top: -20px;
       }
       @media screen and (max-width: $bpM) {
-        top: -10px;
+        top: -5px;
       }
     }
   }
@@ -170,6 +170,9 @@ export default {
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(-100%);
   z-index: 0;
+  @media screen and (max-width: $bpM) {
+    height: 70px;
+  }
 }
 
 $percentage: 40%;

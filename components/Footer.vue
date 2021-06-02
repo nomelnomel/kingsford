@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "@/assets/base/breakpoints";
 .footer {
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ export default {
   &-menu {
     display: flex;
     gap: 20px;
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       flex-direction: column;
       align-items: center;
     }

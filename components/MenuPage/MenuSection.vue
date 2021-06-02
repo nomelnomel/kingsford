@@ -29,16 +29,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
   h3{
     color: $contrast;
     text-transform: uppercase;
     letter-spacing: 0.97px;
     margin: 60px 0;
     font-weight: normal;
-    font-family: alternate-gothic-condensed-a, sans-serif;
-    font-size: 36px;
-    line-height: 43px;
-    @media screen and (max-width: $bpM){
+
+    @include media('<mobile'){
       margin: 30px 0;
     }
   }
@@ -50,10 +49,10 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     margin: 45px 27% 0;
     padding-bottom: 45px;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       margin: 45px 20% 0;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       grid-row-gap: 30px;
     }
   }

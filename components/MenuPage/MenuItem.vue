@@ -3,9 +3,9 @@
     <div class="dish-name">
       {{ item.title }}
     </div>
-    <div class="dish-desc">
+    <p class="dish-desc">
       {{ item.desc }}
-    </div>
+    </p>
   </section>
 </template>
 
@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
   .dish{
     display: flex;
     flex-direction: column;
@@ -36,13 +37,11 @@ export default {
       line-height: 22px;
       margin-bottom: 20px;
       text-transform: uppercase;
-      @media screen and (max-width: $bpM){
+      @include media('<mobile'){
         margin-bottom: 10px;
       }
     }
     &-desc{
-      font-size: 14px;
-      line-height: 22px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }

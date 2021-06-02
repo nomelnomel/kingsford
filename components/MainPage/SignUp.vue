@@ -3,9 +3,9 @@
     <div class="signup-image" data-aos="fade-in">
       <img src="~/assets/images/sign-back.png" alt="">
     </div>
-    <div class="signup-text" data-aos="fade-right">
+    <h3 class="signup-text" data-aos="fade-right">
       SIGN UP FOR UPDATES
-    </div>
+    </h3>
     <form class="signup-form" data-aos="fade-left">
       <input type="text" class="signup-input" placeholder="Email@website.com">
       <div class="signup-btn hover-underline">
@@ -22,25 +22,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "@/assets/base/breakpoints";
 .signup{
   background: $contrast;
   padding: 57px 66px;
   color: $primary;
   text-align: center;
-  @media screen and (max-width: $bpT){
+  @include media('<ipad-pro'){
     padding: 25px;
   }
   &-text{
     font-family: alternate-gothic-condensed-a, sans-serif;
-    font-size: 36px;
-    line-height: 46px;
     letter-spacing: 3.375px;
     margin: 25px 0 24px;
-    @media screen and (max-width: $bpT){
-      font-size: 24px;
-      line-height: 27px;
-    }
   }
   &-form{
     display: inline-flex;

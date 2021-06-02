@@ -34,6 +34,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
+
 .h3line{
   display: flex;
   align-items: center;
@@ -43,14 +45,14 @@ export default {
     margin-right: 50px;
     h3{
       padding-left: 50px;
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         padding-left: 20px;
       }
 
     }
     .line{
       margin-left: -100px;
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         margin-left: -50px;
       }
     }
@@ -59,21 +61,21 @@ export default {
     margin-left: 50px;
     h3{
       padding-right: 50px;
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         padding-right: 20px;
       }
 
     }
     .line{
       margin-right: -100px;
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         margin-right: -50px;
       }
     }
   }
   h3{
     display: block;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       max-width: 180px;
     }
   }
@@ -81,7 +83,7 @@ export default {
     display: block;
     width: 121px;
     border-bottom: 2px solid black;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       width: 80px;
     }
   }
@@ -98,10 +100,10 @@ export default {
     align-items: center;
     padding: 65px 9% 0;
     //margin-top: 65px;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       padding-top: 100px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       flex-direction: column;
     }
   }
@@ -111,24 +113,11 @@ export default {
     margin-top: 20px;
     h3{
       font-family: alternate-gothic-condensed-a, sans-serif;
-      font-size: 36px;
-      line-height: 43px;
       text-transform: uppercase;
       font-style: normal;
       font-weight: normal;
       //margin-bottom: 20px;
       position: relative;
-      @media screen and (max-width: $bpT){
-        font-size: 28px;
-        line-height: 28px;
-      }
-    }
-    p{
-      font-family: filson-pro, sans-serif;
-      font-size: 16px;
-      line-height: 22px;
-      font-style: normal;
-      font-weight: normal;
     }
   }
 
@@ -199,7 +188,7 @@ export default {
 img{
     max-width: 25%;
     margin: 0 15px;
-  @media screen and (max-width: $bpM){
+  @include media('<mobile'){
     max-width: 50%;
     margin: 25px 0;
   }

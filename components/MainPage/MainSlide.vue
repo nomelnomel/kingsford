@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/base/breakpoints";
+
 .swiper-container {
   background: $secondary-light;
   position: relative;
@@ -73,7 +75,8 @@ export default {
     width: auto;
   }
 }
-.slider-text{
+
+.slider-text {
   position: absolute;
   top: 100px;
   left: 50%;
@@ -82,40 +85,43 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media screen and (max-width: $bpM){
+  @include media('<mobile') {
     top: 50px;
   }
-  &-1st{
+
+  &-1st {
     font-size: 160px;
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro') {
       font-size: 100px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile') {
       font-size: 50px;
     }
   }
-  &-2nd{
+
+  &-2nd {
     font-size: 130px;
     font-family: fenway-park-jf, sans-serif;
     margin-bottom: 20px;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro') {
       font-size: 70px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile') {
       font-size: 30px;
     }
   }
-  &-3rd{
+
+  &-3rd {
     font-size: 190px;
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro') {
       font-size: 130px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile') {
       font-size: 70px;
     }
   }

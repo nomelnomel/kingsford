@@ -98,6 +98,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/base/breakpoints";
 header {
   color: $primary !important;
   z-index: 5;
@@ -109,7 +110,7 @@ header {
   position: absolute;
   width: 100%;
   padding: 20px 40px 0;
-  @media screen and (max-width: $bpM){
+  @include media('<mobile'){
     padding: 10px 20px 0;
   }
 }
@@ -120,7 +121,7 @@ header {
     text-decoration: none;
   }
   img{
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       max-width: 100px;
     }
   }
@@ -129,7 +130,7 @@ header {
 .burger {
   cursor: pointer;
   img{
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       max-width: 30px;
     }
   }
@@ -155,12 +156,12 @@ header {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       right: -400px;
       width: 400px;
       padding: 0 20px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       right: -100%;
       width: 100%;
       padding: 0 20px;
@@ -176,7 +177,7 @@ header {
       &:after{
         bottom: 15px;
       }
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         font-size: 60px;
         line-height: 78px;
         margin-left: 70px;
@@ -192,7 +193,7 @@ header {
       display: inline-block;
       margin: 30px 0 30px 214px;
 
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         font-size: 50px;
         line-height: 48px;
         margin-left: 150px;
@@ -206,7 +207,7 @@ header {
       text-transform: uppercase;
       font-size: 30px;
       margin-left: 70px;
-      @media screen and (max-width: $bpT){
+      @include media('<ipad-pro'){
         font-size: 20px;
         line-height: 28px;
         margin-left: 40px;
@@ -308,14 +309,14 @@ header {
 
     }
   }
-  @media screen and (max-width: $bpM){
+  @include media('<mobile'){
     display: none;
   }
   &-menu{
     right: 30px;
     position: absolute;
     top: 30px;
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       display: flex;
     }
   }

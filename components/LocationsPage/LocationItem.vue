@@ -43,12 +43,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
+
 .address {
   display: flex;
   margin-top: 80px;
   position: relative;
   overflow: hidden;
-  @media screen and (max-width: $bpM) {
+  @include media('<mobile') {
     flex-direction: column;
     align-items: center;
     padding: 0 25px;
@@ -59,7 +61,7 @@ export default {
     margin-left: 80px;
     z-index: 2;
     width: 50%;
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       margin-left: 0;
       width: auto;
     }
@@ -70,7 +72,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       position: unset;
       width: auto;
       margin-left: 0;
@@ -84,7 +86,7 @@ export default {
       left: 0;
       border-top: 3px solid;
       width: 98%;
-      @media screen and (max-width: $bpM) {
+      @include media('<mobile') {
         border: none;
       }
     }
@@ -97,7 +99,7 @@ export default {
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      @media screen and (max-width: $bpM) {
+      @include media('<mobile') {
         margin: 20px 0 0;
 
       }
@@ -125,7 +127,7 @@ export default {
   }
 
   &:after {
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       content: "";
       position: absolute;
       bottom: 30px;

@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
   .catering{
     background: $contrast;
     display: flex;
@@ -28,10 +29,10 @@ export default {
     padding: 125px 250px 650px;
     position: relative;
     overflow: hidden;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       padding: 125px 50px 500px;
     }
-    @media screen and (max-width: $bpM){
+    @include media('<mobile'){
       flex-direction: column;
       padding: 125px 25px 60%;
     }
@@ -40,7 +41,7 @@ export default {
       bottom: 50px;
       right: 0;
       width: auto;
-      @media screen and (max-width: $bpM){
+      @include media('<mobile'){
         max-width: 100%;
       }
     }

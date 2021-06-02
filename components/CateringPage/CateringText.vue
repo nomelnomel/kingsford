@@ -17,7 +17,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//@import "@/assets/base/mixins";
 @import "@/assets/base/breakpoints";
 
 .catering{
@@ -32,7 +31,7 @@ export default {
     left: -250px;
     top: 200px;
     width: auto;
-    @media screen and (max-width: $bpT){
+    @include media('<ipad-pro'){
       display: none;
     }
   }
@@ -41,7 +40,6 @@ export default {
     font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
-    //@include poly-fluid-sizing('font-size', (320px:18px, 768px:26px, 1024px:38px, 1440px:46px));
 
     @include media('<ipad-pro') {
       font-size: 50px;
@@ -53,7 +51,7 @@ export default {
       line-height: 72px;
     }
 
-    //@media screen and (max-width: $bpT){
+    //@include media('<ipad-pro'){
     //  font-size: 50px;
     //  line-height: 60px;
     //}

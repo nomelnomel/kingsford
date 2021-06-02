@@ -110,7 +110,7 @@ export default {
     margin-bottom: 100px;
     position: relative;
     list-style: none;
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       //  padding: 50px 0 0;
       //  overflow-x: scroll;
       //  overflow-y: hidden;
@@ -125,10 +125,10 @@ export default {
       left: 0;
       z-index: 3;
       top: -30px;
-      @media screen and (max-width: $bpT) {
+      @include media('<ipad-pro') {
         top: -20px;
       }
-      @media screen and (max-width: $bpM) {
+      @include media('<mobile') {
         top: -5px;
       }
     }
@@ -149,11 +149,11 @@ export default {
     span{
       padding: 10px;
     }
-    @media screen and (max-width: $bpT) {
+    @include media('<ipad-pro') {
       font-size: 16px;
       line-height: 18px;
     }
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       //min-width: 50%;
       font-size: 14px;
       line-height: 16px;
@@ -178,7 +178,7 @@ export default {
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(-100%);
   z-index: 0;
-  @media screen and (max-width: $bpM) {
+  @include media('<mobile') {
     height: 70px;
   }
 }

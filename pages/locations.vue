@@ -18,14 +18,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
 .locations{
   background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
   background-size: cover;
   background-color: $primary;
-  @media screen and (max-width: $bpT){
+  @include media('<ipad-pro'){
     padding-top: 100px;
   }
-  @media screen and (max-width: $bpM){
+  @include media('<mobile'){
     padding-top: 60px;
   }
 }

@@ -152,14 +152,14 @@
         </g>
       </svg>
     </a>
-    <div class="about-main" data-aos="zoom-in">
+    <h3 class="about-main" data-aos="zoom-in">
       donec vulputate libero sed
       euismod blandit. proin
       pharetra ultricies metus,
       suscipit placerat sem mollis
       ut. vestibulum convallis in
       libero sed convallis.
-    </div>
+    </h3>
     <div class="about-text" data-aos="zoom-in">
       Pellentesque porttitor condimentum orci, ut semper
       nibh finibus commodo. Pellentesque risus mauris,
@@ -182,6 +182,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
 
 .circle {
   position: absolute;
@@ -190,10 +191,10 @@ export default {
   transform: translateY(-50%);
   width: auto;
   z-index: 2;
-  @media screen and (max-width: $bpT) {
+  @include media('<ipad-pro') {
     width: 120px;
   }
-  @media screen and (max-width: $bpM) {
+  @include media('<mobile') {
     width: 80px;
   }
 }
@@ -205,29 +206,27 @@ export default {
   background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
   background-size: cover;
   position: relative;
-  @media screen and (max-width: $bpT) {
+  @include media('<ipad-pro') {
     padding: 75px 50px 50px;
   }
-  @media screen and (max-width: $bpM) {
+  @include media('<mobile') {
     flex-direction: column;
   }
 
   &-main {
-    font-size: 36px;
-    line-height: 46px;
     text-transform: uppercase;
     text-align: left;
     margin-right: 101px;
     font-family: alternate-gothic-condensed-a, sans-serif;
-    @media screen and (max-width: $bpT) {
-      font-size: 24px;
-      line-height: 27px;
-      margin-right: 50px;
-    }
-    @media screen and (max-width: $bpM) {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
+    //@include media('<ipad-pro') {
+    //  font-size: 24px;
+    //  line-height: 27px;
+    //  margin-right: 50px;
+    //}
+    //@include media('<mobile') {
+    //  margin-right: 0;
+    //  margin-bottom: 20px;
+    //}
   }
 
   &-text {
@@ -237,7 +236,7 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: $bpT) {
+    @include media('<ipad-pro') {
       font-size: 14px;
       line-height: 17px;
     }
@@ -254,7 +253,7 @@ export default {
       display: block;
       width: 184px;
       padding-bottom: 4px;
-      @media screen and (max-width: $bpM) {
+      @include media('<mobile') {
         margin-bottom: 0;
         margin-top: 30px;
       }

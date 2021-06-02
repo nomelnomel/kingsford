@@ -6,6 +6,12 @@
 //@import "variables";
 @import "breakpoints";
 
+$filson-soft: filson-soft, sans-serif;
+$filson-pro: filson-pro, sans-serif;
+$gothic: alternate-gothic-condensed-a, sans-serif;
+$henderson: henderson-slab-basic, sans-serif;
+$fenway: fenway-park-jf, sans-serif;
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +19,16 @@
 
 h3{
   font-weight: normal;
-  @include custom-text-size(36px, 24px, 43px, 26px);
-  font-family: alternate-gothic-condensed-a, sans-serif;
+  @include custom-text-size(36px, 28px, 43px, 26px);
+  //@include poly-fluid-sizing('font-size', (320px:18px, 768px:26px, 1024px:30px, 1440px:36px));
+  font-family: $gothic;
 }
 
+p{
+  font-weight: normal;
+  font-family: $filson-pro;
+  @include custom-text-size(16px, 14px, 20px, 16px);
+}
 
 //h1 {
 //  font-weight: 600;

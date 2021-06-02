@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/base/breakpoints";
 .catering {
   &-address {
     flex: 1 1 0;
@@ -51,10 +52,11 @@ export default {
     margin-right: -258px;
     margin-left: 100px;
     position: relative;
-    @media screen and (max-width: $bpT) {
+
+    @include media('<ipad-pro') {
       margin-right: -24px;
     }
-    @media screen and (max-width: $bpM) {
+    @include media('<mobile') {
       margin: 30px 0 0;
       align-self: self-start;
     }
@@ -65,12 +67,11 @@ export default {
       left: 0;
       transform: translateY(-100%);
       width: auto;
-      @media screen and (max-width: $bpT) {
+      @include media('<ipad-pro') {
         top: -50px;
       }
-      @media screen and (max-width: $bpM) {
+      @include media('<mobile') {
         display: none;
-
       }
     }
 

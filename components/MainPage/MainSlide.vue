@@ -61,6 +61,10 @@ export default {
   max-height: 100vh;
   overflow: hidden;
 
+  .swiper-slide img {
+    display: block;
+  }
+
   &-text {
     position: absolute;
     top: 50%;

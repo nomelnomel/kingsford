@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+//@import "@/assets/base/mixins";
+@import "@/assets/base/breakpoints";
+
 .catering{
   &-text{
     display: flex;
@@ -38,10 +41,22 @@ export default {
     font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
-    @media screen and (max-width: $bpT){
+    //@include poly-fluid-sizing('font-size', (320px:18px, 768px:26px, 1024px:38px, 1440px:46px));
+
+    @include media('<ipad-pro') {
       font-size: 50px;
       line-height: 60px;
     }
+
+    @include media('<laptop') {
+      font-size: 64px;
+      line-height: 72px;
+    }
+
+    //@media screen and (max-width: $bpT){
+    //  font-size: 50px;
+    //  line-height: 60px;
+    //}
   }
   &-about{
     font-family: filson-pro, sans-serif;

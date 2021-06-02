@@ -186,7 +186,7 @@ export default {
 .circle {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px;
   transform: translateY(-50%);
   width: auto;
   z-index: 2;

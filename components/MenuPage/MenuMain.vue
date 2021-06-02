@@ -42,29 +42,31 @@ export default {
     return {
       current: 0,
       direction: '',
-      indicator_width: 0,
-      indicator_pos: 0,
+      indicatorWidth: 0,
+      indicatorPosition: 0,
       windowWidth: 0
     }
   },
   computed: {
+    menuItemPadding () {
+      return this.windowWidth >= 1024 ? 40 : this.windowWidth < 480 ? 5 : 20
+    },
     currentMenuPage () {
       return this.menu[this.current]
     },
     getStyle () {
       return {
-        left: this.indicator_pos + 'px',
-        width: this.indicator_width + 'px'
+        left: this.indicatorPosition + 'px',
+        width: this.indicatorWidth + 'px'
       }
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
+
     const first = document.querySelector('.menu-active')
-    this.indicator_width = first.firstChild.offsetWidth
-    this.indicator_pos = first.offsetLeft + (first.offsetWidth - first.firstChild.offsetWidth) / 2
+    this.recalculate(first, this.menuItemPadding)
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.onResize)
@@ -72,14 +74,10 @@ export default {
   methods: {
     showCurrentMenu (i) {
       this.current > i ? this.direction = 'to left' : this.direction = 'to right'
-      this.currentMenuPage = this.menu[i]
       this.current = i
     },
     emitWidth (e) {
-      const parentWidth = e.currentTarget.offsetWidth
-      const childWidth = e.currentTarget.firstChild.offsetWidth
-      this.indicator_width = childWidth
-      this.indicator_pos = e.currentTarget.offsetLeft + (parentWidth - childWidth) / 2
+      this.recalculate(e.currentTarget, this.menuItemPadding)
     },
     isActive (i) {
       return i === this.current
@@ -87,14 +85,21 @@ export default {
     onResize () {
       this.windowWidth = window.innerWidth
       const currentItem = document.querySelector('.menu-active')
-      this.indicator_width = currentItem.firstChild.offsetWidth
-      this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
+      this.recalculate(currentItem, this.menuItemPadding)
+    },
+    recalculate (node, padding) {
+      const childNode = node.firstChild
+
+      this.indicatorWidth = childNode.offsetWidth + padding * 2
+      this.indicatorPosition = node.offsetLeft + (node.offsetWidth - childNode.offsetWidth) / 2 - padding
     }
   }
 }
 </script>
 
 <style lang="scss">
+@import "@/assets/base/breakpoints";
+
 .menu {
   &-header {
     display: flex;
@@ -152,6 +157,9 @@ export default {
       //min-width: 50%;
       font-size: 14px;
       line-height: 16px;
+    }
+    @include media('<mobile') {
+      font-size: 12px;
     }
   }
 

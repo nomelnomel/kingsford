@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin custom-text-size($desktopFontSize, $mobileFontSize, $desktopLineHeight, $mobileLineHeight) {
   @include poly-fluid-sizing('font-size', ($laptop: $desktopFontSize, $mobile: $mobileFontSize));
   @include poly-fluid-sizing('line-height', ($laptop: $desktopLineHeight, $mobile: $mobileLineHeight));
@@ -23,7 +25,7 @@
 
 @mixin aspect-ratio($w, $h) {
   width: 100vw;
-  $percent: ($h / $w) * 100vw;
+  $percent: (math.div($h, $w)) * 100vw;
   height: $percent;
 }
 
@@ -40,30 +42,30 @@
 }
 
 @mixin asp-ratio-height($width, $height) {
-  height: $height / $width * 100vw;
+  height: math.div($height, $width * 100vw);
 }
 
 
-//@function linear-interpolation($map) {
-//  $keys: map-keys($map);
-//  @if (length($keys) != 2) {
-//    @error "linear-interpolation() $map must be exactly 2 values";
-//  }
-//  // The slope
-//  $m: (map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1)))/(nth($keys, 2) - nth($keys,1));
-//
-//  // The y-intercept
-//  $b: map-get($map, nth($keys, 1)) - $m * nth($keys, 1);
-//
-//  // Determine if the sign should be positive or negative
-//  $sign: "+";
-//  @if ($b < 0) {
-//    $sign: "-";
-//    $b: abs($b);
-//  }
-//
-//  @return calc(#{$m*100}vw #{$sign} #{$b});
-//}
+@function linear-interpolation($map) {
+  $keys: map-keys($map);
+  @if (length($keys) != 2) {
+    @error "linear-interpolation() $map must be exactly 2 values";
+  }
+  // The slope
+  $m: math.div((map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1))), (nth($keys, 2) - nth($keys,1)));
+
+  // The y-intercept
+  $b: map-get($map, nth($keys, 1)) - $m * nth($keys, 1);
+
+  // Determine if the sign should be positive or negative
+  $sign: "+";
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+
+  @return calc(#{$m*100}vw #{$sign} #{$b});
+}
 
 @function map-sort($map) {
   $keys: list-sort(map-keys($map));
@@ -160,8 +162,8 @@
     $resTotal: $resTotal + $res;
     $valueTotal: $valueTotal + $value;
   }
-  $resMean: $resTotal/$length;
-  $valueMean: $valueTotal/$length;
+  $resMean: math.div($resTotal, $length);
+  $valueMean: math.div($valueTotal, $length);
 
   // Calculate some other stuff
   $multipliedDiff: 0;
@@ -180,7 +182,7 @@
   }
 
   // Calculate the Slope
-  $m: $multipliedDiff / $squaredDiff;
+  $m: math.div($multipliedDiff, $squaredDiff);
 
   // Calculate the Y-Intercept
   $b: $valueMean - ($m * $resMean);
@@ -202,5 +204,26 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='40px' height='23px' viewBox='0 0 40 23' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='pattern-/-arrow-right' transform='translate(-20.000000, -28.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cpath d='M49.5167829,28.1976874 C49.2672848,27.9406162 48.8388438,27.9381179 48.5994232,28.1677339 C48.3549638,28.4023463 48.337325,28.8316566 48.5691779,29.076243 L57.8634274,38.8596953 L20.6451647,38.8596953 C20.2898209,38.8596953 20,39.14672 20,39.4986355 C20,39.850551 20.2898209,40.1375757 20.6451647,40.1375757 L57.8634274,40.1375757 L48.5691779,49.921028 C48.3373186,50.1656207 48.3499251,50.599902 48.5994232,50.8295371 C48.8463987,51.0591594 49.2471041,51.0641495 49.5167829,50.79959 L59.8394185,39.9376066 C60.0838779,39.6381034 60.0208711,39.2711919 59.8394185,39.0590638 L49.5167829,28.1976874 Z' id='arrow'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
 }
 

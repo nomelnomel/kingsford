@@ -1,7 +1,21 @@
 <template>
   <div class="test">
-    {{ windowWidth }}
-    {{ num }}
+    <div v-if="menu">
+      <div
+        v-for="(item,i) in menu"
+        :key="i"
+      >
+        {{ item.menu_title }}
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -23,6 +37,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Test',
   data () {
@@ -33,7 +48,9 @@ export default {
       indicator_width: 0,
       indicator_pos: 0,
       windowWidth: 0,
-      num: 0
+      num: 0,
+      info: null,
+      menu: null
     }
   },
   computed: {
@@ -45,9 +62,9 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize)
-    })
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category.map(i => i)))
+
+    window.addEventListener('resize', this.onResize)
     const currentItem = document.querySelector('.menu-active')
     this.indicator_width = currentItem.firstChild.offsetWidth
     this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2

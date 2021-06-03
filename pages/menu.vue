@@ -1,12 +1,12 @@
 <template>
-  <div class="container menu-page">
+  <div v-if="menu" class="container menu-page">
     <MenuAbout />
     <MenuMain :menu="menu" />
   </div>
 </template>
 
 <script>
-import { menu } from '../assets/menu'
+import axios from 'axios'
 import MenuAbout from '../components/MenuPage/MenuAbout'
 import MenuMain from '../components/MenuPage/MenuMain'
 export default {
@@ -18,9 +18,12 @@ export default {
   },
   data () {
     return {
-      menu,
+      menu: null,
       current: 0
     }
+  },
+  mounted () {
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category.map(i => i)))
   },
   methods: {
     changeCurrent (num) {

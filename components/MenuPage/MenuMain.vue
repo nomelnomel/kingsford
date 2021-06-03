@@ -1,5 +1,5 @@
 <template>
-  <section class="menu">
+  <section v-if="menu" class="menu">
     <ul class="menu-header">
       <li
         v-for="(item,i) in menu"
@@ -8,14 +8,14 @@
         :class="{'menu-active': isActive(i)}"
         @click="emitWidth($event); showCurrentMenu(i)"
       >
-        <span>{{ item.title }}</span>
+        <span>{{ item.menu_title }}</span>
       </li>
       <transition :name="direction">
         <span class="tab-indicator" :style="getStyle" />
       </transition>
     </ul>
     <MenuSection
-      v-for="section in currentMenuPage.sections"
+      v-for="section in currentMenuPage.menu_subcategories"
       :key="section.id"
       :section="section"
     />
@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import MenuSection from './MenuSection'
+// import MenuSection from './MenuSection'
 
 export default {
   name: 'MenuMain',
   components: {
-    MenuSection
+    // MenuSection
   },
   props: {
     menu: {

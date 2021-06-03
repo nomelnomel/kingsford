@@ -1,10 +1,13 @@
 <template>
   <section class="dish">
     <div class="dish-name">
-      {{ item.title }}
+      {{ item.menu_item }}
     </div>
     <p class="dish-desc">
-      {{ item.desc }}
+      {{ item.meni_item_description }}
+    </p>
+    <p class="dish-price">
+      {{ item.price }}$
     </p>
   </section>
 </template>
@@ -44,6 +47,13 @@ export default {
     &-desc{
       letter-spacing: 2px;
       text-transform: uppercase;
+    }
+    &-price{
+      font-size: 20px;
+      font-weight: bold;
+      color: $contrast;
+      display: block;
+      margin-top: 10px;
     }
   }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <section class="menu-section">
-    <h3>{{ section.title }}</h3>
+    <h3>{{ section.sub_menu_title }}</h3>
     <div class="dishes">
       <MenuItem
-        v-for="item in section.items"
+        v-for="item in section.menu_items"
         :key="item.id"
         :item="item"
       />

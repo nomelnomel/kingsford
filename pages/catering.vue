@@ -1,12 +1,13 @@
 <template>
-  <div class="catering">
-    <CateringText />
-    <CateringAddress />
+  <div v-if="text" class="catering">
+    <CateringText :text="text" />
+    <CateringAddress v-if="info" :info="info" />
     <img src="~/assets/images/catering3.png" alt="" class="cat3">
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CateringText from '../components/CateringPage/CateringText'
 import CateringAddress from '../components/CateringPage/CateringAddress'
 export default {
@@ -15,8 +16,16 @@ export default {
     CateringText,
     CateringAddress
   },
-  transition: 'slide-bottom'
-
+  data () {
+    return {
+      text: null,
+      info: null
+    }
+  },
+  mounted () {
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=catering').then(response => (this.text = response.data[0].acf.text))
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=catering').then(response => (this.info = response.data[0].acf.item))
+  }
 }
 </script>
 

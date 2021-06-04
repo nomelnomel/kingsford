@@ -1,6 +1,6 @@
 <template>
   <div v-if="menu" class="container menu-page">
-    <MenuAbout />
+    <MenuAbout :text2="text2" :text="text" />
     <MenuMain :menu="menu" />
   </div>
 </template>
@@ -19,11 +19,15 @@ export default {
   data () {
     return {
       menu: null,
-      current: 0
+      current: 0,
+      text: null,
+      text2: null
     }
   },
   mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category.map(i => i)))
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category))
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.text2 = response.data[0].acf.text_2))
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.text = response.data[0].acf.text))
   },
   methods: {
     changeCurrent (num) {

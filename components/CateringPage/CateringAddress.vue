@@ -8,38 +8,55 @@
       >
     </transition>
     <div class="catering-address-title">
-      START A CATERING ORDER
+      start a catering order
     </div>
-    <div class="catering-address-line">
+
+    <div v-for="(item,i) in info" :key="i" class="catering-address-line">
       <h3 class="top">
-        DOWNLOAD CATERING MENU
+        {{ item.text }}
       </h3>
       <a class="link" href="#">
-        CATERINGMENU.PDF
+        {{ item.link }}
       </a>
     </div>
-    <div class="catering-address-line">
-      <h3 class="top">
-        CALL CATERING EXPERT
-      </h3>
-      <a class="link" href="tel:123-456-7890">
-        123-456-7890
-      </a>
-    </div>
-    <div class="catering-address-line">
-      <h3 class="top">
-        EMAIL CATERING EXPERT
-      </h3>
-      <a class="link" href="mailto:CATERING@KINGSFORDGRILLE.COM">
-        CATERING@KINGSFORDGRILLE.COM
-      </a>
-    </div>
+
+    <!--    <div class="catering-address-line">-->
+    <!--      <h3 class="top">-->
+    <!--        download catering menu-->
+    <!--      </h3>-->
+    <!--      <a class="link" href="#">-->
+    <!--        cateringmenu.pdf-->
+    <!--      </a>-->
+    <!--    </div>-->
+    <!--    <div class="catering-address-line">-->
+    <!--      <h3 class="top">-->
+    <!--        call catering expert-->
+    <!--      </h3>-->
+    <!--      <a class="link" href="tel:123-456-7890">-->
+    <!--        123-456-7890-->
+    <!--      </a>-->
+    <!--    </div>-->
+    <!--    <div class="catering-address-line">-->
+    <!--      <h3 class="top">-->
+    <!--        email catering expert-->
+    <!--      </h3>-->
+    <!--      <a class="link" href="mailto:catering@kingsfordgrille.com">-->
+    <!--        catering@kingsfordgrille.com-->
+    <!--      </a>-->
+    <!--    </div>-->
   </section>
 </template>
 
 <script>
 export default {
-  name: 'CateringAddress'
+  name: 'CateringAddress',
+  props: {
+    info: {
+      type: Array,
+      default: () => {
+      }
+    }
+  }
 }
 </script>
 
@@ -106,6 +123,7 @@ export default {
         color: $secondary;
         margin-bottom: 5px;
         font-size: 16px;
+        text-transform: uppercase;
       }
 
       .link {

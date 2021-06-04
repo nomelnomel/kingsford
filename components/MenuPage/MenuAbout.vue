@@ -1,39 +1,34 @@
 <template>
   <section class="menu-about">
     <div class="menu-text">
-      <div class="h3line h3line-left">
-        <span class="line" />
-        <h3 class="menu-line-left">
-          ABOUT OUR MENU
-        </h3>
-      </div>
-      <p>
-        Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-      </p>
+      <span class="line line-left" />
+      <div class="wiz" v-html="text" />
     </div>
     <img src="~/assets/images/menu-text.png" alt="">
     <div class="menu-text">
-      <div class="h3line h3line-right">
-        <h3 class="menu-line-right">
-          OUR SIGNATURE GRILL
-        </h3>
-        <span class="line" />
-      </div>
-
-      <p>
-        Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-      </p>
+      <span class="line line-right" />
+      <div class="wiz" v-html="text2" />
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'MenuAbout'
+  name: 'MenuAbout',
+  props: {
+    text2: {
+      type: String,
+      default: ''
+    },
+    text: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/assets/base/breakpoints";
 
 .h3line{
@@ -79,14 +74,7 @@ export default {
       max-width: 180px;
     }
   }
-  .line{
-    display: block;
-    width: 121px;
-    border-bottom: 2px solid black;
-    @include media('<ipad-pro'){
-      width: 80px;
-    }
-  }
+
 }
 
 .menu{
@@ -106,18 +94,43 @@ export default {
     @include media('<mobile'){
       flex-direction: column;
     }
+    img{
+      max-width: 25%;
+      margin: 0 15px;
+      @include media('<mobile'){
+        max-width: 50%;
+        margin: 25px 0;
+      }
+    }
   }
   &-text{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    h3{
-      font-family: alternate-gothic-condensed-a, sans-serif;
-      text-transform: uppercase;
-      font-style: normal;
-      font-weight: normal;
-      //margin-bottom: 20px;
-      position: relative;
+    position: relative;
+    .line{
+      display: block;
+      width: 70px;
+      border-bottom: 2px solid black;
+      position: absolute;
+      top: 10px;
+      @include media('<ipad-pro'){
+        width: 40px;
+      }
+      &-right{
+        transform: translateX(70%);
+        right: 0;
+        @include media('<ipad-pro'){
+          transform: translateX(80%);
+        }
+      }
+      &-left{
+        transform: translateX(calc(-70% + 15px));
+        left: 0;
+        @include media('<ipad-pro'){
+          transform: translateX(calc(-80% + 15px));
+        }
+      }
     }
   }
 
@@ -172,25 +185,6 @@ export default {
   }
   &-active{
     color: $primary;
-    &:before{
-      content: '';
-      height: 122px;
-      width: 279px;
-      background: $contrast;
-      position: absolute;
-      z-index: -1;
-      top:0;
-      left:50%;
-      transform:translate(-50%, -50%);
-    }
-  }
-}
-img{
-    max-width: 25%;
-    margin: 0 15px;
-  @include media('<mobile'){
-    max-width: 50%;
-    margin: 25px 0;
   }
 }
 

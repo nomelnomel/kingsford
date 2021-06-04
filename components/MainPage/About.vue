@@ -153,23 +153,12 @@
       </svg>
     </a>
     <h3 class="about-main" data-aos="zoom-in">
-      donec vulputate libero sed
-      euismod blandit. proin
-      pharetra ultricies metus,
-      suscipit placerat sem mollis
-      ut. vestibulum convallis in
-      libero sed convallis.
+      {{ about.headline }}
     </h3>
     <div class="about-text" data-aos="zoom-in">
-      Pellentesque porttitor condimentum orci, ut semper
-      nibh finibus commodo. Pellentesque risus mauris,
-      facilisis non elementum maximus, euismod a velit.
-      Curabitur iaculis ex lorem, quis consequat mauris
-      mattis vitae. Quisque tincidunt dolor et tellus
-      pretium, eu accumsan arcu iaculis.
-
+      {{ about.simple_text }}
       <nuxt-link to="menu" class="hover-underline">
-        SEE OUR MENU
+        {{ about.link }}
       </nuxt-link>
     </div>
   </div>
@@ -177,11 +166,18 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  props: {
+    about: {
+      type: Object,
+      default: () => {
+      }
+    }
+  }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/assets/base/breakpoints";
 
 .circle {

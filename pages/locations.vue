@@ -1,11 +1,12 @@
 <template>
   <section class="locations">
     <LocationsH2 />
-    <LocationList />
+    <LocationList :locations="locations" />
   </section>
 </template>
 
 <script>
+import axios from 'axios'
 import LocationList from '../components/LocationsPage/LocationList'
 import LocationsH2 from '../components/LocationsPage/LocationsH2'
 export default {
@@ -13,6 +14,14 @@ export default {
   components: {
     LocationList,
     LocationsH2
+  },
+  data () {
+    return {
+      locations: null
+    }
+  },
+  mounted () {
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=locations').then(response => (this.locations = response.data[0].acf.locations))
   }
 }
 </script>

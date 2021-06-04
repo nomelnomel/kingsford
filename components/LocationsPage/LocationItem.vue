@@ -6,13 +6,11 @@
     </div>
     <div class="address-text">
       <div class="text">
-        <p>{{ address.name }}</p>
+        <p>{{ item.location_name }}</p>
         <a href="#" class="address-link">
-          {{ address.street }}
-          <br>
-          {{ address.index }}
+          {{ item.address }}
         </a>
-        <a :href="`tel:${address.tel}`" class="tel">{{ address.tel }}</a>
+        <a :href="`tel:${item.phone}`" class="tel">{{ item.phone }}</a>
       </div>
     </div>
   </section>
@@ -26,13 +24,7 @@ export default {
     // Images
   },
   props: {
-    image: {
-      type: String,
-      default: () => {
-      },
-      required: true
-    },
-    address: {
+    item: {
       type: Object,
       default: () => {
       },

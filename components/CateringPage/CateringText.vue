@@ -1,22 +1,35 @@
 <template>
   <section class="catering-text">
     <img src="~/assets/images/catering2.png" alt="" class="cat2">
-    <h2 class="catering-headline">
-      CATERING HEADLINE CAN GO HERE AND BE THIS LONG IF IT NEEDS TO BE UP TO YOU REALLY.
-    </h2>
-    <p class="catering-about">
-      Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.
-    </p>
+    <!--    <h2 class="catering-headline">-->
+    <!--      CATERING HEADLINE CAN GO HERE AND BE THIS LONG IF IT NEEDS TO BE UP TO YOU REALLY.-->
+    <!--    </h2>-->
+    <!--    <p class="catering-about">-->
+    <!--      Pellentesque porttitor condimentum orci, ut semper nibh finibus commodo. Pellentesque risus mauris, facilisis non elementum maximus, euismod a velit. Curabitur iaculis ex lorem, quis consequat mauris mattis vitae. Quisque tincidunt dolor et tellus pretium, eu accumsan arcu iaculis.-->
+    <!--    </p>-->
+    <span v-html="text" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'CateringText'
+  name: 'CateringText',
+  props: {
+    text: {
+      type: String,
+      default: () => {
+      }
+    }
+  },
+  computed: {
+    getText () {
+      return this.text.slice(1, -1)
+    }
+  }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/assets/base/breakpoints";
 
 .catering{
@@ -35,18 +48,18 @@ export default {
       display: none;
     }
   }
-  &-headline{
+  h2{
     font-family: alternate-gothic-condensed-a, sans-serif;
     font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
 
-    @include media('<ipad-pro') {
-      font-size: 50px;
-      line-height: 60px;
+    @include media('<mobile') {
+      font-size: 50px!important;
+      line-height: 60px!important;
     }
 
-    @include media('<laptop') {
+    @include media('<ipad-pro') {
       font-size: 64px;
       line-height: 72px;
     }
@@ -56,10 +69,6 @@ export default {
     //  line-height: 60px;
     //}
   }
-  &-about{
-    font-family: filson-pro, sans-serif;
-    font-size: 16px;
-    line-height: 22px;
-  }
+
 }
 </style>

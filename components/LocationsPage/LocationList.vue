@@ -1,6 +1,6 @@
 <template>
   <section class="locations-list">
-    <LocationItem :address="address" :image="'/_nuxt/assets/images/loc1.png'" />
+    <LocationItem v-for="(item, i) in locations" :key="i" :item="item" />
     <!--    <div class="address">-->
     <!--      <div class="address-image">-->
     <!--        <img src="~/assets/images/loc1.png" alt="">-->
@@ -12,7 +12,7 @@
     <!--        </div>-->
     <!--      </div>-->
     <!--    </div>-->
-    <LocationItem :address="address2" :image="'/_nuxt/assets/images/loc1.png'" />
+    <!--    <LocationItem :address="address2" :image="'/_nuxt/assets/images/loc1.png'" />-->
   </section>
 </template>
 
@@ -22,6 +22,13 @@ export default {
   name: 'LocationList',
   components: {
     LocationItem
+  },
+  props: {
+    locations: {
+      type: Array,
+      default: () => {
+      }
+    }
   },
   data () {
     return {

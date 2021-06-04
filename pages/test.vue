@@ -1,5 +1,8 @@
 <template>
   <div class="test">
+    <div v-if="about">
+      {{ about.headline }}
+    </div>
     <div v-if="menu">
       <div
         v-for="(item,i) in menu"
@@ -50,7 +53,8 @@ export default {
       windowWidth: 0,
       num: 0,
       info: null,
-      menu: null
+      menu: null,
+      about: null
     }
   },
   computed: {
@@ -62,7 +66,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category.map(i => i)))
+    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=home').then(response => (this.about = response.data[0].acf.about_text))
 
     window.addEventListener('resize', this.onResize)
     const currentItem = document.querySelector('.menu-active')

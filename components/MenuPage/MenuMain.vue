@@ -1,5 +1,5 @@
 <template>
-  <section v-if="menu" class="menu">
+  <section class="menu">
     <ul class="menu-header">
       <li
         v-for="(item,i) in menu"

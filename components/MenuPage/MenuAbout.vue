@@ -1,11 +1,18 @@
 <template>
   <section class="menu-about">
-    <div class="menu-text">
+    <div ref="par" class="menu-text" data-aos="fade-right" data-aos-delay="600" data-aos-duration="900">
       <span class="line line-left" />
       <div class="wiz" v-html="text" />
     </div>
-    <img src="~/assets/images/menu-text.png" alt="">
-    <div class="menu-text">
+    <img
+      src="~/assets/images/menu-text.png"
+      alt=""
+      data-aos="fade-down"
+      data-aos-delay="900"
+      data-aos-duration="900"
+      data-aos-easing="ease-out"
+    >
+    <div class="menu-text" data-aos="fade-left" data-aos-delay="600" data-aos-duration="900">
       <span class="line line-right" />
       <div class="wiz" v-html="text2" />
     </div>
@@ -25,6 +32,7 @@ export default {
       default: ''
     }
   }
+
 }
 </script>
 
@@ -125,7 +133,7 @@ export default {
         }
       }
       &-left{
-        transform: translateX(calc(-70% + 15px));
+        transform: translateX(calc(-50% + 15px));
         left: 0;
         @include media('<ipad-pro'){
           transform: translateX(calc(-80% + 15px));

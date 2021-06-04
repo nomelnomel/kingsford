@@ -1,12 +1,13 @@
 <template>
   <section class="catering-address">
-    <transition name="fade">
-      <img
-        src="~/assets/images/catering1.png"
-        alt=""
-        class="cat1"
-      >
-    </transition>
+    <img
+      src="~/assets/images/catering1.png"
+      alt=""
+      class="cat1"
+      data-aos="fade-up"
+      data-aos-delay="1100"
+      data-aos-duration="500"
+    >
     <div class="catering-address-title">
       start a catering order
     </div>

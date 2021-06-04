@@ -2,7 +2,14 @@
   <div v-if="text" class="catering">
     <CateringText :text="text" />
     <CateringAddress v-if="info" :info="info" />
-    <img src="~/assets/images/catering3.png" alt="" class="cat3">
+    <img
+      src="~/assets/images/catering3.png"
+      alt=""
+      class="cat3"
+      data-aos="fade-right"
+      data-aos-delay="900"
+      data-aos-duration="700"
+    >
   </div>
 </template>
 

@@ -165,24 +165,24 @@ export default {
     //  width: 121px;
     //}
   }
-  &-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 100px;
-    padding: 0 200px;
-    margin-bottom: 100px;
-    position: relative;
-    &:after{
-      content: '';
-      border-top: 3px solid $secondary;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      z-index: 3;
-      top: -30px;
-    }
-  }
+  //&-header{
+  //  display: flex;
+  //  justify-content: space-between;
+  //  width: 100%;
+  //  margin-top: 100px;
+  //  padding: 0 200px;
+  //  margin-bottom: 100px;
+  //  position: relative;
+  //  &:after{
+  //    content: '';
+  //    border-top: 3px solid $secondary;
+  //    position: absolute;
+  //    width: 100%;
+  //    left: 0;
+  //    z-index: 3;
+  //    top: -30px;
+  //  }
+  //}
   &-item{
     font-size: 18px;
     line-height: 23px;

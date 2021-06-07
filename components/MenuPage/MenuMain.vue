@@ -23,12 +23,12 @@
 </template>
 
 <script>
-// import MenuSection from './MenuSection'
+import MenuSection from './MenuSection'
 
 export default {
   name: 'MenuMain',
   components: {
-    // MenuSection
+    MenuSection
   },
   props: {
     menu: {
@@ -146,6 +146,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
     span{
       padding: 10px;
     }

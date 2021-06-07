@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <MainSlide />
-    <About v-if="about" :about="about" />
+    <About v-if="acfData.about_text" :about="acfData.about_text" />
     <SignUp />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MainSlide from '../components/MainPage/MainSlide'
 import About from '../components/MainPage/About'
 import SignUp from '../components/MainPage/SignUp'
@@ -17,16 +18,16 @@ export default {
     About,
     SignUp
   },
-  data () {
-    return {
-      about: null,
-      acf: null
-    }
+  computed: {
+    ...mapState(['acfData'])
   },
-  async fetch () {
-    this.acf = await this.$store.dispatch('getInfo', 'home')
-    this.about = this.acf.about_text
+  mounted () {
+    this.$store.dispatch('setAcfData', 'home')
   }
+  // async fetch () {
+  //   this.acf = await this.$store.dispatch('getInfo', 'home')
+  //   this.about = this.acf.about_text
+  // }
 }
 </script>
 

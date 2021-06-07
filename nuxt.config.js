@@ -31,7 +31,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/aos', ssr: false }],
+  plugins: [{ src: '~/plugins/aos.client', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -47,7 +47,6 @@ export default {
   styleResources: {
     scss: [
       '~/assets/base/colors.scss'
-
     ]
   },
 

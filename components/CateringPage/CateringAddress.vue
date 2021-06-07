@@ -16,7 +16,7 @@
       <h3 class="top">
         {{ item.text }}
       </h3>
-      <a class="link" href="#">
+      <a class="link" :href="item.href? item.href + item.link : '#'">
         {{ item.link }}
       </a>
     </div>

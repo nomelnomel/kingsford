@@ -1,7 +1,7 @@
 <template>
-  <div v-if="text" class="catering">
-    <CateringText :text="text" />
-    <CateringAddress v-if="info" :info="info" />
+  <div v-if="acfData.text" class="catering">
+    <CateringText :text="acfData.text" />
+    <CateringAddress v-if="acfData.item" :info="acfData.item" />
     <img
       src="~/assets/images/catering3.png"
       alt=""
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import CateringText from '../components/CateringPage/CateringText'
 import CateringAddress from '../components/CateringPage/CateringAddress'
 export default {
@@ -23,17 +24,11 @@ export default {
     CateringText,
     CateringAddress
   },
-  data () {
-    return {
-      text: null,
-      info: null,
-      acf: null
-    }
+  computed: {
+    ...mapState(['acfData'])
   },
-  async fetch () {
-    this.acf = await this.$store.dispatch('getInfo', `${this.$route.name}`)
-    this.text = this.acf.text
-    this.info = this.acf.item
+  mounted () {
+    this.$store.dispatch('setAcfData', `${this.$route.name}`)
   }
 }
 </script>

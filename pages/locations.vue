@@ -1,11 +1,12 @@
 <template>
   <section class="locations">
     <LocationsH2 />
-    <LocationList :locations="locations" />
+    <LocationList :locations="acfData.locations" />
   </section>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import LocationList from '../components/LocationsPage/LocationList'
 import LocationsH2 from '../components/LocationsPage/LocationsH2'
 export default {
@@ -16,13 +17,14 @@ export default {
   },
   data () {
     return {
-      locations: null,
       acf: null
     }
   },
-  async fetch () {
-    this.acf = await this.$store.dispatch('getInfo', `${this.$route.name}`)
-    this.locations = this.acf.locations
+  computed: {
+    ...mapState(['acfData'])
+  },
+  mounted () {
+    this.$store.dispatch('setAcfData', `${this.$route.name}`)
   }
 }
 </script>

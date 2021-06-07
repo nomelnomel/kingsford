@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import LocationList from '../components/LocationsPage/LocationList'
 import LocationsH2 from '../components/LocationsPage/LocationsH2'
 export default {
@@ -17,11 +16,13 @@ export default {
   },
   data () {
     return {
-      locations: null
+      locations: null,
+      acf: null
     }
   },
-  mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=locations').then(response => (this.locations = response.data[0].acf.locations))
+  async fetch () {
+    this.acf = await this.$store.dispatch('getInfo', `${this.$route.name}`)
+    this.locations = this.acf.locations
   }
 }
 </script>

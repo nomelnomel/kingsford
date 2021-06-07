@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import MainSlide from '../components/MainPage/MainSlide'
 import About from '../components/MainPage/About'
 import SignUp from '../components/MainPage/SignUp'
@@ -20,12 +19,13 @@ export default {
   },
   data () {
     return {
-      endslider: false,
-      about: null
+      about: null,
+      acf: null
     }
   },
-  mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=home').then(response => (this.about = response.data[0].acf.about_text))
+  async fetch () {
+    this.acf = await this.$store.dispatch('getInfo', 'home')
+    this.about = this.acf.about_text
   }
 }
 </script>

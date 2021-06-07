@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import CateringText from '../components/CateringPage/CateringText'
 import CateringAddress from '../components/CateringPage/CateringAddress'
 export default {
@@ -27,12 +26,14 @@ export default {
   data () {
     return {
       text: null,
-      info: null
+      info: null,
+      acf: null
     }
   },
-  mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=catering').then(response => (this.text = response.data[0].acf.text))
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=catering').then(response => (this.info = response.data[0].acf.item))
+  async fetch () {
+    this.acf = await this.$store.dispatch('getInfo', `${this.$route.name}`)
+    this.text = this.acf.text
+    this.info = this.acf.item
   }
 }
 </script>

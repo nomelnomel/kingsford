@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import MenuAbout from '../components/MenuPage/MenuAbout'
 import MenuMain from '../components/MenuPage/MenuMain'
 export default {
@@ -21,13 +20,15 @@ export default {
       menu: null,
       current: 0,
       text: null,
-      text2: null
+      text2: null,
+      acf: null
     }
   },
-  mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.menu = response.data[0].acf.menu_category))
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.text2 = response.data[0].acf.text_2))
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=menu').then(response => (this.text = response.data[0].acf.text))
+  async fetch () {
+    this.acf = await this.$store.dispatch('getInfo', `${this.$route.name}`)
+    this.menu = this.acf.menu_category
+    this.text = this.acf.text
+    this.text2 = this.acf.text_2
   },
   methods: {
     changeCurrent (num) {

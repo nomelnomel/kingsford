@@ -43,7 +43,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources', 'vue-scrollto/nuxt'],
+  modules: ['@nuxtjs/style-resources', 'vue-scrollto/nuxt', '@nuxtjs/axios'],
   styleResources: {
     scss: [
       '~/assets/base/colors.scss'

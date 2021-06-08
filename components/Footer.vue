@@ -42,6 +42,7 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/base/breakpoints";
+
 .footer {
   display: flex;
   align-items: center;
@@ -54,6 +55,7 @@ export default {
   &-menu {
     display: flex;
     gap: 20px;
+
     @include media('<mobile') {
       flex-direction: column;
       align-items: center;
@@ -78,19 +80,18 @@ export default {
     flex-direction: row;
     margin-top: 34px;
     margin-bottom: 67px;
-    gap: 36px; /*is it legal? :D*/
+    gap: 36px;
+
     .icon {
       position: relative;
       cursor: pointer;
+
       img {
         width: auto;
       }
 
-      //.fb {
-      //  padding: 0 36px;
-      //}
-
     }
+
   }
 
   .copy {
@@ -100,6 +101,6 @@ export default {
     line-height: 22px;
     letter-spacing: 1.8px;
   }
-}
 
+}
 </style>

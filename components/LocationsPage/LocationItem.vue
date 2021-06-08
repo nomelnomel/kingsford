@@ -42,6 +42,7 @@ export default {
   margin-top: 80px;
   position: relative;
   overflow: hidden;
+
   @include media('<mobile') {
     flex-direction: column;
     align-items: center;
@@ -53,10 +54,12 @@ export default {
     margin-left: 80px;
     z-index: 2;
     width: 50%;
+
     @include media('<mobile') {
       margin-left: 0;
       width: auto;
     }
+
   }
 
   &-text {
@@ -64,6 +67,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
+
     @include media('<mobile') {
       position: unset;
       width: auto;
@@ -78,9 +82,11 @@ export default {
       left: 0;
       border-top: 3px solid;
       width: 98%;
+
       @include media('<mobile') {
         border: none;
       }
+
     }
 
     .text {
@@ -91,9 +97,9 @@ export default {
       font-size: 14px;
       display: flex;
       flex-direction: column;
+
       @include media('<mobile') {
         margin: 20px 0 0;
-
       }
 
       p {
@@ -111,14 +117,18 @@ export default {
         display: inline;
         text-decoration: none;
       }
+
     }
+
   }
+
   &-link{
     text-decoration: none;
     color: $secondary;
   }
 
   &:after {
+
     @include media('<mobile') {
       content: "";
       position: absolute;
@@ -128,12 +138,16 @@ export default {
       width: 80%;
       transform: translateX(-50%);
     }
+
   }
 
   &:last-child {
+
     &:after {
       border: none !important;
     }
+
   }
+
 }
 </style>

@@ -20,31 +20,6 @@
         {{ item.link }}
       </a>
     </div>
-
-    <!--    <div class="catering-address-line">-->
-    <!--      <h3 class="top">-->
-    <!--        download catering menu-->
-    <!--      </h3>-->
-    <!--      <a class="link" href="#">-->
-    <!--        cateringmenu.pdf-->
-    <!--      </a>-->
-    <!--    </div>-->
-    <!--    <div class="catering-address-line">-->
-    <!--      <h3 class="top">-->
-    <!--        call catering expert-->
-    <!--      </h3>-->
-    <!--      <a class="link" href="tel:123-456-7890">-->
-    <!--        123-456-7890-->
-    <!--      </a>-->
-    <!--    </div>-->
-    <!--    <div class="catering-address-line">-->
-    <!--      <h3 class="top">-->
-    <!--        email catering expert-->
-    <!--      </h3>-->
-    <!--      <a class="link" href="mailto:catering@kingsfordgrille.com">-->
-    <!--        catering@kingsfordgrille.com-->
-    <!--      </a>-->
-    <!--    </div>-->
   </section>
 </template>
 
@@ -63,7 +38,9 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/base/breakpoints";
+
 .catering {
+
   &-address {
     flex: 1 1 0;
     align-self: flex-end;
@@ -74,6 +51,7 @@ export default {
     @include media('<ipad-pro') {
       margin-right: -24px;
     }
+
     @include media('<mobile') {
       margin: 30px 0 0;
       align-self: self-start;
@@ -85,12 +63,15 @@ export default {
       left: 0;
       transform: translateY(-100%);
       width: auto;
+
       @include media('<ipad-pro') {
         top: -50px;
       }
+
       @include media('<mobile') {
         display: none;
       }
+
     }
 
     &-title {
@@ -109,6 +90,7 @@ export default {
         border-bottom: 3px solid $primary;
         width: 300px;
       }
+
     }
 
     &-line {
@@ -131,14 +113,11 @@ export default {
         color: $primary;
         text-decoration: none;
       }
+
     }
+
   }
+
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 3s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
-  opacity: 0;
-}
 </style>

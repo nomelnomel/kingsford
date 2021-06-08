@@ -187,12 +187,15 @@ export default {
   transform: translateY(-50%);
   width: auto;
   z-index: 2;
+
   @include media('<ipad-pro') {
     width: 120px;
   }
+
   @include media('<mobile') {
     width: 80px;
   }
+
 }
 
 .about {
@@ -203,9 +206,11 @@ export default {
   background-size: cover;
   background-position: top;
   position: relative;
+
   @include media('<ipad-pro') {
     padding: 75px 50px 50px;
   }
+
   @include media('<mobile') {
     flex-direction: column;
   }
@@ -215,15 +220,6 @@ export default {
     text-align: left;
     margin-right: 101px;
     font-family: alternate-gothic-condensed-a, sans-serif;
-    //@include media('<ipad-pro') {
-    //  font-size: 24px;
-    //  line-height: 27px;
-    //  margin-right: 50px;
-    //}
-    //@include media('<mobile') {
-    //  margin-right: 0;
-    //  margin-bottom: 20px;
-    //}
   }
 
   &-text {
@@ -233,6 +229,7 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
+
     @include media('<ipad-pro') {
       font-size: 14px;
       line-height: 17px;
@@ -250,6 +247,7 @@ export default {
       display: block;
       width: 184px;
       padding-bottom: 4px;
+
       @include media('<mobile') {
         margin-bottom: 0;
         margin-top: 30px;
@@ -258,6 +256,7 @@ export default {
       &:after {
         border-bottom: 3px solid $contrast;
       }
+
     }
   }
 }

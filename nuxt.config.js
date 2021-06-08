@@ -20,7 +20,6 @@ export default {
   transition: {
     name: 'slide-bottom'
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/base/fonts.scss',
@@ -31,11 +30,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/aos.client', mode: 'client' }],
-  purgeCSS: {
-    whitelist: ['aos-init', 'aos-animate', 'data-aos-delay', 'data-aos-duration', 'fade-up', 'zoom-in']
-  },
-
+  plugins: [{ src: '~/plugins/aos.client', mode: 'client', ssr: 'false' }],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

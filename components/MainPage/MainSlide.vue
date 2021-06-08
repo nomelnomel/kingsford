@@ -47,7 +47,6 @@ export default {
           disableOnInteraction: false
         },
         loop: true
-        // Some Swiper option/callback...
       }
     }
   }
@@ -74,6 +73,7 @@ export default {
     transform: translate(-50%, -50%);
     width: auto;
   }
+
 }
 
 .slider-text {
@@ -85,6 +85,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @include media('<mobile') {
     top: 50px;
   }
@@ -94,36 +95,45 @@ export default {
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
+
     @include media('<ipad-pro') {
       font-size: 100px;
     }
+
     @include media('<mobile') {
       font-size: 50px;
     }
+
   }
 
   &-2nd {
     font-size: 130px;
     font-family: fenway-park-jf, sans-serif;
     margin-bottom: 20px;
+
     @include media('<ipad-pro') {
       font-size: 70px;
     }
+
     @include media('<mobile') {
       font-size: 30px;
     }
+
   }
 
   &-3rd {
     font-size: 190px;
     font-family: alternate-gothic-condensed-a, sans-serif;
     text-transform: uppercase;
+
     @include media('<ipad-pro') {
       font-size: 130px;
     }
+
     @include media('<mobile') {
       font-size: 70px;
     }
+
   }
 }
 </style>

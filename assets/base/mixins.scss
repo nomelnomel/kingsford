@@ -25,6 +25,7 @@
 
 @mixin aspect-ratio($w, $h) {
   width: 100vw;
+  //noinspection CssInvalidFunction
   $percent: (math.div($h, $w)) * 100vw;
   height: $percent;
 }
@@ -41,6 +42,7 @@
   align-items: $items;
 }
 
+//noinspection CssInvalidFunction
 @mixin asp-ratio-height($width, $height) {
   height: math.div($height, $width * 100vw);
 }
@@ -52,6 +54,7 @@
     @error "linear-interpolation() $map must be exactly 2 values";
   }
   // The slope
+  //noinspection CssInvalidFunction
   $m: math.div((map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1))), (nth($keys, 2) - nth($keys,1)));
 
   // The y-intercept
@@ -63,7 +66,6 @@
     $sign: "-";
     $b: abs($b);
   }
-
   @return calc(#{$m*100}vw #{$sign} #{$b});
 }
 
@@ -162,7 +164,9 @@
     $resTotal: $resTotal + $res;
     $valueTotal: $valueTotal + $value;
   }
+  //noinspection CssInvalidFunction
   $resMean: math.div($resTotal, $length);
+  //noinspection CssInvalidFunction
   $valueMean: math.div($valueTotal, $length);
 
   // Calculate some other stuff
@@ -182,6 +186,7 @@
   }
 
   // Calculate the Slope
+  //noinspection CssInvalidFunction
   $m: math.div($multipliedDiff, $squaredDiff);
 
   // Calculate the Y-Intercept

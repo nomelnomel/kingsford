@@ -6,3 +6,7 @@ export default ({ app }) => {
     disable: 'mobile' // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
   })
 }
+
+window.onNuxtReady(() => {
+  AOS.hardRefresh()
+})

@@ -26,9 +26,6 @@ export default {
       loading: false
     }
   },
-  // async asyncData ({ store, route }) {
-  //   await store.dispatch('setAcfData', 'home')
-  // },
   async fetch () {
     try {
       this.loading = true

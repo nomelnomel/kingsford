@@ -2,6 +2,7 @@
 
 .underline{
   position: relative;
+
   &:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -10,34 +11,42 @@
     height: 2px;
     left: 50%;
     position: absolute;
-
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
+
   &:hover{
+
     &:after{
       width: 100%;
       left: 0;
     }
+
   }
+
 }
 
 .underline-contrast{
+
   &:after {
     background: $contrast;
   }
+
 }
 
 .underline-secondary{
+
   &:after {
     background: $secondary;
   }
+
 }
 
 .hover-underline {
   color: $primary;
   text-decoration: none;
   position: relative;
+
   &:after{
     content: '';
     position: absolute;
@@ -47,64 +56,18 @@
     right: 0;
     transition: right .4s cubic-bezier(0,.5,0,1);
   }
+
   &:hover{
+
     &:after{
       right:100%;
-
     }
+
   }
+
 }
 
-//.page-enter-active {
-//  animation: enter-page ease-out .3s;
-//  &:before{
-//    content: '';
-//    position: fixed;
-//    top: -100%;
-//    left: 0;
-//    width: 100%;
-//    height: 100%;
-//    background-color: $contrast;
-//    z-index: 100;
-//    opacity: 1;
-//  }
-//}
-//
-//.page-leave-active {
-//  animation: leave-page ease .3s;
-//  &:before{
-//    content: '';
-//    position: fixed;
-//    top: -100%;
-//    left: 0;
-//    width: 100%;
-//    height: 100%;
-//    background-color: $contrast;
-//    z-index: 100;
-//    opacity: 1;
-//  }
-//}
-//
-//@keyframes enter-page {
-//  from {
-//    z-index: 0;
-//    transform: translateY(100%);
-//  }
-//  to {
-//    z-index: 1;
-//    transform: translateY(0);
-//  }
-//}
-//
-//@keyframes leave-page {
-//  from {
-//    transform: translateY(0);
-//  }
-//  to {
-//    transform: translateY(-100%);
-//  }
-//}
-
+/* page navigation animation */
 .slide-bottom-enter-active,
 .slide-bottom-leave-active {
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
@@ -114,6 +77,8 @@
   opacity: 0;
   transform: translate3d(0, 15px, 0);
 }
+
+/* disable AOS on <1024 */
 
 @include media('<ipad-pro'){
   [data-aos^=fade][data-aos^=fade],

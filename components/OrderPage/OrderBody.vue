@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .order{
   background: $contrast;
   display: flex;
@@ -25,4 +26,5 @@ export default {
   font-family: alternate-gothic-condensed-a, sans-serif;
   height: 100vh;
 }
+
 </style>

@@ -30,6 +30,7 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/base/breakpoints";
+
   h3{
     color: $contrast;
     text-transform: uppercase;
@@ -40,6 +41,7 @@ export default {
     @include media('<mobile'){
       margin: 30px 0;
     }
+
   }
 
   .dishes{
@@ -49,11 +51,15 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     margin: 45px 27% 0;
     padding-bottom: 45px;
+
     @include media('<ipad-pro'){
       margin: 45px 20% 0;
     }
+
     @include media('<mobile'){
       grid-row-gap: 30px;
     }
+
   }
+
 </style>

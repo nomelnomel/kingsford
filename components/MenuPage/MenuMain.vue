@@ -41,7 +41,6 @@ export default {
   data () {
     return {
       current: 0,
-      direction: '',
       indicatorWidth: 0,
       indicatorPosition: 0,
       windowWidth: 0
@@ -73,7 +72,6 @@ export default {
   },
   methods: {
     showCurrentMenu (i) {
-      this.current > i ? this.direction = 'to left' : this.direction = 'to right'
       this.current = i
     },
     emitWidth (e) {
@@ -101,6 +99,7 @@ export default {
 @import "@/assets/base/breakpoints";
 
 .menu {
+
   &-header {
     display: flex;
     justify-content: space-between;
@@ -110,10 +109,8 @@ export default {
     margin-bottom: 100px;
     position: relative;
     list-style: none;
+
     @include media('<mobile') {
-      //  padding: 50px 0 0;
-      //  overflow-x: scroll;
-      //  overflow-y: hidden;
       padding: 0;
     }
 
@@ -125,13 +122,17 @@ export default {
       left: 0;
       z-index: 3;
       top: -30px;
+
       @include media('<ipad-pro') {
         top: -20px;
       }
+
       @include media('<mobile') {
         top: -5px;
       }
+
     }
+
   }
 
   &-item {
@@ -147,26 +148,27 @@ export default {
     align-items: center;
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
+
     span{
       padding: 10px;
     }
+
     @include media('<ipad-pro') {
       font-size: 16px;
       line-height: 18px;
     }
-    @include media('<mobile') {
-      //min-width: 50%;
-      font-size: 14px;
-      line-height: 16px;
-    }
+
     @include media('<mobile') {
       font-size: 12px;
+      line-height: 16px;
     }
+
   }
 
   &-active {
     color: $primary;
   }
+
 }
 
 .tab-indicator {
@@ -179,43 +181,11 @@ export default {
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(-100%);
   z-index: 0;
+
   @include media('<mobile') {
     height: 70px;
   }
+
 }
 
-$percentage: 40%;
-
-// Forwards transition
-//.to-right-enter {
-//  opacity: 0;
-//  transform: translateX($percentage);
-//}
-//
-//.to-right-enter-active {
-//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//}
-//
-//.to-right-leave-active {
-//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//  opacity: 0;
-//  transform: translateX(-$percentage);
-//}
-//
-//// Backwards transition
-//
-//.to-left-back-enter {
-//  opacity: 0;
-//  transform: translateX(-$percentage);
-//}
-//
-//.to-left-enter-active {
-//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//}
-//
-//.to-left-leave-active {
-//  transition: all .6s  cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//  opacity: 0;
-//  transform: translateX($percentage);
-//}
 </style>

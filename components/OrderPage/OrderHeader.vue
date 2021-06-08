@@ -9,11 +9,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .order{
+
   &-header{
     height: 150px;
     background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
     background-size: cover;
   }
+
 }
+
 </style>

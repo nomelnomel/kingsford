@@ -27,12 +27,14 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/base/breakpoints";
+
   .dish{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: filson-pro, sans-serif;
+
     &-name{
       font-size: 18px;
       font-weight: bold;
@@ -40,14 +42,18 @@ export default {
       line-height: 22px;
       margin-bottom: 20px;
       text-transform: uppercase;
+
       @include media('<mobile'){
         margin-bottom: 10px;
       }
+
     }
+
     &-desc{
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
     &-price{
       font-size: 20px;
       font-weight: bold;
@@ -55,5 +61,7 @@ export default {
       display: block;
       margin-top: 10px;
     }
+
   }
+
 </style>

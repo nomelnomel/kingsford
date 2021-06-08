@@ -1,7 +1,10 @@
 <template>
-  <div v-if="acfData" class="container menu-page">
+  <div v-if="!loading" class="container menu-page">
     <MenuAbout :text2="acfData.text_2" :text="acfData.text" />
-    <MenuMain v-if="acfData.menu_category" :menu="acfData.menu_category" />
+    <MenuMain :menu="acfData.menu_category" />
+  </div>
+  <div v-else>
+    loading...
   </div>
 </template>
 
@@ -16,19 +19,28 @@ export default {
     MenuAbout,
     MenuMain
   },
+  // async asyncData ({ store, route }) {
+  //   await store.dispatch('setAcfData', `${route.name}`)
+  // },
   data () {
     return {
-      current: 0
+      current: 0,
+      loading: false
+    }
+  },
+  async fetch () {
+    try {
+      this.loading = true
+      await this.$store.dispatch('setAcfData', `${this.$route.name}`)
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    } finally {
+      this.loading = false
     }
   },
   computed: {
     ...mapState(['acfData'])
-  },
-  mounted () {
-    this.$store.dispatch('setAcfData', `${this.$route.name}`)
-    // this.menu = this.acf.menu_category
-    // this.text = this.acf.text
-    // this.text2 = this.acf.text_2
   },
   methods: {
     changeCurrent (num) {

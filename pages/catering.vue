@@ -1,7 +1,7 @@
 <template>
-  <div v-if="acfData.text" class="catering">
+  <div v-if="!loading" class="catering">
     <CateringText :text="acfData.text" />
-    <CateringAddress v-if="acfData.item" :info="acfData.item" />
+    <CateringAddress :info="acfData.item" />
     <img
       src="~/assets/images/catering3.png"
       alt=""
@@ -24,12 +24,26 @@ export default {
     CateringText,
     CateringAddress
   },
+  data () {
+    return {
+      loading: false
+    }
+  },
+  async fetch () {
+    try {
+      this.loading = true
+      await this.$store.dispatch('setAcfData', `${this.$route.name}`)
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    } finally {
+      this.loading = false
+    }
+  },
   computed: {
     ...mapState(['acfData'])
-  },
-  mounted () {
-    this.$store.dispatch('setAcfData', `${this.$route.name}`)
   }
+
 }
 </script>
 

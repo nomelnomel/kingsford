@@ -1,8 +1,11 @@
 <template>
-  <section class="locations">
+  <section v-if="!loading" class="locations">
     <LocationsH2 />
     <LocationList :locations="acfData.locations" />
   </section>
+  <div v-else>
+    loading...
+  </div>
 </template>
 
 <script>
@@ -15,17 +18,31 @@ export default {
     LocationList,
     LocationsH2
   },
+  // async asyncData ({ store, route }) {
+  //   await store.dispatch('setAcfData', `${route.name}`)
+  // },
   data () {
     return {
-      acf: null
+      loading: false
+    }
+  },
+  async fetch () {
+    try {
+      this.loading = true
+      await this.$store.dispatch('setAcfData', `${this.$route.name}`)
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+    } finally {
+      this.loading = false
     }
   },
   computed: {
     ...mapState(['acfData'])
-  },
-  mounted () {
-    this.$store.dispatch('setAcfData', `${this.$route.name}`)
   }
+  // mounted () {
+  //   this.$store.dispatch('setAcfData', `${this.$route.name}`)
+  // }
 }
 </script>
 

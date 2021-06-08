@@ -32,7 +32,7 @@
         >
           <img src="~/assets/icons/cross.svg" alt="">
         </div>
-        <div class="order-btn order-btn-menu">
+        <div class="order-btn order-btn-menu" @click="showMenu">
           <nuxt-link to="/ordering">
             order now
           </nuxt-link>
@@ -332,6 +332,7 @@ nav{
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
+  z-index: 2;
 }
 
 .menu-layout{

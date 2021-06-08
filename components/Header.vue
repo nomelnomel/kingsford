@@ -38,13 +38,13 @@
           </nuxt-link>
         </div>
         <nav @click="showMenu">
-          <nuxt-link to="menu" class="menu1 hover-underline">
+          <nuxt-link to="/menu" class="menu1 hover-underline">
             menu
           </nuxt-link>
-          <nuxt-link to="locations" class="menu2 hover-underline">
+          <nuxt-link to="/locations" class="menu2 hover-underline">
             locations
           </nuxt-link>
-          <nuxt-link to="catering" class="menu3 hover-underline">
+          <nuxt-link to="/catering" class="menu3 hover-underline">
             catering
           </nuxt-link>
         </nav>

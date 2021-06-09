@@ -67,6 +67,10 @@
 
 }
 
+a{
+  -webkit-tap-highlight-color: transparent;
+}
+
 .loading{
   height: 100vh;
   width: 100vw;
@@ -118,7 +122,9 @@
   [data-aos=fade-up],
   [data-aos=fade-down],
   [data-aos=zoom-in],
-  [data-aos=zoom-out]{
+  [data-aos=zoom-out],
+  [data-aos=fade-up-left]
+  {
     transform: none!important;
   }
 }

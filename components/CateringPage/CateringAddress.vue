@@ -49,7 +49,7 @@ export default {
     position: relative;
 
     @include media('<ipad-pro') {
-      margin-right: -24px;
+      margin-right: -45px;
     }
 
     @include media('<mobile') {
@@ -61,7 +61,7 @@ export default {
       position: absolute;
       top: -38px;
       left: 0;
-      transform: translateY(-100%);
+      transform: translateY(-100%)!important;
       width: auto;
 
       @include media('<ipad-pro') {

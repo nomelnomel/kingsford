@@ -46,14 +46,7 @@ export default {
       '~/assets/base/colors.scss'
     ]
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ['aos']
-  },
-  router: {
-    scrollBehavior (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
   }
 }

@@ -220,6 +220,12 @@ export default {
     text-align: left;
     margin-right: 101px;
     font-family: alternate-gothic-condensed-a, sans-serif;
+
+    @include media('<mobile') {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
   }
 
   &-text {

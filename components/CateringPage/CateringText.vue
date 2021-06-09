@@ -1,6 +1,12 @@
 <template>
   <section class="catering-text">
-    <img src="~/assets/images/catering2.jpg" alt="" class="cat2" data-aos="fade-right" data-aos-delay="1200">
+    <img
+      src="~/assets/images/catering2.jpg"
+      alt=""
+      class="cat2"
+      data-aos="fade-right"
+      data-aos-delay="1200"
+    >
     <span v-html="text" />
   </section>
 </template>

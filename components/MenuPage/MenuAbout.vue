@@ -95,7 +95,11 @@ export default {
         right: 0;
 
         @include media('<ipad-pro'){
-          transform: translateX(80%);
+          transform: translateX(calc(20% + 15px));
+        }
+
+        @include media('<mobile'){
+          transform: translateX(10%);
         }
 
       }
@@ -104,8 +108,8 @@ export default {
         transform: translateX(calc(-50% + 15px));
         left: 0;
 
-        @include media('<ipad-pro'){
-          transform: translateX(calc(-80% + 15px));
+        @include media('<mobile'){
+          transform: translateX(10%);
         }
 
       }

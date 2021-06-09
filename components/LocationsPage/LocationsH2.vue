@@ -10,25 +10,18 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/base/breakpoints";
+@import "@/assets/base/mixins";
 
 h2{
-  font-size: 300px;
+  @include custom-text-size(300px, 100px, 300px, 100px);
   letter-spacing: 0;
-  line-height: 300px;
   font-family: fenway-park-jf, sans-serif;
   color: $contrast;
   text-align: center;
   font-weight: normal;
+  padding-top: 1.5vh;
 
   @include media('<ipad-pro'){
-    font-size: 200px;
-    line-height: 200px;
-    margin-bottom: -50px;
-  }
-
-  @include media('<mobile'){
-    font-size: 100px;
-    line-height: 100px;
     margin-bottom: 50px;
   }
 

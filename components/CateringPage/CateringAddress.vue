@@ -1,7 +1,7 @@
 <template>
   <section class="catering-address">
     <img
-      src="~/assets/images/catering1.png"
+      src="~/assets/images/catering1.jpg"
       alt=""
       class="cat1"
       data-aos="fade-up"

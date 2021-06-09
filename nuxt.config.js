@@ -17,9 +17,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  transition: {
-    name: 'slide-bottom'
-  },
+  pageTransition: 'slide-bottom',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/base/fonts.scss',
@@ -50,6 +49,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    vendor: ['aos']
   },
   router: {
     scrollBehavior (to, from, savedPosition) {

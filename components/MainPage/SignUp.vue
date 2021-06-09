@@ -1,12 +1,12 @@
 <template>
   <div class="signup">
-    <div class="signup-image" data-aos="fade-in">
-      <img src="~/assets/images/sign-back.png" alt="">
+    <div class="signup-image">
+      <img src="~/assets/images/sign-back.jpg" alt="" data-aos="fade-in" data-aos-duration="500">
     </div>
-    <h3 class="signup-text" data-aos="fade-right">
+    <h3 class="signup-text" data-aos="fade-right" data-aos-duration="500">
       SIGN UP FOR UPDATES
     </h3>
-    <form class="signup-form" data-aos="fade-left">
+    <form class="signup-form" data-aos="fade-left" data-aos-duration="500">
       <input type="text" class="signup-input" placeholder="Email@website.com">
       <div class="signup-btn hover-underline">
         OK

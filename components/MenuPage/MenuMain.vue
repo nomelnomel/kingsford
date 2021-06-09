@@ -10,9 +10,7 @@
       >
         <span>{{ item.menu_title }}</span>
       </li>
-      <transition :name="direction">
-        <span class="tab-indicator" :style="getStyle" />
-      </transition>
+      <span class="tab-indicator" :style="getStyle" />
     </ul>
     <MenuSection
       v-for="section in currentMenuPage.menu_subcategories"

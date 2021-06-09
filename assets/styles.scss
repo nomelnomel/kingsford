@@ -121,9 +121,17 @@ a{
   [data-aos=fade-left],
   [data-aos=fade-up],
   [data-aos=fade-down],
+  [data-aos=fade-up-left],
+  [data-aos=fade-up-right],
+  [data-aos=fade-down-left],
+  [data-aos=fade-down-right],
+  [data-aos=fade],
+  [data-aos=slide-up],
+  [data-aos=slide-down],
+  [data-aos=slide-left],
+  [data-aos=slide-right],
   [data-aos=zoom-in],
   [data-aos=zoom-out],
-  [data-aos=fade-up-left]
   {
     transform: none!important;
   }

@@ -3,8 +3,8 @@
     <MenuAbout :text2="acfData.text_2" :text="acfData.text" />
     <MenuMain :menu="acfData.menu_category" />
   </div>
-  <div v-else>
-    loading...
+  <div v-else class="loading">
+    <img src="@/assets/icons/reload.svg" alt="">
   </div>
 </template>
 
@@ -61,4 +61,5 @@ export default {
       background-position: top;
     }
   }
+
 </style>

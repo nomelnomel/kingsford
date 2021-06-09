@@ -8,5 +8,5 @@ export default ({ app }) => {
 }
 
 window.onNuxtReady(() => {
-  AOS.hardRefresh()
+  AOS.refreshHard()
 })

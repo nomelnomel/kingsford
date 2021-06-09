@@ -3,8 +3,8 @@
     <LocationsH2 />
     <LocationList :locations="acfData.locations" />
   </section>
-  <div v-else>
-    loading...
+  <div v-else class="loading">
+    <img src="@/assets/icons/reload.svg" alt="">
   </div>
 </template>
 

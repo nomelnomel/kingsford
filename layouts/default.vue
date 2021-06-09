@@ -42,11 +42,21 @@ html {
   background-color: $contrast;
 }
 
-*,
-*::before,
-*::after {
+*, {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  outline: none !important;
+  text-rendering: optimizelegibility;
+}
+
+*::before,
+*::after{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 img{

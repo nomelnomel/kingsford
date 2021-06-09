@@ -60,6 +60,7 @@ export default {
   background: $secondary-light;
   position: relative;
   max-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 
   .swiper-slide img {

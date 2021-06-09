@@ -12,6 +12,9 @@
       data-aos-offset="-500"
     >
   </div>
+  <div v-else class="loading">
+    <img src="@/assets/icons/reload.svg" alt="">
+  </div>
 </template>
 
 <script>

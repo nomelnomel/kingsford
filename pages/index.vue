@@ -1,7 +1,7 @@
 <template>
   <div v-if="!loading" class="container">
     <MainSlide />
-    <About :about="acfData.about_text" />
+    <About :about="homeData.about_text" />
     <SignUp />
   </div>
   <div v-else class="loading">
@@ -26,19 +26,19 @@ export default {
       loading: false
     }
   },
-  async fetch () {
-    try {
-      this.loading = true
-      await this.$store.dispatch('setAcfData', 'home')
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error)
-    } finally {
-      this.loading = false
-    }
-  },
+  // async fetch () {
+  //   try {
+  //     this.loading = true
+  //     await this.$store.dispatch('setAcfData', 'home')
+  //   } catch (error) {
+  //     // eslint-disable-next-line no-console
+  //     console.log(error)
+  //   } finally {
+  //     this.loading = false
+  //   }
+  // },
   computed: {
-    ...mapState(['acfData'])
+    ...mapState(['homeData'])
   }
 
 }

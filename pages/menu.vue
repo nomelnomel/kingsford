@@ -1,7 +1,7 @@
 <template>
   <div v-if="!loading" class="container menu-page">
-    <MenuAbout :text2="acfData.text_2" :text="acfData.text" />
-    <MenuMain :menu="acfData.menu_category" />
+    <MenuAbout :text2="menuData.text_2" :text="menuData.text" />
+    <MenuMain :menu="menuData.menu_category" />
   </div>
   <div v-else class="loading">
     <img src="@/assets/icons/reload.svg" alt="">
@@ -28,19 +28,20 @@ export default {
       loading: false
     }
   },
-  async fetch () {
-    try {
-      this.loading = true
-      await this.$store.dispatch('setAcfData', `${this.$route.name}`)
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error)
-    } finally {
-      this.loading = false
-    }
-  },
+  // async fetch () {
+  //   try {
+  //     this.loading = true
+  //     await this.$store.dispatch('setAcfData', `${this.$route.name}`)
+  //   } catch (error) {
+  //     // eslint-disable-next-line no-console
+  //     console.log(error)
+  //   } finally {
+  //     this.loading = false
+  //   }
+  // },
   computed: {
-    ...mapState(['acfData'])
+    // ...mapState(['acfData']),
+    ...mapState(['menuData'])
   },
   methods: {
     changeCurrent (num) {

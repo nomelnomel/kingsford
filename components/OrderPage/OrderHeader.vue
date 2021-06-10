@@ -14,8 +14,10 @@ export default {
 
   &-header{
     height: 150px;
-    background: url('~/assets/images/about-back.png') 100% 100% no-repeat;
+    background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
+    background-position: top;
     background-size: cover;
+    background-color: #fff;
   }
 
 }

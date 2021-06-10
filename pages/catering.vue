@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading" class="catering">
+  <div class="catering">
     <CateringText :text="cateringData.text" />
     <CateringAddress :info="cateringData.item" />
     <img
@@ -11,9 +11,6 @@
       data-aos-duration="700"
       data-aos-offset="-500"
     >
-  </div>
-  <div v-else class="loading">
-    <img src="@/assets/icons/reload.svg" alt="">
   </div>
 </template>
 
@@ -27,24 +24,8 @@ export default {
     CateringText,
     CateringAddress
   },
-  data () {
-    return {
-      loading: false
-    }
-  },
-  // async fetch () {
-  //   try {
-  //     this.loading = true
-  //     await this.$store.dispatch('setAcfData', `${this.$route.name}`)
-  //   } catch (error) {
-  //     // eslint-disable-next-line no-console
-  //     console.log(error)
-  //   } finally {
-  //     this.loading = false
-  //   }
-  // },
+
   computed: {
-    // ...mapState(['acfData'])
     ...mapState(['cateringData'])
   }
 

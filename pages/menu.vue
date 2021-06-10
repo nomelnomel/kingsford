@@ -1,10 +1,7 @@
 <template>
-  <div v-if="!loading" class="container menu-page">
+  <div class="container menu-page">
     <MenuAbout :text2="menuData.text_2" :text="menuData.text" />
     <MenuMain :menu="menuData.menu_category" />
-  </div>
-  <div v-else class="loading">
-    <img src="@/assets/icons/reload.svg" alt="">
   </div>
 </template>
 
@@ -15,40 +12,12 @@ import MenuMain from '../components/MenuPage/MenuMain'
 export default {
   name: 'Menu',
   components: {
-
     MenuAbout,
     MenuMain
   },
-  // async asyncData ({ store, route }) {
-  //   await store.dispatch('setAcfData', `${route.name}`)
-  // },
-  data () {
-    return {
-      current: 0,
-      loading: false
-    }
-  },
-  // async fetch () {
-  //   try {
-  //     this.loading = true
-  //     await this.$store.dispatch('setAcfData', `${this.$route.name}`)
-  //   } catch (error) {
-  //     // eslint-disable-next-line no-console
-  //     console.log(error)
-  //   } finally {
-  //     this.loading = false
-  //   }
-  // },
   computed: {
-    // ...mapState(['acfData']),
     ...mapState(['menuData'])
-  },
-  methods: {
-    changeCurrent (num) {
-      this.current = num
-    }
   }
-
 }
 </script>
 

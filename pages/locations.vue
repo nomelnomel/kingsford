@@ -1,11 +1,8 @@
 <template>
-  <section v-if="!loading" class="locations">
+  <section class="locations">
     <LocationsH2 />
     <LocationList :locations="locationsData.locations" />
   </section>
-  <div v-else class="loading">
-    <img src="@/assets/icons/reload.svg" alt="">
-  </div>
 </template>
 
 <script>
@@ -18,24 +15,7 @@ export default {
     LocationList,
     LocationsH2
   },
-  data () {
-    return {
-      loading: false
-    }
-  },
-  // async fetch () {
-  //   try {
-  //     this.loading = true
-  //     await this.$store.dispatch('setAcfData', `${this.$route.name}`)
-  //   } catch (error) {
-  //     // eslint-disable-next-line no-console
-  //     console.log(error)
-  //   } finally {
-  //     this.loading = false
-  //   }
-  // },
   computed: {
-    // ...mapState(['acfData'])
     ...mapState(['locationsData'])
   }
 }

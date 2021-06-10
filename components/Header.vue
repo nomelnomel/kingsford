@@ -38,15 +38,25 @@
           </nuxt-link>
         </div>
         <nav @click="showMenu">
-          <nuxt-link to="/menu" class="menu1 hover-underline">
-            menu
+          <nuxt-link
+            v-for="(link, i) in menuLinks"
+            :key="i"
+            :to="`/${link}`"
+            class="hover-underline"
+            :class="`menu${i+1}`"
+          >
+            {{ link }}
           </nuxt-link>
-          <nuxt-link to="/locations" class="menu2 hover-underline">
-            locations
-          </nuxt-link>
-          <nuxt-link to="/catering" class="menu3 hover-underline">
-            catering
-          </nuxt-link>
+
+          <!--          <nuxt-link :to="`/${navLinks[0]}`" class="menu1 hover-underline">-->
+          <!--            {{ navLinks[0] }}-->
+          <!--          </nuxt-link>-->
+          <!--          <nuxt-link to="/locations" class="menu2 hover-underline">-->
+          <!--            locations-->
+          <!--          </nuxt-link>-->
+          <!--          <nuxt-link to="/catering" class="menu3 hover-underline">-->
+          <!--            catering-->
+          <!--          </nuxt-link>-->
         </nav>
 
         <div class="hidden-info">
@@ -75,6 +85,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Header',
   data () {
@@ -85,6 +97,10 @@ export default {
   computed: {
     isIndex () {
       return (this.$route.name === 'index')
+    },
+    ...mapState(['navLinks']),
+    menuLinks () {
+      return this.navLinks.slice(0, 3)
     }
   },
   methods: {

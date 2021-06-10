@@ -1,12 +1,16 @@
 <template>
   <div class="main">
     <Header />
-    <Nuxt />
+    <Nuxt v-if="!loading" />
+    <div v-else class="loading">
+      <img src="@/assets/icons/reload.svg" alt="">
+    </div>
     <Footer />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -14,6 +18,9 @@ export default {
   components: {
     Header,
     Footer
+  },
+  computed: {
+    ...mapState(['loading'])
   }
 }
 </script>

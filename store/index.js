@@ -51,15 +51,15 @@ export const actions = {
     }
   },
   async getHome ({ commit }) {
-    const resHome = await this.$axios.$get(home)
-    const acfHome = resHome[0].acf
-    commit('setAcfHome', acfHome)
+    const resHome = (await this.$axios.$get(home))
+    // const acfHome = resHome[0].acf
+    commit('setAcfHome', resHome)
   },
 
   async getMenu ({ commit }) {
-    const resMenu = await this.$axios.$get(menu)
-    const acfMenu = resMenu[0].acf
-    commit('setAcfMenu', acfMenu)
+    const resMenu = (await this.$axios.$get(menu))[0]
+    // const acfMenu = resMenu[0].acf
+    commit('setAcfMenu', resMenu)
   },
 
   async getNavLinks ({ commit }) {
@@ -71,12 +71,13 @@ export const actions = {
 
   async getLocations ({ commit }) {
     const resLocations = (await this.$axios.$get(locations))[0]
+    // const acfLocations = resLocations[0].acf
     commit('setAcfLocations', resLocations)
   },
 
   async getCatering ({ commit }) {
-    const resCatering = await this.$axios.$get(catering)
-    const acfCatering = resCatering[0].acf
-    commit('setAcfCatering', acfCatering)
+    const resCatering = (await this.$axios.$get(catering))[0]
+    // const acfCatering = resCatering[0].acf
+    commit('setAcfCatering', resCatering)
   }
 }

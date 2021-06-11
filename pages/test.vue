@@ -1,46 +1,16 @@
 <template>
-  <div class="test">
-    <div v-if="about">
-      {{ about.headline }}
+  <div v-if="data" style="background: white">
+    {{ data[0].acf.pictures }}
+    <br>
+    <br>
+    <br>
+    <div v-for="picture in data[0].acf.pictures" :key="picture.name">
+      <img :src="`${ picture.image.sizes.medium }`" alt="">
     </div>
-    <div v-if="menu">
-      <div
-        v-for="(item,i) in menu"
-        :key="i"
-      >
-        {{ item.menu_title }}
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <ul class="menu">
-      <li
-        v-for="(item, i) in items"
-        :key="i"
-        class="menu-item"
-        :class="{'menu-active':isActive(i)}"
-        @click="changeCurrent(i); emitWidth($event)"
-      >
-        <span>{{ item }}</span>
-      </li>
-      <transition :name="direction">
-        <span class="tab-indicator" :style="getStyle" @click.prevent="emitWidth($event)" />
-      </transition>
-    </ul>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'Test',
   data () {
@@ -54,50 +24,16 @@ export default {
       num: 0,
       info: null,
       menu: null,
-      about: null
+      about: null,
+      data: null
     }
   },
-  computed: {
-    getStyle () {
-      return {
-        left: this.indicator_pos + 'px',
-        width: this.indicator_width + 'px'
-      }
-    }
-  },
-  mounted () {
-    axios.get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=home').then(response => (this.about = response.data[0].acf.about_text))
-
-    window.addEventListener('resize', this.onResize)
-    const currentItem = document.querySelector('.menu-active')
-    this.indicator_width = currentItem.firstChild.offsetWidth
-    this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
-  },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.onResize)
-  },
-  methods: {
-    isActive (i) {
-      return i === this.current
-    },
-    changeCurrent (i) {
-      this.current > i ? this.direction = 'to left' : this.direction = 'to right'
-      this.current = i
-    },
-    emitWidth (e) {
-      const parentWidth = e.currentTarget.offsetWidth
-      const childWidth = e.currentTarget.firstChild.offsetWidth
-      this.indicator_width = childWidth
-      this.indicator_pos = e.currentTarget.offsetLeft + (parentWidth - childWidth) / 2
-    },
-    onResize () {
-      this.windowWidth = window.innerWidth
-      const currentItem = document.querySelector('.menu-active')
-      this.indicator_width = currentItem.firstChild.offsetWidth
-      this.indicator_pos = currentItem.offsetLeft + (currentItem.offsetWidth - currentItem.firstChild.offsetWidth) / 2
-    }
+  async fetch () {
+    this.data = await this.$axios.$get('https://wp.kingsfordfiregrille.com//wp-json/wp/v2/pages/?slug=home')
   }
+
 }
+
 </script>
 
 <style scoped lang="scss">

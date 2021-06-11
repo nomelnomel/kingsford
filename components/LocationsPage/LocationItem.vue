@@ -1,8 +1,8 @@
 <template>
   <section class="address">
     <div class="address-image">
-      <!--      <Images :image-url="image" />-->
-      <img src="~/assets/images/loc1.jpg" alt="">
+      <Images v-if="item.picture.sizes" :image-url="item.picture.sizes" :alt="item.picture.alt? item.picture.alt: item.picture.name " />
+      <img v-else src="~/assets/images/locations-ph.jpg" alt="">
     </div>
     <div class="address-text">
       <div class="text">
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-// import Images from '../Images'
+import Images from '../Images'
 export default {
   name: 'LocationItem',
   components: {
-    // Images
+    Images
   },
   props: {
     item: {
@@ -57,7 +57,7 @@ export default {
 
     @include media('<mobile') {
       margin-left: 0;
-      width: auto;
+      width: 100%;
     }
 
   }

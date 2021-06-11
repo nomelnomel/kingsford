@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <MainSlide />
+    <MainSlide :images="homeData.pictures" />
     <About :about="homeData.about_text" />
     <SignUp />
   </div>

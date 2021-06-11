@@ -1,27 +1,30 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide>
-      <img src="~/assets/images/land1.png" alt="">
-      <div class="slider-text">
-        <span class="slider-text-1st">
-          Friends
-        </span>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <img src="~/assets/images/land2.png" alt="">
-      <div class="slider-text">
-        <span class="slider-text-1st">Friends</span>
-        <span class="slider-text-2nd">Fire</span>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <img src="~/assets/images/land3.png" alt="">
-      <div class="slider-text">
-        <span class="slider-text-1st">Friends</span>
-        <span class="slider-text-2nd">Fire</span>
-        <span class="slider-text-3rd">Food</span>
-      </div>
+    <!--    <swiper-slide>-->
+    <!--      <img src="~/assets/images/land1.png" alt="">-->
+    <!--      <div class="slider-text">-->
+    <!--        <span class="slider-text-1st">-->
+    <!--          Friends-->
+    <!--        </span>-->
+    <!--      </div>-->
+    <!--    </swiper-slide>-->
+    <!--    <swiper-slide>-->
+    <!--      <img src="~/assets/images/land2.png" alt="">-->
+    <!--      <div class="slider-text">-->
+    <!--        <span class="slider-text-1st">Friends</span>-->
+    <!--        <span class="slider-text-2nd">Fire</span>-->
+    <!--      </div>-->
+    <!--    </swiper-slide>-->
+    <!--    <swiper-slide>-->
+    <!--      <img src="~/assets/images/land3.png" alt="">-->
+    <!--      <div class="slider-text">-->
+    <!--        <span class="slider-text-1st">Friends</span>-->
+    <!--        <span class="slider-text-2nd">Fire</span>-->
+    <!--        <span class="slider-text-3rd">Food</span>-->
+    <!--      </div>-->
+    <!--    </swiper-slide>-->
+    <swiper-slide v-for="slide in images" :key="slide.name">
+      <Images :image-url="slide.image.sizes" :alt="slide.image.name" />
     </swiper-slide>
     <!--    <div slot="button-prev" class="swiper-button-prev" />-->
   </swiper>
@@ -29,15 +32,23 @@
 
 <script>
 import { directive, Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import Images from '../Images'
 import 'swiper/css/swiper.css'
 
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    Images
   },
   directives: {
     swiper: directive
+  },
+  props: {
+    images: {
+      type: Array,
+      default: () => {}
+    }
   },
   data () {
     return {
@@ -62,9 +73,15 @@ export default {
   max-height: 100vh;
   //height: 100vh; /*bug on tablet*/
   overflow: hidden;
+  @include media('<ipad-pro'){
+    aspect-ratio: 3 / 2;
+    max-height: unset;
+  }
 
-  .swiper-slide img {
-    display: block;
+  .swiper-slide{
+    img {
+      display: block;
+    }
   }
 
   &-text {

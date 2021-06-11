@@ -1,10 +1,20 @@
 <!--wrap this component in some block-->
 <template>
-  <picture class="cli-image">
+  <picture v-if="imageUrl" class="cli-image">
+    <source
+      v-if="imageUrl.large"
+      :data-srcset="`${imageUrl.large}`"
+      media="(min-width: 770px)"
+    >
+    <source
+      v-if="imageUrl.medium_large"
+      :data-srcset="`${imageUrl.medium_large}`"
+      media="(max-width: 769px)"
+    >
     <img
       :alt="alt"
       data-sizes="auto"
-      :src="imageUrl"
+      :src="getImage"
       :style="{ objectFit: fit }"
       class="lazyload"
     >
@@ -17,7 +27,7 @@ export default {
   name: 'cli-image',
   props: {
     imageUrl: {
-      type: String,
+      type: [Object, Boolean],
       default: () => {},
       required: true,
     },
@@ -31,7 +41,16 @@ export default {
       default: 'cover',
     },
   },
-
+  computed: {
+    getImage() {
+      const { thumbnail, medium_large, large } = this.imageUrl
+      if (thumbnail) {
+        return thumbnail
+      } else if (medium_large) {
+        return medium_large
+      } else return large
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -49,4 +68,3 @@ img {
   filter: blur(10px);
 }
 </style>
-

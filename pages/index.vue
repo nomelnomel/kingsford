@@ -20,6 +20,7 @@ export default {
   },
   head () {
     return {
+      title: this.homeData.title.rendered,
       meta: this.homeData.yoast_meta
     }
   },

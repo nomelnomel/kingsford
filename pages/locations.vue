@@ -17,6 +17,7 @@ export default {
   },
   head () {
     return {
+      title: this.locationsData.title.rendered,
       meta: this.locationsData.yoast_meta
     }
   },

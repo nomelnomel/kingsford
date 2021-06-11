@@ -26,6 +26,7 @@ export default {
   },
   head () {
     return {
+      title: this.cateringData.title.rendered,
       meta: this.cateringData.yoast_meta
     }
   },

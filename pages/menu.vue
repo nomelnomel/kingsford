@@ -17,6 +17,7 @@ export default {
   },
   head () {
     return {
+      title: this.menuData.title.rendered,
       meta: this.menuData.yoast_meta
     }
   },

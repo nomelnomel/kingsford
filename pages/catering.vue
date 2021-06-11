@@ -1,7 +1,7 @@
 <template>
   <div class="catering">
-    <CateringText :text="cateringData.text" />
-    <CateringAddress :info="cateringData.item" />
+    <CateringText :text="cateringData.acf.text" />
+    <CateringAddress :info="cateringData.acf.item" />
     <img
       src="~/assets/images/catering3.jpg"
       alt=""

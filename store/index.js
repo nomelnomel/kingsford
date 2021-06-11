@@ -51,7 +51,7 @@ export const actions = {
     }
   },
   async getHome ({ commit }) {
-    const resHome = (await this.$axios.$get(home))
+    const resHome = (await this.$axios.$get(home))[0]
     // const acfHome = resHome[0].acf
     commit('setAcfHome', resHome)
   },

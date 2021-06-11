@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <MainSlide :images="homeData.pictures" />
-    <About :about="homeData.about_text" />
+    <MainSlide :images="homeData.acf.pictures" />
+    <About :about="homeData.acf.about_text" />
     <SignUp />
   </div>
 </template>

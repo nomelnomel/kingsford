@@ -1,7 +1,7 @@
 <template>
   <div class="container menu-page">
-    <MenuAbout :text2="menuData.text_2" :text="menuData.text" />
-    <MenuMain :menu="menuData.menu_category" />
+    <MenuAbout :text2="menuData.acf.text_2" :text="menuData.acf.text" />
+    <MenuMain :menu="menuData.acf.menu_category" />
   </div>
 </template>
 

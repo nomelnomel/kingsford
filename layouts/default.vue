@@ -2,10 +2,7 @@
   <div class="main">
     <Header />
     <img src="../assets/images/menu-back.png" style="display: none">
-    <Nuxt v-if="!loading" />
-    <div v-else class="loading">
-      <img src="@/assets/icons/reload.svg" alt="">
-    </div>
+    <Nuxt />
     <Footer />
   </div>
 </template>

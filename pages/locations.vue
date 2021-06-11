@@ -1,7 +1,7 @@
 <template>
   <section class="locations">
     <LocationsH2 />
-    <LocationList :locations="locationsData.locations" />
+    <LocationList :locations="locationsData.acf.locations" />
   </section>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     LocationList,
     LocationsH2
+  },
+  head () {
+    return {
+      meta: this.locationsData.yoast_meta
+    }
   },
   computed: {
     ...mapState(['locationsData'])

@@ -9,8 +9,7 @@ export const state = () => ({
   menuData: {},
   homeData: {},
   locationsData: {},
-  cateringData: {},
-  loading: false
+  cateringData: {}
 })
 
 export const mutations = {
@@ -31,10 +30,6 @@ export const mutations = {
   },
   setAcfCatering (state, payload) {
     state.cateringData = payload
-  },
-  setLoading (state, payload) {
-    state.loading = payload
-    console.log(state.loading)
   }
 }
 
@@ -51,6 +46,7 @@ export const actions = {
         ]
       )
     } catch (e) {
+      // eslint-disable-next-line
       console.log(e)
     }
   },
@@ -74,9 +70,8 @@ export const actions = {
   },
 
   async getLocations ({ commit }) {
-    const resLocations = await this.$axios.$get(locations)
-    const acfLocations = resLocations[0].acf
-    commit('setAcfLocations', acfLocations)
+    const resLocations = (await this.$axios.$get(locations))[0]
+    commit('setAcfLocations', resLocations)
   },
 
   async getCatering ({ commit }) {

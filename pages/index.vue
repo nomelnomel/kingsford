@@ -18,6 +18,11 @@ export default {
     About,
     SignUp
   },
+  head () {
+    return {
+      meta: this.homeData.yoast_meta
+    }
+  },
   computed: {
     ...mapState(['homeData'])
   }

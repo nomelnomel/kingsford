@@ -15,6 +15,11 @@ export default {
     MenuAbout,
     MenuMain
   },
+  head () {
+    return {
+      meta: this.menuData.yoast_meta
+    }
+  },
   computed: {
     ...mapState(['menuData'])
   }

@@ -24,7 +24,11 @@ export default {
     CateringText,
     CateringAddress
   },
-
+  head () {
+    return {
+      meta: this.cateringData.yoast_meta
+    }
+  },
   computed: {
     ...mapState(['cateringData'])
   }

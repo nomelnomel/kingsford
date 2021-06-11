@@ -1,32 +1,13 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <!--    <swiper-slide>-->
-    <!--      <img src="~/assets/images/land1.png" alt="">-->
-    <!--      <div class="slider-text">-->
-    <!--        <span class="slider-text-1st">-->
-    <!--          Friends-->
-    <!--        </span>-->
-    <!--      </div>-->
-    <!--    </swiper-slide>-->
-    <!--    <swiper-slide>-->
-    <!--      <img src="~/assets/images/land2.png" alt="">-->
-    <!--      <div class="slider-text">-->
-    <!--        <span class="slider-text-1st">Friends</span>-->
-    <!--        <span class="slider-text-2nd">Fire</span>-->
-    <!--      </div>-->
-    <!--    </swiper-slide>-->
-    <!--    <swiper-slide>-->
-    <!--      <img src="~/assets/images/land3.png" alt="">-->
-    <!--      <div class="slider-text">-->
-    <!--        <span class="slider-text-1st">Friends</span>-->
-    <!--        <span class="slider-text-2nd">Fire</span>-->
-    <!--        <span class="slider-text-3rd">Food</span>-->
-    <!--      </div>-->
-    <!--    </swiper-slide>-->
-    <swiper-slide v-for="slide in images" :key="slide.name">
+    <swiper-slide v-for="(slide,i) in images" :key="slide.name">
       <Images :image-url="slide.image.sizes" :alt="slide.image.name" />
+      <div class="slider-text">
+        <span class="slider-text-1st">Friends</span>
+        <span v-if="i>0" class="slider-text-2nd">Fire</span>
+        <span v-if="i>1" class="slider-text-3rd">Food</span>
+      </div>>
     </swiper-slide>
-    <!--    <div slot="button-prev" class="swiper-button-prev" />-->
   </swiper>
 </template>
 

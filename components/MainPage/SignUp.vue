@@ -3,23 +3,28 @@
     <div class="signup-image">
       <img src="~/assets/images/sign-back.jpg" alt="" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
     </div>
-    <h3 class="signup-text" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
-      SIGN UP FOR UPDATES
-    </h3>
-    <form
-      v-if="!formValid"
-      class="signup-form"
+    <div data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">
+      <h3 class="signup-text">
+        SIGN UP FOR UPDATES
+      </h3>
+    </div>
+    <div
       data-aos="fade-left"
       data-aos-duration="500"
       data-aos-delay="300"
-      :class="['join-form', isError]"
     >
-      <input v-model="email" type="email" class="signup-input" placeholder="Email@website.com">
-      <div class="signup-btn hover-underline" @click="submitForm">
-        OK
+      <div
+        v-if="!formValid"
+        class="signup-form"
+        :class="['join-form', isError]"
+      >
+        <input v-model="email" type="email" class="signup-input" placeholder="Email@website.com">
+        <div class="signup-btn hover-underline" @click="submitForm">
+          OK
+        </div>
       </div>
-    </form>
-    <p v-else class="thank" v-html="status" />
+      <p v-else class="thank" v-html="status" />
+    </div>
   </div>
 </template>
 

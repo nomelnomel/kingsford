@@ -17,12 +17,13 @@ export default {
   },
   head () {
     return {
-      title: this.menuData.title.rendered,
+      title: this.menuData.yoast_meta.find(obj => obj.property === 'og:title').content,
       meta: this.menuData.yoast_meta
     }
   },
   computed: {
     ...mapState(['menuData'])
+
   }
 }
 </script>

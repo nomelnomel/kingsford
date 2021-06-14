@@ -1,12 +1,8 @@
 <template>
   <div v-if="data" style="background: white">
-    {{ data[0].acf.pictures }}
     <br>
     <br>
     <br>
-    <div v-for="picture in data[0].acf.pictures" :key="picture.name">
-      <img :src="`${ picture.image.sizes.medium }`" alt="">
-    </div>
   </div>
 </template>
 
@@ -15,16 +11,6 @@ export default {
   name: 'Test',
   data () {
     return {
-      items: ['Hello', 'World', 'OMG'],
-      current: 0,
-      direction: '',
-      indicator_width: 0,
-      indicator_pos: 0,
-      windowWidth: 0,
-      num: 0,
-      info: null,
-      menu: null,
-      about: null,
       data: null
     }
   },

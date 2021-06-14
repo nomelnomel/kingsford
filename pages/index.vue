@@ -20,7 +20,7 @@ export default {
   },
   head () {
     return {
-      title: this.homeData.title.rendered,
+      title: this.homeData.yoast_meta.find(obj => obj.property === 'og:title').content,
       meta: this.homeData.yoast_meta
     }
   },

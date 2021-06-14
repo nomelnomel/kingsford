@@ -26,7 +26,7 @@ export default {
   },
   head () {
     return {
-      title: this.cateringData.title.rendered,
+      title: this.cateringData.yoast_meta.find(obj => obj.property === 'og:title').content,
       meta: this.cateringData.yoast_meta
     }
   },

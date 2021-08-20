@@ -35,7 +35,8 @@ export default {
     color: $contrast;
     text-transform: uppercase;
     letter-spacing: 0.97px;
-    margin: 60px 0;
+    margin: 60px auto 0;
+    max-width: 800px;
     font-weight: normal;
 
     @include media('<mobile'){

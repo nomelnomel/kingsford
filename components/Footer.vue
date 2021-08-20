@@ -1,30 +1,30 @@
 <template>
   <div class="footer">
     <div class="footer-menu">
-      <nuxt-link
+      <!-- <nuxt-link
         v-for="(link, i) in navLinks"
         :key="i"
         :to="`/${link}`"
         class="underline underline-contrast"
       >
         {{ link }}
-      </nuxt-link>
+      </nuxt-link> -->
 
-      <!--      <nuxt-link to="menu" class="underline underline-contrast">-->
-      <!--        menu-->
-      <!--      </nuxt-link>-->
-      <!--      <nuxt-link to="locations" class="underline underline-contrast">-->
-      <!--        locations-->
-      <!--      </nuxt-link>-->
-      <!--      <nuxt-link to="catering" class="underline underline-contrast">-->
-      <!--        catering-->
-      <!--      </nuxt-link>-->
-      <!--      <nuxt-link to="/" class="underline underline-contrast">-->
-      <!--        contact-->
-      <!--      </nuxt-link>-->
-      <!--      <nuxt-link to="/" class="underline underline-contrast">-->
-      <!--        careers-->
-      <!--      </nuxt-link>-->
+      <nuxt-link to="/menu" class="underline underline-contrast">
+       menu
+      </nuxt-link>
+      <nuxt-link to="/locations" class="underline underline-contrast">
+        locations
+      </nuxt-link>
+      <nuxt-link to="/catering" class="underline underline-contrast">
+        catering
+      </nuxt-link>
+      <a href="mailto:tampa@kingsfordfiregrille.com" class="underline underline-contrast">
+        contact
+      </a>
+      <nuxt-link to="/" class="underline underline-contrast">
+        careers
+      </nuxt-link>
     </div>
     <div class="footer-social">
       <div class="icon underline underline-contrast">

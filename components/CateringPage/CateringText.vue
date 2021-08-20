@@ -53,6 +53,7 @@ export default {
     font-size: 83px; /*must be 80*/
     line-height: 96px;
     font-weight: normal;
+    padding-bottom: 25px;
 
     @include media('<mobile') {
       font-size: 50px!important;

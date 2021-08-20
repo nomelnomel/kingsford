@@ -28,13 +28,17 @@
     </div>
     <div class="footer-social">
       <div class="icon underline underline-contrast">
-        <img src="~/assets/icons/ig.svg" alt="">
+        <a href="https://www.instagram.com/kingsfordfiregrille/" target="_blank">
+          <img src="~/assets/icons/ig.svg" alt="">
+        </a>
       </div>
-      <div class="icon underline underline-contrast">
+      <!-- <div class="icon underline underline-contrast">
         <img src="~/assets/icons/fb.svg" alt="" class="fb">
-      </div>
+      </div> -->
       <div class="icon underline underline-contrast">
-        <img src="~/assets/icons/tw.svg" alt="">
+        <a href="https://twitter.com/KingsfordFire" target="_blank">
+          <img src="~/assets/icons/tw.svg" alt="">
+        </a>
       </div>
     </div>
     <div class="copy">

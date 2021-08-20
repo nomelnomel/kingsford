@@ -6,8 +6,11 @@
     <p class="dish-desc">
       {{ item.meni_item_description }}
     </p>
-    <p class="dish-price">
-      {{ item.price }}$
+    <p class="dish-price" v-if="item.price">
+      ${{ item.price }}
+    </p>
+    <p class="dish-price" v-if="item.menu_item_promo">
+      {{ item.menu_item_promo }}
     </p>
   </section>
 </template>

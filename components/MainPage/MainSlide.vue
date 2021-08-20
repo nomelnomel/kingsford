@@ -6,7 +6,7 @@
         <span class="slider-text-1st">Friends</span>
         <span v-if="i>0" class="slider-text-2nd">Fire</span>
         <span v-if="i>1" class="slider-text-3rd">Food</span>
-      </div>>
+      </div>
     </swiper-slide>
   </swiper>
 </template>

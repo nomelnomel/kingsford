@@ -62,7 +62,7 @@
         <div class="hidden-info">
           <img src="~/assets/icons/fire.svg" alt="" class="fire">
           <a href="mailto:tampa@kingsfordfiregrille.com" class="hidden-text">
-          contact
+            contact
           </a>
           <div class="hidden-social">
             <div class="icon underline underline-secondary">

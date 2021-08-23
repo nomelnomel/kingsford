@@ -1,6 +1,8 @@
 <template>
   <section class="order">
-    Online ordering portal
+    Online Ordering coming soon! Please contact <nuxt-link to="/locations" class="underline underline-contrast">
+       locations
+      </nuxt-link>directly to place an order.
   </section>
 </template>
 

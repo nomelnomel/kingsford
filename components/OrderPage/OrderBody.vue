@@ -1,7 +1,7 @@
 <template>
   <section class="order">
-    Online Ordering coming soon!<br> Please contact <nuxt-link to="/locations" class="white underline underline-contrast">
-       locations
+    Online Ordering coming soon! Please contact <nuxt-link to="/locations" class="white underline underline-contrast">
+       locations 
       </nuxt-link>directly to place an order.
   </section>
 </template>
@@ -18,6 +18,7 @@ export default {
   background: $contrast;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   color: $primary;
   text-transform: uppercase;

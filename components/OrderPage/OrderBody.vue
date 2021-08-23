@@ -1,6 +1,6 @@
 <template>
   <section class="order">
-    Online Ordering coming soon! Please contact <nuxt-link to="/locations" class="underline underline-contrast">
+    Online Ordering coming soon!<br> Please contact <nuxt-link to="/locations" class="white underline underline-contrast">
        locations
       </nuxt-link>directly to place an order.
   </section>
@@ -27,6 +27,9 @@ export default {
   line-height: 45px;
   font-family: alternate-gothic-condensed-a, sans-serif;
   height: 100vh;
+  a {
+    color: white;
+  }
 }
 
 </style>

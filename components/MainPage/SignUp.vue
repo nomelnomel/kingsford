@@ -49,7 +49,7 @@ export default {
       const self = this
       this.formValid = false
       await this.$axios
-        .$post(`${process.env.WP_URL}/wp-json/gf/v2/forms/1/submissions`, {
+        .$post(`https://wp.kingsfordfiregrille.com/wp-json/gf/v2/forms/1/submissions`, {
           input_1: this.email
         })
         .then((resp) => {

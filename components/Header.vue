@@ -61,9 +61,9 @@
 
         <div class="hidden-info">
           <img src="~/assets/icons/fire.svg" alt="" class="fire">
-          <nuxt-link to="/" class="hidden-text">
-            contact
-          </nuxt-link>
+          <a href="mailto:tampa@kingsfordfiregrille.com" class="hidden-text">
+          contact
+          </a>
           <div class="hidden-social">
             <div class="icon underline underline-secondary">
               <a href="https://www.instagram.com/kingsfordfiregrille/" target="_blank">
@@ -74,13 +74,13 @@
               <img src="~/assets/icons/fb.svg" alt="" class="fb">
             </div> -->
             <div class="icon underline underline-secondary">
-              <a href="https://twitter.com/KingsfordFire" target="_blank">
+              <a href="https://twitter.com/kingsfordgrill" target="_blank">
                 <img src="~/assets/icons/tw.svg" alt="">
               </a>
             </div>
           </div>
           <div class="hidden-copy">
-            COPYRIGHT KINGSFORD GRILLE 2021
+            COPYRIGHT KINGSFORD FIRE GRILLE 2021
           </div>
         </div>
       </div>
@@ -340,6 +340,7 @@ header {
           left: 50%;
           transform: translateX(-50%);
           width: 272px;
+          z-index: -1;
         }
 
       }

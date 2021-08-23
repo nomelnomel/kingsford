@@ -22,9 +22,9 @@
       <a href="mailto:tampa@kingsfordfiregrille.com" class="underline underline-contrast">
         contact
       </a>
-      <nuxt-link to="/" class="underline underline-contrast">
+      <a href="https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=678F856802F31238D7ACA250FA61428A" target="_blank" class="underline underline-contrast">
         careers
-      </nuxt-link>
+      </a>
     </div>
     <div class="footer-social">
       <div class="icon underline underline-contrast">
@@ -36,13 +36,13 @@
         <img src="~/assets/icons/fb.svg" alt="" class="fb">
       </div> -->
       <div class="icon underline underline-contrast">
-        <a href="https://twitter.com/KingsfordFire" target="_blank">
+        <a href="https://twitter.com/kingsfordgrill" target="_blank">
           <img src="~/assets/icons/tw.svg" alt="">
         </a>
       </div>
     </div>
     <div class="copy">
-      COPYRIGHT KINGSFORD GRILLE 2021
+      COPYRIGHT KINGSFORD FIRE GRILLE 2021
     </div>
   </div>
 </template>

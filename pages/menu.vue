@@ -29,13 +29,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  ::deep .main {
+    background: url('../assets/images/menu-back.png') 100% 100% no-repeat;
+    background-size: cover;
+  }
   .menu{
     &-page {
-      background: url('../assets/images/menu-back.png') 100% 100% no-repeat;
-      background-size: cover;
       overflow: hidden;
       background-color: $primary!important;
-      background-position: top;
     }
   }
 

@@ -125,18 +125,18 @@ export default {
   position: relative;
   &:hover {
     &:after{
-      content: '';
-      position: absolute;
       border-bottom: 3px solid $primary;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      right: 100%;
       transition: right .4s cubic-bezier(0,.5,0,1);
     }
   }
 
   &:after{
-    right:100%;
+    right: 0;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 }
 header {

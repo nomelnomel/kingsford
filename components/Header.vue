@@ -42,7 +42,7 @@
             v-for="(link, i) in menuLinks"
             :key="i"
             :to="`/${link}`"
-            class="hover-underline"
+            class="hover-underline-menu"
             :class="`menu${i+1}`"
           >
             {{ link }}
@@ -196,7 +196,7 @@ header {
       @include media('<mobile'){
         display: flex;
       }
-      .hover-underline {
+      .hover-underline-menu {
         color: $primary;
         text-decoration: none;
         position: relative;
@@ -293,9 +293,9 @@ header {
 
           .menu1{
             font-family: alternate-gothic-condensed-a, sans-serif;
-            font-size: 115px;
+            font-size: 90px;
             letter-spacing: 2.42px;
-            line-height: 90px;
+            line-height: 115px;
             text-transform: uppercase;
             margin-left: 100px;
 

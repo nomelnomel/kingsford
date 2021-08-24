@@ -119,7 +119,26 @@ export default {
 
 <style lang="scss">
 @import "@/assets/base/breakpoints";
+.hover-underline-menu {
+  color: $primary;
+  text-decoration: none;
+  position: relative;
+  &:hover {
+    &:after{
+      content: '';
+      position: absolute;
+      border-bottom: 3px solid $primary;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: right .4s cubic-bezier(0,.5,0,1);
+    }
+  }
 
+  &:after{
+    right:100%;
+  }
+}
 header {
   color: $primary !important;
   z-index: 5;
@@ -196,27 +215,6 @@ header {
       @include media('<mobile'){
         display: flex;
       }
-      .hover-underline-menu {
-        color: $primary;
-        text-decoration: none;
-        position: relative;
-        &:hover {
-          &:after{
-            content: '';
-            position: absolute;
-            border-bottom: 3px solid $primary;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            transition: right .4s cubic-bezier(0,.5,0,1);
-          }
-        }
-
-        &:after{
-          right:100%;
-        }
-      }
-
     }
     a{
       color: $primary;

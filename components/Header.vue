@@ -126,8 +126,8 @@ export default {
   &:hover {
     &:after{
       border-bottom: 3px solid $primary;
-      right: 100%;
-      transition: right .4s cubic-bezier(0,.5,0,1);
+      left: 0;
+      transition: left .4s cubic-bezier(0,.5,0,1);
     }
   }
 
@@ -136,7 +136,7 @@ export default {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 100%;
   }
 }
 header {

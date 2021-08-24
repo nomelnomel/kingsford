@@ -36,17 +36,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/base/breakpoints";
+
+.wiz {
+    max-width: 600px;
+  }
 
 .menu{
 
   &-page{
     // background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
     // background-size: cover;
-  }
-  .wiz {
-    max-width: 600px;
   }
 
   &-about{

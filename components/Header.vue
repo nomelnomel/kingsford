@@ -196,6 +196,26 @@ header {
       @include media('<mobile'){
         display: flex;
       }
+      .hover-underline {
+        color: $primary;
+        text-decoration: none;
+        position: relative;
+        &:hover {
+          &:after{
+            content: '';
+            position: absolute;
+            border-bottom: 3px solid $primary;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: right .4s cubic-bezier(0,.5,0,1);
+          }
+        }
+
+        &:after{
+          right:100%;
+        }
+      }
 
     }
     a{
@@ -273,7 +293,7 @@ header {
 
           .menu1{
             font-family: alternate-gothic-condensed-a, sans-serif;
-            font-size: 90px;
+            font-size: 115px;
             letter-spacing: 2.42px;
             line-height: 90px;
             text-transform: uppercase;

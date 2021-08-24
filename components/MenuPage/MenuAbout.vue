@@ -42,8 +42,11 @@ export default {
 .menu{
 
   &-page{
-    background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
-    background-size: cover;
+    // background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
+    // background-size: cover;
+  }
+  .wiz {
+    max-width: 600px;
   }
 
   &-about{

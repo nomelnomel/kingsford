@@ -31,9 +31,9 @@ export default {
 @import "@/assets/base/breakpoints";
 
 .locations{
-  background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
-  background-position: top;
-  background-size: cover;
+  // background: url('~/assets/images/menu-back.png') 100% 100% no-repeat;
+  // background-position: top;
+  // background-size: cover;
   background-color: $primary;
 
   @include media('<ipad-pro'){

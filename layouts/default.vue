@@ -30,9 +30,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  &::-webkit-scrollbar{
-   display: none;
-  }
+  // &::-webkit-scrollbar{
+  //  display: none;
+  // }
 }
 
 .main{
@@ -43,7 +43,7 @@ html {
   background-color: $contrast;
 }
 
-*, {
+* {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
